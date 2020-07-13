@@ -29,6 +29,11 @@ categories: github jekyll
 \usepackage{lineno}
 \usepackage{xargs}
 
+<script type="text/tikz">
+  \begin{tikzpicture}
+    \draw (0,0) circle (1in);
+  \end{tikzpicture}
+</script>
 
 \tikzset{declare function = {
 cosf(\x) = cos(\x r);%
