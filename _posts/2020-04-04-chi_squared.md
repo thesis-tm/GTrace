@@ -170,6 +170,13 @@ In general form, we write, \\
 Z_1^2 + Z_2^2+...+Z_n^2  \sim \chi^2_n 
 \end{equation}
 
+
+<script type="text/tikz">
+  \begin{tikzpicture}
+    \draw (0,0) circle (1in);
+  \end{tikzpicture}
+</script>
+
 where $n$ is known as the degree of freedom. 
 
 In simple words, $\chi^2$ distribution is the distribution followed by a square of variable which follows the normal distribution. Further, how many such variables are added tells how much is the degree of freedom of a $\chi^2$ distribution.
