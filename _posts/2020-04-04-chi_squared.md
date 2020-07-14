@@ -182,6 +182,7 @@ In simple words, $\chi^2$ distribution is the distribution followed by a square 
 
 
 \begin{figure}
+<script type="text/tikz">
 \begin{tikzpicture}[scale=2]
 \def\XMIN{0}, \def\XMAX{10}, \def\NSAMP{50},
 \datavisualization
@@ -213,6 +214,7 @@ var x : interval[\XMIN:\XMAX] samples \NSAMP;
 func y = chif(\value x, 8) ;
 };
 \end{tikzpicture}
+  </script>
 \caption{$\chi^2$ distribution for different degrees-of-freedom.}
 \label{fig:chi2f}
 \end{figure}
