@@ -8,8 +8,6 @@ date:   2016-08-21 23:41:54 +0000
 categories: github jekyll
 ---
 
-<link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
-<script src="https://tikzjax.com/v1/tikzjax.js"></script>
 
 \documentclass[12pt]{article}
 \usepackage{textcomp}
