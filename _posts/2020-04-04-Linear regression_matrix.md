@@ -27,9 +27,9 @@ We define a linear system where the output of the system is dependent linearly o
 here $x_1,x_2,...x_n$ are the inputs and $y$ is the output.
 In a linear system, we know that the output is linearly dependent on the inputs, which implies that the inputs are scaled by some numbers and then results in an output. Hence in mathematical form, we can write the linear system as, 
 
-\begin{equation}
+<p> \begin{equation}
 y(t) = \beta_0 + \beta_1 x_1(t) + \beta_2 x_2(t) + \cdots + \beta_k x_k(t) + \epsilon
-\end{equation}
+\end{equation} </p>
 
 where $\epsilon$ is the random noise that either the system or any other source related to the system generates, and $(t)$ signifies the time, which means the output at time $t$ depends on the inputs $i.e.$ $x_i$ at time $t$. 
  
@@ -41,8 +41,7 @@ Now the next challenge is to identify $\beta_i$ to know about the system, and we
 To start with, we formalize the notations to be used further.
 As we have time dependent output $y(t)$, to present the $n$ instances of the outputs for given $n$ instances of each inputs $x_i$, we use the following matrix notation. 
 
-<html>
-\begin{equation}
+<p> \begin{equation}
 \textbf{y} = \begin{bmatrix}
 y_1\\
 y_2\\
@@ -70,79 +69,78 @@ y_n\\
 \cdots\\
 \beta_n\\
 \end{bmatrix}
-\end{equation}
-  <html>
+\end{equation} </p>
 
 
 Hence we can write the linear system as, 
 
-\begin{equation}\label{eq:regression}
+<p> \begin{equation}\label{eq:regression}
 \textbf{y} = \textbf{X}\boldsymbol{\beta} + \bld{\epsilon}
-\end{equation} 
+\end{equation} </p> 
 
 
 \section{Regression parameter estimation}
 As it is not possible for us to know the regression parameters $\beta$ for the system, so to estimate these parameters we take some another variable $\hat{\beta}$ , and replace it with $\beta$  in Eq. \ref{eq:regression} and predict the output $\hat{\textbf{y}}$, i.e., 
 
-\begin{equation}\label{eq:y_hat}
+<p> \begin{equation}\label{eq:y_hat}
 \hbld{y} = \textbf{X} \hbld{\beta}
-\end{equation}
+\end{equation} </p>
 
 To approximate the regression parameters of unknown system, we have fix $\hat{\beta}$ such that the predicted $\hat{\textbf{y}}$ is closest to actual $\textbf{y}$. In order to do so, we define a term $\textbf{\textbf{e}}$ which is known residual term and mathematically written as, 
 
-\begin{equation}
+<p> \begin{equation}
 \label{eq:residual}
 \textbf{e} = \textbf{y} - \hat{\textbf{y}} 
-\end{equation}
+\end{equation} </p>
 
 So now the problem can identified as adjusting  $\hat{\boldsymbol{\beta}}$ that tries make $\textbf{e}$ zero or towards zero. Alternately we can define it as adjusting  $\hat{\boldsymbol{\beta}}$ such that  $||\textbf{e}||^2$ minimizes. $||\cdot||^2$ signifies the square of each element of $\bld{e}$. \\
 The values of $\hat{\boldsymbol{\beta}}$ that minimizes $||\textbf{e}||^2$ can be obtained by finding minima by differentiation. i.e.,\\
 
-\begin{equation}
+<p> \begin{equation}
 \frac{\partial ||\textbf{e}||^2}{\partial \hat{\boldsymbol{\beta}}} = \frac{\partial \textbf{e}^T \textbf{e}}{\partial \hat{\boldsymbol{\beta}}} = \frac{\partial (\textbf{y} - \hat{\textbf{y}})^T (\textbf{y} - \hat{\textbf{y}})}{\partial \hat{\boldsymbol{\beta}}} = 2 (\textbf{y} - \hat{\textbf{y}})^T \frac{\partial \hat{\textbf{y}}}{\partial \hat{\boldsymbol{\beta}}}
-\end{equation}
+\end{equation} </p>
 Further we know that, 
 
-\begin{equation\*}
+<p> \begin{equation*}
 \frac{\partial \hat{\textbf{y}}}{\partial \hat{\boldsymbol{\beta}}} = \frac{\partial \textbf{X} \hat{\boldsymbol{\beta}}}{\partial \hat{\boldsymbol{\beta}}} = -\textbf{X}
-\end{equation\*}
+\end{equation*} </p>
 Hence we can further write, \\
-\begin{equation}
+<p> \begin{equation}
 \frac{\partial ||\textbf{e}||^2}{\partial \hat{\boldsymbol{\beta}}} = -2 (\textbf{y} - \hat{\textbf{y}})^T \textbf{X}
-\end{equation}
+\end{equation} </p>
 We calculate the optimum value of $\bld{\beta}$ by taking first and second derivative of $||\textbf{e}||^2$ with respect to $\hbld{\beta}$, as shown below, 
-\begin{equation}
+<p> \begin{equation}
 \frac{\partial}{\partial \hbld{\beta}} \frac{\partial ||\textbf{e}||^2}{\partial \hbld{\beta}} = \textbf{X}^T \textbf{X}
-\end{equation}
+\end{equation} </p>
 
 As the second derivative will always be positive, hence we confirm that the value of $\hbld{\beta}$ obtain from first derivative would result in minimization of $||\textbf{e}||$. 
 Hence we can find $\hat{\boldsymbol{\beta}}$ that minimize $||\textbf{e}||^2$ as,
-\begin{equation\*}
+<p> \begin{equation*}
 \begin{split}
 &-2 (\textbf{y} - \hat{\textbf{y}})^T \textbf{X} = 0\\
 \Rightarrow &
 -2 (\textbf{y} - \textbf{X}\hat{\boldsymbol{\beta}})^T \textbf{X} = 0\\
 \Rightarrow & \textbf{y}^T X =  \hat{\boldsymbol{\beta}}^T \textbf{X}^T \textbf{X} 
 \end{split}
-\end{equation\*}
+\end{equation*} </p>
 
 Taking transpose of both sides and with little manipulation, we have, 
 
-\begin{equation}
+<p> \begin{equation}
 \begin{split}
 \textbf{X}^T \textbf{X}  \hbld{\beta}  &= \textbf{X}^T\textbf{y}\\ 
 \Rightarrow \hbld{\beta}  &= (\textbf{X}^T \textbf{X})^{-1} \textbf{X}^T\textbf{y} 
 \end{split}
-\end{equation}
+\end{equation} </p>
 
 Now we can predict the values using the calculated parameter $\hbld{\beta}$ as, \\
-\begin{equation}
+<p> \begin{equation}
 \begin{split}
 \hat{\textbf{y}} &= \textbf{X}\hbld{\beta}\\
 &= \textbf{X} (\textbf{X}^T \textbf{X})^{-1} \textbf{X}^T\textbf{y} \\
 &= \textbf{H} \textbf{y} 
 \end{split}
-\end{equation}
+\end{equation} </p>
 where, $\textbf{H} = \textbf{X} (\textbf{X}^T \textbf{X})^{-1} \textbf{X}^T $
 
 Further we can easily derive that $H = H H^T = H^T H $
@@ -154,28 +152,28 @@ Now the question is, does the above expression really tell us the actual values 
 
 Let's find this. We plug Eq. \ref{eq:regression} into the above equation, 
 
-\begin{equation\*}
+<p> \begin{equation*}
   \hat{\boldsymbol{\beta}}  = (\textbf{X}^T \textbf{X})^{-1} \textbf{X}^T(\textbf{X}\bld{\beta} + \bld{\epsilon})  = (\textbf{X}^T \textbf{X})^{-1} \textbf{X}^T \textbf{X}\beta + (\textbf{X}^T \textbf{X})^{-1} \textbf{X}^T \bld{\epsilon}
-\end{equation\*}
+\end{equation*} </p>
 
 Or simply, 
 
-\begin{equation\*}
+<p> \begin{equation*}
 \hat{\boldsymbol{\beta}}  = \boldsymbol{\beta} + (\textbf{X}^T \textbf{X})^{-1} \textbf{X}^T \bld{\epsilon}
-\end{equation\*}
+\end{equation*} </p>
 
 
 
 
 This means that how close $\hat{\boldsymbol{\beta}}$ is to $\boldsymbol{\beta}$ depends on the noise $\bld{\epsilon}$. \\
 It is interesting to note that the noise $\bld{\epsilon}$ is independent and identical or \textit{i.i.d.} and follows normal distribution with certain variance [how do we know thia ? well, we assume so!]. Therefore any once element of noise vector i.e. $\epsilon_i$ can be written as,\\
-\begin{equation\*}
+<p> \begin{equation*}
 \epsilon_i \sim \mathcal{N}(0, \sigma^2)
-\end{equation\*}
+\end{equation*} </p>
 Similarly $\bld{\epsilon}$ can be written in the form of multivariate normal distribution as,\\
-\begin{equation}
+<p> \begin{equation}
 \bld{\epsilon} = \mathcal{N}(0, \sigma^2 \textbf{I})
-\end{equation}\\
+\end{equation} </p>\\
 
 Thus, since $\bld{\epsilon}$ follows a distribution, the  parameter $\hbld{\beta}$ must also follow the distribution. We must also note that we cannot directly measure $\bld{\epsilon}$ instead we can measure residual $\textbf{e}$ which can be calculated using Eq. \ref{eq:residual}. Nonetheless we can learn about $\bld{\epsilon}$ from $\textbf{e}$ as explained in the next section.
 
@@ -183,16 +181,16 @@ Thus, since $\bld{\epsilon}$ follows a distribution, the  parameter $\hbld{\beta
 
 Let's approximate it from error term or residuals, i.e. $\textbf{e}$. Let's write sum of squared of residual first in the following form, 
 
-\begin{equation\*}
+<p> \begin{equation*}
 \begin{split}
 \textbf{SSR} = \textbf{e}^T\textbf{e} = (\textbf{y} - \hat{\textbf{y}})^T (\textbf{y} - \hat{\textbf{y}}) &= (\textbf{y} - \textbf{Hy})^T (\textbf{y} - \textbf{Hy})\\
 & = \textbf{y}^T \textbf{y} - \textbf{y}^T  \textbf{Hy} - \textbf{y}^T \textbf{H}^T \textbf{y} + \textbf{y}^T \textbf{H}^T \textbf{Hy}
 \end{split}
-\end{equation\*}
+\end{equation*} </p>
 
 Since $\textbf{H}^T\textbf{H} = \textbf{H}$, thus we have, 
 
-\begin{equation\*}
+<p> \begin{equation*}
 \begin{split}
 \textbf{SSR} &= \textbf{y}^T \textbf{y} - \textbf{y}^T  \textbf{Hy} - \textbf{y}^T \textbf{H}^T \textbf{y} + \textbf{y}^T  \textbf{Hy}\\
 &= \textbf{y}^T(I-H)\textbf{y}\\
@@ -201,54 +199,54 @@ Since $\textbf{H}^T\textbf{H} = \textbf{H}$, thus we have,
 &= (\bld{\beta}^T \textbf{X}^T \textbf{M}+\bld{\epsilon}^T \textbf{M})(\textbf{X}\bld{\beta}+\bld{\epsilon})\\
 &= \bld{\beta}^T \textbf{X}^T \textbf{M} \textbf{X}\bld{\beta} +\bld{\epsilon}^T \textbf{M} \textbf{X}\bld{\beta} + \bld{\beta}^T \textbf{X}^T \textbf{M} \bld{\epsilon} +\bld{\epsilon}^T \textbf{M} \bld{\epsilon}
 \end{split}
-\end{equation\*}
+\end{equation*} </p>
 
 Further, it must be noted that 
-\begin{equation}
+<p> \begin{equation}
 \textbf{M}\textbf{X} = \textbf{X} - \textbf{H}\textbf{X} = 0
-\end{equation}
+\end{equation} </p>
 
 Thus we can write, 
-\begin{equation\*}
+<p> \begin{equation*}
 \textbf{SSR} = \bld{\epsilon}^T \textbf{M} \bld{\epsilon}
-\end{equation\*}
+\end{equation*} </p>
 
 
 Now we calculate the expected value of \textbf{SSR} as,
 
-\begin{equation\*}
+<p> \begin{equation*}
 \mathtt{E}[\textbf{SSR}] = \mathtt{E}[\bld{\epsilon}^T \textbf{M} \bld{\epsilon}] = \mathtt{E}[\text{tr}(\bld{\epsilon}^T \textbf{M} \bld{\epsilon})] = \mathtt{E}[\text{tr}( \textbf{M} \bld{\epsilon} \bld{\epsilon}^T)] = \text{tr}( \textbf{M} \mathtt{E}[\bld{\epsilon} \bld{\epsilon}^T])
-\end{equation\*}
+\end{equation*} </p>
 
 
 Since we know that $\mathtt{E}[\bld{\epsilon} \bld{\epsilon}^T)] = \sigma^2 \textbf{I} $ 
 
-\begin{equation\*}
+<p> \begin{equation*}
 \mathtt{E}[\textbf{SSR}] = \sigma^2 \text{tr}( \textbf{M})
-\end{equation\*}
+\end{equation*} </p>
 
 Little maths tells us that $\text{tr}( \textbf{M}) = n-p$
 Thus finally we have, 
 
-\begin{equation}
+<p> \begin{equation}
 \mathtt{E}[\textbf{SSR}] = (n-p)\sigma^2 
-\end{equation}
+\end{equation} </p>
 Hence we can say that, 
-\begin{equation}
+<p> \begin{equation}
 \sigma^2 = \frac{\textbf{e}^T \textbf{e}}{n-p} =  \frac{\textbf{e}^T \textbf{e}}{n-p} = \frac{\textbf{SSR}}{n-p}
-\end{equation}
+\end{equation} </p>
 
 Further we also write, 
 
-\begin{equation\*}
+<p> \begin{equation*}
 \hat{\sigma}^2 = \frac{\textbf{SSR}}{n} = \frac{1}{n}\bld{\epsilon}^T \textbf{M} \bld{\epsilon}
-\end{equation\*}
+\end{equation*} </p>
 
 Going back to the original problem, we can estimate $\Sigma$ from \textbf{SSR} as shown below, 
 
-\begin{equation}
+<p> \begin{equation}
 \Sigma = \sigma^2 (\textbf{X}^T \textbf{X})^{-1} = \frac{\textbf{SSR}}{n-k} (\textbf{X}^T \textbf{X})^{-1} = \frac{n\hat{\sigma}^2}{n-k} (\textbf{X}^T \textbf{X})^{-1}
-\end{equation}
+\end{equation} </p>
 
 
 
@@ -256,9 +254,9 @@ Going back to the original problem, we can estimate $\Sigma$ from \textbf{SSR} a
 
 With little manipulation and dividing both sides by $\sigma^2$ we have, 
 
-\begin{equation\*}
+<p> \begin{equation*}
 \frac{n\hat{\sigma}^2}{\sigma^2} = \bigg(\frac{\bld{\epsilon}}{\sigma} \bigg)^T \textbf{M} \bigg(\frac{\bld{\epsilon}}{\sigma}\bigg) \sim Z^2 \textbf{M} Z^2 = \chi^2_{n-p}
-\end{equation\*}
+\end{equation*} </p>
 
 where $Z$ is a standard normal distribution.
 
@@ -268,22 +266,22 @@ where $Z$ is a standard normal distribution.
 In order to represent the $\hbld{\beta}$ in distribution form, we calculate the two main parameters first i.e. mean and variance. 
 
 \subsubsection{Expected value of $\hbld{\beta}$, $\mathtt{E}(\hat{\boldsymbol{\beta}})$}
-\begin{equation\*}
+<p> \begin{equation*}
 E[\hbld{\beta}] = E[\bld{\beta} + \textbf{H} \bld{\epsilon}] = E[\bld{\beta}] + E[\textbf{H} \bld{\epsilon}]
-\end{equation\*}
+\end{equation*} </p>
 nointen
 As we know, $ E[\boldsymbol{\beta} ] = \boldsymbol{\beta}$, and $E[\textbf{H} \boldsymbol{\epsilon}] = \textbf{X}^T \textbf{X})^{-1} \textbf{X}^T E[\boldsymbol{\epsilon}] = 0$ 
 
 \subsubsection{Variance of $\hat{\boldsymbol{\beta}}$}
 We calculate the variance from second moment as, 
 
-\begin{equation\*}
+<p> \begin{equation*}
 \mathtt{E}[\hat{\boldsymbol{\beta}} - \mathtt{E}[\boldsymbol{\beta} ]]^2 = \mathtt{E}[\hat{\boldsymbol{\beta}} - \boldsymbol{\beta}]^2 = \mathtt{E}[\textbf{H} \epsilon]^2
-\end{equation\*}
+\end{equation*} </p>
 
 we can write it further as,
 
-\begin{equation\*}
+<p> \begin{equation*}
 \begin{split}
 \mathtt{E}[\textbf{H} \bld{\epsilon}]^2 &= \mathtt{E}[(\textbf{H} \bld{\epsilon})(\textbf{H} \bld{\epsilon})^T]\\
 & =  \mathtt{E}[\textbf{H} \bld{\epsilon} \bld{\epsilon}^T \textbf{H}^T] \\
@@ -292,19 +290,19 @@ we can write it further as,
 & = \sigma^2 \textbf{H} \textbf{H}^T \\
 &=\sigma^2 (\textbf{X}^T \textbf{X})^{-1} \textbf{X}^T \textbf{X} (\textbf{X}^T \textbf{X})^{-1} 
 \end{split}
-\end{equation\*}
+\end{equation*} </p>
 
 Hence we have, 
 
-\begin{equation}
+<p> \begin{equation}
 \text{Var}(\hbld{\beta}) =  \sigma^2 (\textbf{X}^T \textbf{X})^{-1}
-\end{equation}
+\end{equation} </p>
 
 
 Thus we can write the distribution of $\hbld{\beta}$ as, 
-\begin{equation}\label{eq:beta_hat}
+<p> \begin{equation}\label{eq:beta_hat}
 \hbld{\beta} = \bld{\beta} + \textbf{H}\bld{\epsilon} \sim \mathcal{N}\big(\bld{\beta}, \sigma^2 (\textbf{X}^T \textbf{X})^{-1}\big)
-\end{equation}
+\end{equation} </p>
 
 
 \section{Hypotheses tests}
@@ -312,68 +310,70 @@ From Eq. \ref{eq:beta_hat} we know that calculated parameter $\hbld{\beta}$ foll
 
 Before doing so, let's do some maths magic. Let's write Eq. \ref{eq:beta_hat} as follows, 
 
-\begin{equation\*}
+<p> \begin{equation*}
 \hbld{\beta} \sim \mathcal{N} (\bld{\beta}, \Sigma)
-\end{equation\*} 
+\end{equation*} </p> 
 where, $\Sigma = \sigma^2 (\textbf{X}^T \textbf{X})^{-1}$
 
 We can transform the above distribution to zero mean as, 
 
-\begin{equation}\label{eq:beta_hat_beta}
+<p> \begin{equation}\label{eq:beta_hat_beta}
 \hbld{\beta} - \bld{\beta} \sim \mathcal{N} (0, \Sigma)
-\end{equation}
+\end{equation} </p>
 Further we can standardize the distribution to unit variance as, 
 
-\begin{equation\*}
+<p> \begin{equation*}
 \Sigma^{-1/2}(\hbld{\beta} - \bld{\beta}) \sim \Sigma^{-1/2} \mathcal{N} (0, \Sigma) = \mathcal{N} (0, \Sigma^{-T/2} \Sigma \Sigma^{-1/2} ) = \mathcal{N} (0, \textbf{I} )
-\end{equation\*}
+\end{equation*} </p>
 However, it must be noted that we still have a parameter unknown i.e. $\sigma^2$ in $\Sigma$. 
 
 
 
 Since we know that estimated standard error for a single component $\beta_i$ can be written as, 
 
-\begin{equation}
-\text{SE}\_{\hat{\beta_i}} = \sqrt{\frac{n\hat{\sigma}^2}{n-k} (\textbf{X}^T \textbf{X})^{-1}\_{ii}}
-\end{equation}
+<p> \begin{equation}
+\text{SE}_{\hat{\beta_i}} = \sqrt{\frac{n\hat{\sigma}^2}{n-k} (\textbf{X}^T \textbf{X})^{-1}_{ii}}
+\end{equation} </p>
 
 And we can write the distribution of individual $\beta_i$ parameter as,
 
-\begin{equation}
-\hat{\beta_i} \sim \mathcal{N}\bigg(\beta_i, \sigma^2 (\textbf{X}^T \textbf{X})^{-1}\_{ii} \bigg)
-\end{equation}
+<p> \begin{equation}
+\hat{\beta_i} \sim \mathcal{N}\bigg(\beta_i, \sigma^2 (\textbf{X}^T \textbf{X})^{-1}_{ii} \bigg)
+\end{equation} </p>
 
 Further we can write it as, 
-\begin{equation}
+<p> \begin{equation}
 \frac{\hat{\beta}_i- \beta_i}{\text{SE}_{\hat{\beta_i}}} = \frac{\frac{\hat{\beta}_i- \beta_i}{\sqrt{\sigma^2 (\textbf{X}^T\textbf{X})^{-1}_{ii}}}}{\frac{\text{SE}_{\hat{\beta_i}}}{\sqrt{\sigma^2 (\textbf{X}^T\textbf{X})^{-1}_{ii}}}}
-\end{equation}
+\end{equation} </p>
 
 Since we know that, 
-\begin{equation}
+<p> \begin{equation}
 \frac{\hat{\beta}_i- \beta_i}{\sqrt{\sigma^2 (\textbf{X}^T\textbf{X})^{-1}_{ii}}} \sim \mathcal{N} (0, 1)
-\end{equation}
+\end{equation} </p>
 So we have,
 
-\begin{equation}
+<p> \begin{equation}
 \begin{split}
 \frac{\hat{\beta}_i- \beta_i}{\text{SE}_{\hat{\beta_i}}} &\sim \frac{\mathcal{N}(0,1)}{\frac{\sqrt{\frac{n\hat{\sigma}^2}{n-k} (\textbf{X}^T \textbf{X})^{-1}_{ii}}}{\sqrt{\sigma^2 (\textbf{X}^T\textbf{X})^{-1}_{ii}}}}\\
 &\sim \frac{\mathcal{N}(0,1)}{\sqrt{\frac{n\hat{\sigma}^2}{\sigma^2}\frac{1}{n-k} }}\\
 &\sim \frac{\mathcal{N}(0,1)}{\sqrt{\frac{\chi^2_{n-k}}{n-k} }}\\
 & \sim \mathtt{t}_{n-k}
 \end{split}
-\end{equation}
+\end{equation} </p>
 
-
+<p>
 where $\mathtt{t}_{n-k}$ is the $\mathtt{t}$ distribution with $n-k$ degree of freedom.\\
 Thus we conclude that $\mathtt{t}_{n-k}$  tells us the probability of obtaining different values of $\frac{\hat{\beta}_i- \beta_i}{\text{SE}_{\hat{\beta_i}}}$. Intuitively, $\mathtt{t}_{n-k}$ values tells us that what is the probability that the given value of $\hat{\beta}_i$ belongs to a distribution which is generated from system that has a regression parameter $\beta_i$. \\
 
 
 
-In this context, we formulate the following hypotheses,\
+In this context, we formulate the following hypotheses,\\
+<p>
 \begin{itemize}
 \item[H0:] The regression parameter $\beta_i = 0$. Also known as \textit{null} hypothesis. Intuitively, we state that the regression parameter that we have approximated i.e. $\hat{\beta}_i$ belongs to a population or system which as a regression parameter $\beta_i$ and $\beta_i=0$.
 \item[H1:] The regression parameter $\beta_i \neq 0$. Also known as \textit{alternate} hypothesis. Intuitively, we state that the regression parameter that we have approximated i.e. $\hat{\beta_i}$ belongs to a population or system which as a regression parameter $\beta_i$ and $\beta_i \neq 0$.
 \end{itemize}
+  <p>
 In our analysis, we try to prove null hypothesis. If we succeed in doing so, we conclude that the regression parameter is zero. Otherwise, we conclude that the regression parameter is \textit{not} zero.  A line of precaution here. As mentioned previously, $\mathtt{t}$ distribution tells the probability of $\hat{\beta}_i$ to belong to a system which has a regression parameter $\beta_i$, and since it is composed of normal distribution and $\chi^2$ distribution, there will always be certain non-zero probability that $\hat{\beta}_i$ belongs to $\beta_i$. So we can never conclude that any possible value of $\beta_i$ is does not belong to a population of system which has regression parameter $\beta_i$, which is $0$ in case of null hypothesis. Therefore, to avoid such situation, we restrict our analysis to a given probability $\alpha$ i.e. if there is probability of $\hat{\beta}_i$ to belong to $\beta_i$ is more than $\alpha$, then \textit{null} hypothesis is true, otherwise if the probability is lower than $\alpha$, we reject the null hypothesis and accept the alternate hypothesis i.e. $\beta_i \neq 0$. In management literature the most used level of $\alpha$ is 0.95. Therefore if $\frac{\hat{\beta}_i- \beta_i}{\text{SE}_{\hat{\beta}_i}}$ is less than the critical value of $\mathtt{t}_{n-p}$ for $\alpha=0.95$, then we accept the null hypothesis. Otherwise we accept the alternate hypothesis. 
  
 
@@ -383,71 +383,71 @@ In our analysis, we try to prove null hypothesis. If we succeed in doing so, we 
 
 In the previous section we concluded that the regression parameters $\hbld{\beta}$ follows some distributions. As we predict the output using $\hbld{\beta}$ i.e. using Eq. \ref{eq:beta_hat}, the predictions should also some distribution.    Hence the predicted values $\hat{\textbf{y}}$ are not fixed, rather follow a distribution. Let's consider that we want to predict the values for $\textbf{X}^*$, as given below, 
 
-\begin{equation}
+<p> \begin{equation}
 \begin{split}
 \hat{\textbf{y}}(\textbf{X}^*) &= \textbf{X}^* \hat{\boldsymbol{\beta}}\\
 & =  \textbf{X}^* (\bld{\beta} + \textbf{H}\bld{\epsilon})\\
 & = \textbf{X}^* \bld{\beta} + \textbf{X}^*\textbf{H}\bld{\epsilon}
 \end{split}
-\end{equation}
+\end{equation} </p>
 
 Now we calculate the expected value of $\hat{\textbf{y}}(\textbf{X}^*)$ as,
-\begin{equation}
+<p> \begin{equation}
 \mathtt{E}[\hat{\textbf{y}}(\textbf{X}^*)] = \mathtt{E}[\textbf{X}^*\bld{\beta}] + \mathtt{E}[\textbf{X}^*\textbf{H}\bld{\epsilon}] = \textbf{X}^*\bld{\beta} + \textbf{X}^*\textbf{H}\mathtt{E}[\bld{\epsilon}]  = \textbf{X}^*\bld{\beta}
-\end{equation}
+\end{equation} </p>
 This is because  $\mathtt{E}(\bld{\epsilon}) = 0$
 
 Further we calculate the variance as,
-\begin{equation\*}
+<p> \begin{equation*}
 \text{Var}(\hat{y}(\textbf{X}^*)) = \mathtt{E}[\hat{y}(\textbf{X}^*) - \mathtt{E}[\hat{y}(\textbf{X}^*)]]^2 = \mathtt{E}[\textbf{X}^* \boldsymbol{\beta} + \textbf{X}^* \textbf{H} \epsilon - \textbf{X}^*  \boldsymbol{\beta}]^2
-\end{equation\*}
+\end{equation*} </p>
 
 
 Thus we can write the variance in simplified form as, 
-\begin{equation\*}
+<p> \begin{equation*}
 \begin{split}
 \text{Var}(\hat{y}(\textbf{X}^*)) &=  \mathtt{E}[ \textbf{X}^* (\textbf{X}^T \textbf{X})^{-1} \textbf{X}^T \bld{\epsilon} ]^2\\
  &=  \textbf{E}[ \textbf{X}^* (\textbf{X}^T \textbf{X})^{-1} \textbf{X}^T \epsilon (\textbf{X}^* (\textbf{X}^T \textbf{X})^{-1} \textbf{X}^T \epsilon)^T ]\\
 & =  \textbf{E}[ \textbf{X}^* (\textbf{X}^T \textbf{X})^{-1} \textbf{X}^T \epsilon \epsilon^T \textbf{X}  (\textbf{X}^* (\textbf{X}^T \textbf{X})^{-1} \textbf{X}^{*T}]   
 \end{split}
-\end{equation\*}
+\end{equation*} </p>
 
 
-\begin{equation\*}
+<p> \begin{equation*}
 \text{Var}(\hat{y}(\textbf{X}^*)) =  \textbf{X}^* (\textbf{X}^T \textbf{X})^{-1} \textbf{X}^T \textbf{E}[ \epsilon \epsilon^T] \textbf{X}  ( (\textbf{X}^T \textbf{X})^{-1} \textbf{X}^{*T}
-\end{equation\*}
+\end{equation*} </p>
 
 Since $\textbf{E}( \bld{\epsilon} \bld{\epsilon}^T) = \sigma^2 \textbf{I}$,
 
-\begin{equation\*}
+<p> \begin{equation*}
 \text{Var}(\hat{y}(\textbf{X}^*)) =  \sigma^2 \textbf{X}^* (\textbf{X}^T \textbf{X})^{-1} \textbf{X}^{*T}
-\end{equation\*}
+\end{equation*} </p>
 
 Thus we can write the distribution of predicted values as, 
 
-\begin{equation}
+<p> \begin{equation}
 \hat{y}(\textbf{X}^*) \sim \mathcal{N}\big( \textbf{X}^* \bld{\beta}, \sigma^2 \textbf{X}^* (\textbf{X}^T \textbf{X})^{-1} \textbf{X}^{*T} \big)
-\end{equation}
+\end{equation} </p>
 
 
 We can easily calculate that, 
 
-\begin{equation}
+<p> \begin{equation}
 \frac{\hat{y}(\textbf{x}_i^{T*}) - \textbf{x}_i^{T*}\beta}{\text{SE}_{\hat{y}}} \sim \mathtt{t}_{n-p}
-\end{equation}
-
+\end{equation} </p>
+<p>
 where $\text{SE}_{\hat{y}} = \hat{\sigma} \sqrt{\textbf{x}_i^{T*} (\textbf{X}^T \textbf{X})^{-1}\textbf{x}_i^{*}}$
-
+<p>
 From $\mathtt{t}$ distribution, we can easily calculate the range that there is a certain probability that $\hat{y}(\textbf{x}_i^{*T})$ belongs to the distribution which has mean of $ \textbf{x}_i^{T*}\beta$. Let's say $(\pm) \gamma$ is the range for which $\hat{y}(\textbf{x}_i^{*T})$ can vary on given probability level. Then we can calculate the actual range as, 
-\begin{equation}
+<p> \begin{equation}
 \hat{y}(\textbf{x}_i^{*T}) -\gamma \text{SE}_{\hat{y}} \leq \hat{y} \leq  \hat{y}(\textbf{x}_i^{*T}) +\gamma \text{SE}_{\hat{y}} 
-\end{equation}  
+\end{equation} </p>  
 
 In other words, 
 
-\begin{equation}
+<p> \begin{equation}
 \hat{y}(\textbf{x}_i^{*T}) -\gamma \hat{\sigma} \sqrt{\textbf{x}_i^{T*} (\textbf{X}^T \textbf{X})^{-1}\textbf{x}_i^{*}} \leq \hat{y} \leq  \hat{y}(\textbf{x}_i^{*T}) +\gamma \hat{\sigma} \sqrt{\textbf{x}_i^{T*} (\textbf{X}^T \textbf{X})^{-1}\textbf{x}_i^{*}} 
-\end{equation}
+\end{equation} </p>
 
 \section{Example}
 Consider an example of a supermarket, where we want to understand the consumer spending with respect to the time that the consumers spend in the supermarket and their education level. We have the data shown in Table \ref{table:table_1}. 
@@ -487,7 +487,7 @@ Consider an example of a supermarket, where we want to understand the consumer s
 \end{table} 
 
 We can write the data shown in Table \ref{table:table_1} in the following form.
-\begin{equation\*}
+<p> \begin{equation*}
 \textbf{X} = \begin{bmatrix}
 1 & 80 & 20 \\
 1 & 83 & 13 \\
@@ -535,26 +535,26 @@ We can write the data shown in Table \ref{table:table_1} in the following form.
 1998 & 202988 & 28207\\
 282 & 28207 & 4218\\
 \end{bmatrix}
-\end{equation\*}
+\end{equation*} </p>
 
-\begin{equation\*}
+<p> \begin{equation*}
 (\textbf{X}^T\textbf{X})^{-1} = 
 \begin{bmatrix}
   3.70e+00 &  -2.89e-02 &  -5.41e-02 \\
  -2.89e-02 &   2.96e-04 &  -4.30e-05 \\
  -5.41e-02 &  -4.30e-05 &   4.14e-03 \\
  \end{bmatrix}
-\end{equation\*}
+\end{equation*} </p>
 
 Now we calculate $\hbld{\beta}$ as, 
 
-\begin{equation}
+<p> \begin{equation}
 \hbld{\beta} = (\textbf{X}^T\textbf{X})^{-1}\textbf{X}^T \textbf{y} = \begin{bmatrix}
 12.70 \\
 15.12 \\
 1.02 \\
 \end{bmatrix}
-\end{equation}
+\end{equation} </p>
 
 \begin{table}
 \centering
@@ -590,12 +590,12 @@ Now we calculate $\hbld{\beta}$ as,
 Based on $\hbld{\beta}$ we predict the output using Eq. \ref{eq:beta_hat} as shown in Table \ref{table:table_2}. 
 Now we calculate $\hat{\sigma}^2$ using the data from Table \ref{table:table_2} as shown below, 
 
-\begin{equation}
+<p> \begin{equation}
 \hat{\sigma}^2 = \frac{1}{20} \textbf{e}^T\textbf{e} = 263.48
-\end{equation}
+\end{equation} </p>
 
 and 
-\begin{equation\*}
+<p> \begin{equation*}
 \begin{split}
 &\sqrt{\frac{n}{n-p}\hat{\sigma}^2 (\textbf{X}^T\textbf{X})^{-1}} = \sqrt{\frac{20}{20-3} \times 263.48 \times (\textbf{X}^T\textbf{X})^{-1}}\\
 &=\sqrt{\frac{20}{20-3} \times 263.48 \times \begin{bmatrix}
@@ -604,38 +604,39 @@ and
  -5.41e-02 &  -4.30e-05 &   4.14e-03 \\
 \end{bmatrix}}
 \end{split}
-\end{equation\*}
+\end{equation*} </p>
 
 
 So we have 
-\begin{equation\*}
+<p> \begin{equation*}
 \text{SE}_{\hat{\beta}_0} = \sqrt{\frac{20}{20-3} \times 263.48 \times (\textbf{X}^T\textbf{X})^{-1}_{00}} = 33.88
-\end{equation\*}
-\begin{equation\*}
+\end{equation*} </p>
+<p> \begin{equation*}
 \text{SE}_{\hat{\beta}_1} = \sqrt{\frac{20}{20-3} \times 263.48 \times (\textbf{X}^T\textbf{X})^{-1}_{11}} = 0.30
-\end{equation\*}
+\end{equation*} </p>
 
-\begin{equation\*}
+<p> \begin{equation*}
 \text{SE}_{\hat{\beta}_2} = \sqrt{\frac{20}{20-3} \times 263.48 \times (\textbf{X}^T\textbf{X})^{-1}_{22}} = 1.13
-\end{equation\*}
+\end{equation*} </p>
 
 So finally following the null hypothesis i.e. $\beta_i=0$ we have, 
-\begin{equation\*}
+<p> \begin{equation*}
 \frac{\hat{\beta}_0-\beta_0}{\text{SE}_{\hat{\beta_0}}} = \frac{\hat{\beta}_0}{\text{SE}_{\hat{\beta}_0}} = \frac{12.90}{33.88} = 0.37
-\end{equation\*}
+\end{equation*} </p>
 Similarly we can derive, 
 
-\begin{equation\*}
+<p> \begin{equation*}
 \begin{split}
 \frac{\hat{\beta}_1}{\text{SE}_{\hat{\beta}_1}} = \frac{15.12}{0.30} &= 49.94\\
 \frac{\hat{\beta}_2}{\text{SE}_{\hat{\beta}_2}} = \frac{1.02}{1.13} &= 0.90
 \end{split}
-\end{equation\*}
+\end{equation*} </p>
 
+<p>
 From standard $\mathtt{t}$ table, the critical value for $\alpha=0.95$ is $2.1098$. Since $\frac{\hat{\beta}_0}{\text{SE}_{\hat{\beta}_0}} < \alpha$ and $\frac{\hat{\beta}_2}{\text{SE}_{\hat{\beta}_2}} <\alpha$ we accept the null hypothesis for $\beta_0$ and $\beta_2$ and conclude that $\beta_0 = \beta_1 = 0$. On the other hand,  $\frac{\hat{\beta}_1}{\text{SE}_{\hat{\beta}_1}} > \alpha$, thus we fail to accept the null hypothesis, and conclude that $\beta_1\neq 0$.\\
 Furthermore, the confidence interval of predicted values are shown in Table \ref{table:table_2}. \\
 Interested readers can also find out the confidence interval for regression parameter as well.
-
+</p>
 $\mathbf{t}$
 
 \end{document}
