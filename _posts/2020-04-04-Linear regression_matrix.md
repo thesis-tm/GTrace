@@ -332,13 +332,13 @@ However, it must be noted that we still have a parameter unknown i.e. $\sigma^2$
 Since we know that estimated standard error for a single component $\beta_i$ can be written as, 
 
 \begin{equation}
-\text{SE}_{\hat{\beta_i}} = \sqrt{\frac{n\hat{\sigma}^2}{n-k} (\textbf{X}^T \textbf{X})^{-1}_{ii}}
+\text{SE}\_{\hat{\beta_i}} = \sqrt{\frac{n\hat{\sigma}^2}{n-k} (\textbf{X}^T \textbf{X})^{-1}\_{ii}}
 \end{equation}
 
 And we can write the distribution of individual $\beta_i$ parameter as,
 
 \begin{equation}
-\hat{\beta_i} \sim \mathcal{N}\bigg(\beta_i, \sigma^2 (\textbf{X}^T \textbf{X})^{-1}_{ii} \bigg)
+\hat{\beta_i} \sim \mathcal{N}\bigg(\beta_i, \sigma^2 (\textbf{X}^T \textbf{X})^{-1}\_{ii} \bigg)
 \end{equation}
 
 Further we can write it as, 
