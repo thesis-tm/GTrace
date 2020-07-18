@@ -228,4 +228,4 @@ We should remember here that the we assumed $(0,0)$ as centre. However, to adept
 f(x) = \frac{1}{\sigma \sqrt{2\pi }} \exp\Big(-\frac{(x-\mu)^2}{2\sigma^2}\Big) 
 \end{equation}
 
-Eq. \ref{eq_7} is known as \textbf{normal distribution function}, and also represented by $\mathcal{N}(\mu, \sigma^2)$
+Eq. \ref{eq_7} is known as $\textbf{normal distribution function}$, and also represented by $\mathcal{N}(\mu, \sigma^2)$
