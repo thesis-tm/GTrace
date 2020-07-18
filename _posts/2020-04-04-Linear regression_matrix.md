@@ -48,10 +48,10 @@ y_2\\
 \cdots\\
 y_n\\
 \end{bmatrix}, \textbf{X} = \begin{bmatrix}
-\textbf{x}_1^T\\
-\textbf{x}_2^T\\
+\textbf{x}\_1^T\\
+\textbf{x}\_2^T\\
 \cdots\\
-\textbf{x}_n^T\\
+\textbf{x}\_n^T\\
 \end{bmatrix} = 
 \begin{bmatrix}
 1	&	x_{11}	&	x_{12}	&	\cdots	&	x_{1k}\\	
