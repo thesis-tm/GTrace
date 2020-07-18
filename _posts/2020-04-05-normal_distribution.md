@@ -8,6 +8,8 @@ categories: methods, linear regression
 ---
 
 
+
+
 \begin{document}
 \maketitle
 \section{Introduction}
@@ -53,7 +55,7 @@ Normal distribution function or normal probability distribution function (PDF) i
 \section{The concept of probability}
 Probability, in general, defines the possibility or chances of something to happen. For example, what is the probability that it will rain on a particular day in future. Probability varies between $0$ and $1$, where $0$ implies that there is perfectly no chances of something to happen and $1$ implies that something will happen definitely. And a probability between $0$ and $1$ tells the changes of something to happen.\\ 
 
-Imaging that we are playing a game of darts. The aim is to throw the dart that lands on the centre of the board, which is represented by $x-y$ coordinate $(0,0)$. As we are not expert in throwing the dart, after many tries, we got trained to throw the dart which lands `near' to the centre of the board. Here, near implies that sometimes the dart lands on left and sometimes right of the centre. Similarly sometimes the darts falls on below the centre position and sometimes above of the centre position. Of course, in few cases, we are able to hit the bull's eye i.e. the centre point.\\   
+Imaging that we are playing a game of darts. The aim is to throw the dart that lands on the centre of the board, which is represented by $x-y$ coordinate $(0,0)$. As we are not expert in throwing the dart, after many tries, we got trained to throw the dart which lands near to the centre of the board. Here, near implies that sometimes the dart lands on left and sometimes right of the centre. Similarly sometimes the darts falls on below the centre position and sometimes above of the centre position. Of course, in few cases, we are able to hit the bull's eye i.e. the centre point.\\   
 Now as the dart can land on any arbitrary position, we represent the arbitrary position $(x,y)$ by polar coordinates $(r,\theta)$, measured from  origin $(0,0)$, where $r$ defines the distance of the centre points, and $\theta$ defines the angle that line connecting points $(0,0)$ and $(x,y)$ from horizontal direction.\\ 
 If we assume that coordinates $x$ and $y$ are independent and probability is depending only on radial distance $r$, then we can write probability distribution function (PDF) as,
 
