@@ -41,6 +41,7 @@ Now the next challenge is to identify $\beta_i$ to know about the system, and we
 To start with, we formalize the notations to be used further.
 As we have time dependent output $y(t)$, to present the $n$ instances of the outputs for given $n$ instances of each inputs $x_i$, we use the following matrix notation. 
 
+<html>
 \begin{equation}
 \textbf{y} = \begin{bmatrix}
 y_1\\
@@ -48,10 +49,10 @@ y_2\\
 \cdots\\
 y_n\\
 \end{bmatrix}, \textbf{X} = \begin{bmatrix}
-\textbf{x}\_1^T\\
-\textbf{x}\_2^T\\
+\textbf{x}_1^T\\
+\textbf{x}_2^T\\
 \cdots\\
-\textbf{x}\_n^T\\
+\textbf{x}_n^T\\
 \end{bmatrix} = 
 \begin{bmatrix}
 1	&	x_{11}	&	x_{12}	&	\cdots	&	x_{1k}\\	
@@ -70,6 +71,7 @@ y_n\\
 \beta_n\\
 \end{bmatrix}
 \end{equation}
+  <html>
 
 
 Hence we can write the linear system as, 
