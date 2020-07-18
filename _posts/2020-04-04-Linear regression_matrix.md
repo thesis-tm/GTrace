@@ -7,27 +7,7 @@ comments: true
 categories: methods, linear regression
 ---
 
-
-\documentclass[10pt,a4paper]{article}
-\usepackage[utf8]{inputenc}
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{amssymb, hyperref}
-\usepackage{tikz}
-\title{Linear Regression}
-\author{
-Vijay Kumar \\
-\href{mailto:vijay.kumar@hb.se}{vijay.kumar@hb.se}
-}
-
-\setlength\parindent{0pt}
-\newcommand{\bld}[1]{\boldsymbol{#1}}
-\newcommand{\hbld}[1]{\hat{\boldsymbol{#1}}}
-
-\begin{document}
-\maketitle
-\tableofcontents
-
+\bf{Nothing}
 \section{Introduction}
 We define a linear system where the output of the system is dependent linearly on some inputs. Let's consider the following system, 
 
