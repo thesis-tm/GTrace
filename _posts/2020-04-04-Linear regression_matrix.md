@@ -8,7 +8,7 @@ categories: methods, linear regression
 ---
 
 ${\bf Nothing}$
-\section{Introduction}
+$\section{Introduction}$
 We define a linear system where the output of the system is dependent linearly on some inputs. Let's consider the following system, 
 
 
