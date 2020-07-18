@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Linear regression
+title: Normal distribution
 mathjax: true
 tikz: yes
 comments: true  
-categories: methods, linear regression
+categories: methods, normal distribution, derivation, proof
 ---
 
 
