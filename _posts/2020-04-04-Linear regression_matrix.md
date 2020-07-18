@@ -12,6 +12,8 @@ categories: methods, linear regression
   \def\<#1>{\left<#1\right>}
   \newcommand{\ddx}[2]{\frac{#1}{#2}}
   \newcommand{\CC}{\mathbf{C}}
+  \newcommand{\bld}[1]{\boldsymbol{#1}}
+  \newcommand{\hbld}[1]{\hat{\boldsymbol{#1}}}
 \)
 </div>
 
