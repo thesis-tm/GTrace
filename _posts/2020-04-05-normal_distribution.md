@@ -7,13 +7,23 @@ comments: true
 categories: methods, normal distribution, derivation, proof
 ---
 
-
+<div style="display:none">
+\(
+  \def\<#1>{\left<#1\right>}
+  \newcommand{\ddx}[2]{\frac{#1}{#2}}
+  \newcommand{\CC}{\mathbf{C}}
+  \newcommand{\bld}[1]{\boldsymbol{#1}}
+  \newcommand{\hbld}[1]{\hat{\boldsymbol{#1}}}
+  \newcommand{\textbf}[1]{\mathbf{#1}}
+  \newcommand{\textit}[1]{\mathit{#1}}
+\)
+</div>
 
 
 \begin{document}
 \maketitle
 \section{Introduction}
-Normal distribution function or normal probability distribution function (PDF) is probably the most common distribution used in statistics. It is a function of two parameters, known as mean $(\mu)$ and standard deviation $(\sigma)$ or variance $(\sigma^2)$. Normal PDF is represented by $\mathcal{N}(\mu, \sigma^2)$.  Figure \ref{typical_normal_distribution} shows example of normal PDF for varying parameters. 
+Normal distribution function or normal probability distribution function (PDF) is probably the most common distribution used in statistics. It is a function of two parameters, known as mean $(\mu)$ and standard deviation $ (\sigma) $ or variance $(\sigma^2)$. Normal PDF is represented by $\mathcal{N}(\mu, \sigma^2)$.  Figure \ref{typical_normal_distribution} shows example of normal PDF for varying parameters. 
 
 
 <script type="text/tikz">
@@ -67,6 +77,7 @@ Since we know that $r^2=x^2+y^2$, so we can write Eq. \ref{eq_1} as follows, \\
 \end{equation}
 
 Suppose $y=0$, we have,
+<p>
 \begin{equation}
 \begin{split}
 \phi(\sqrt{x^2}) &= f(x)f(0)\\
@@ -75,7 +86,7 @@ Suppose $y=0$, we have,
 \end{equation}
 where $\lambda$ is a constant. $\lambda$ can be understood as what is the probability that the dart lends on $0$ distance from horizontal or vertical axis. 
 Further we can write the above equation as,
-
+<p>
 \begin{equation}
 \begin{split}
 \lambda f(\sqrt{x^2+y^2}) &= f(x)f(y)\\
@@ -83,13 +94,13 @@ Further we can write the above equation as,
 \Rightarrow \frac{\lambda f(\sqrt{x^2+y^2})}{\lambda^2} &= \frac{f(x)}{\lambda} \frac{f(y)}{\lambda}
 \end{split}
 \end{equation}
-
+<p>
 Further we can write it as,
-
+<p>
 \begin{equation}
 \frac{\lambda f(\sqrt{x^2+y^2})}{\lambda^2} = \frac{f(x)}{\lambda} \frac{f(y)}{\lambda}
 \end{equation}
-
+<p>
 Lets define $g(a) = \frac{f(a)}{\lambda}$, then we can write the above equation as,\\ 
 \begin{equation}\label{eq_2}
 g(x)g(y) = g(\sqrt{x^2+y^2})
@@ -99,6 +110,7 @@ Now here the question is, what should be the function $g$ that satisfies the con
 For a moment, let's consider that the function $g$ is an exponential function, i.e. $g(a) = \exp(A a^2)$, where $A$ is a constant. 
 
 Using $g$ as exponential function, we have the following equation, \\
+<p>
 \begin{equation}
 \begin{split}
 g(x)g(y) &= \exp(A x^2)\exp(A y^2)\\
@@ -121,7 +133,7 @@ So far, we do not know the parameters $\lambda$ and $A$. These parameters are ha
 \section{Distribution}
 As mentioned previously, the distributions represent the probability of something to happen for given parameters. The area under the curve of distribution should be unity as that would represent the total probability.
 Let's first find the area under the curve for the function derived in Eq. \ref{eq_3}. We integrate the function from $-\infty$ to $+\infty$ to calculate all area, as follows, 
-
+<p>
 \begin{equation}
 \begin{split}
 \int_{-\infty}^{+\infty} f(x)dx &= 1\\
@@ -131,13 +143,13 @@ Let's first find the area under the curve for the function derived in Eq. \ref{e
 
 For the sake of computational easing, let's replace $A$ by $-h^2$, where $h$ is another parameter, and we will calculate this later. 
 
-
+<p>
 \begin{equation}
 \int_{-\infty}^{+\infty} \lambda \exp(-h^2x^2)dx = 1
 \end{equation}
 
 Let's consider $hx = u$, we have $du = h dx$,\\
-
+<p>
 \begin{equation}
 \begin{split}
 \int_{-\infty}^{+\infty} \frac{\lambda}{h} \exp(-u^2)du &= 1\\
@@ -158,7 +170,7 @@ f(x) = \lambda \exp(-\pi \lambda^2 x^2)
 So far, the distribution represented by $f(x)$ has area unity. \\
 
 Now we will calculate the variance of the distribution, as follows, 
-
+<p>
 \begin{equation}\label{eq_4}
 \begin{split}
 Var(x) = \sigma^2 &= \int_{-\infty}^{+\infty} x^2 \exp(-\pi \lambda^2 x^2) dx\\
@@ -170,7 +182,7 @@ Var(x) = \sigma^2 &= \int_{-\infty}^{+\infty} x^2 \exp(-\pi \lambda^2 x^2) dx\\
 As we know from calculus that $\int udv  = uv - \int v du$. We can compare this identity with Eq. \ref{eq_4} as $u = x$, so $du = dx$, and $v = x \exp(-\pi h^2x^2)$, so $dv = x \exp(-\pi \lambda^2 x^2) dx$ and $v = -\frac{1}{2\pi \lambda^2} \exp(-\pi \lambda^2 x^2)$
 
 So we can write Eq. \ref{eq_4} as follows, 
-
+<p>
 \begin{equation}
 \begin{split}
 Var(x) = \sigma^2 = \lambda \Big( x \Big( -\frac{1}{2\pi \lambda^2} &\exp(-\pi \lambda^2 x^2) \biggr\rvert_{-\infty}^{+\infty} \Big) \\
@@ -178,7 +190,7 @@ Var(x) = \sigma^2 = \lambda \Big( x \Big( -\frac{1}{2\pi \lambda^2} &\exp(-\pi \
 \end{split}
 \end{equation}
 
-
+<p>
 \begin{equation}\label{eq_4a}
 \begin{split}
 Var(x) = \sigma^2 &= \lambda \Big( x \Big( 0 \Big) - \int_{-\infty}^{+\infty}  -\frac{1}{2\pi \lambda^2} \exp(-\pi \lambda^2 x^2) \Big)\\
@@ -191,19 +203,20 @@ Var(x) = \sigma^2 &= \lambda \Big( x \Big( 0 \Big) - \int_{-\infty}^{+\infty}  -
 
 Since we know from Eq. \ref{eq_3a} that $\int_{-\infty}^{+\infty} \lambda  \exp(-\pi \lambda^2 x^2 = 1$
 Hence we can write Eq. \ref{eq_4a} as given below,
+<p>
 \begin{equation}
 \begin{split}
 \sigma^2 &= \frac{1}{2\pi \lambda^2}\\
 \end{split}
 \end{equation}
-
+<p>
 \begin{equation}\label{eq_5}
 \begin{split}
 \lambda^2 &= \frac{1}{2\pi \sigma^2 }\\
 \Rightarrow \lambda &= \frac{1}{\sigma \sqrt{2\pi }}
 \end{split}
 \end{equation}
-
+<p>
 So we finally have from Eq. \ref{eq_3a} and Eq. \ref{eq_5}, 
 \begin{equation}\label{eq_6}
 f(x) = \frac{1}{\sigma \sqrt{2\pi }} \exp\Big(-\frac{x^2}{2\sigma^2}\Big) 
