@@ -59,12 +59,12 @@ y_n\\
 \cdots\\
 \textbf{x}_n^T\\
 \end{bmatrix} = 
-\begin{bmatrix}
+\\begin{bmatrix}
 1	&	x_{11}	&	x_{12}	&	\cdots	&	x_{1k}\\	
 1	&	x_{21}	&	x_{22}	&	\cdots	&	x_{2k}\\	
 1	&	\cdots	&	\cdots		&	\cdots	&	\cdots\\	
 1	&	x_{n1}	&	x_{n2}	&	\cdots	&	x_{nk}\\	
-\end{bmatrix}, \boldsymbol{\epsilon} = \begin{bmatrix}
+\\end{bmatrix}, \boldsymbol{\epsilon} = \begin{bmatrix}
 \epsilon_1\\
 \epsilon_2\\
 \cdots\\
@@ -107,10 +107,13 @@ The values of $\hat{\boldsymbol{\beta}}$ that minimizes $||\textbf{e}||^2$ can b
 \end{equation}
 Further we know that, 
 
-\begin{equation*}
+\begin{equation}
 \frac{\partial \hat{\textbf{y}}}{\partial \hat{\boldsymbol{\beta}}} = \frac{\partial \textbf{X} \hat{\boldsymbol{\beta}}}{\partial \hat{\boldsymbol{\beta}}} = -\textbf{X}
-\end{equation*}
+\end{equation}
 Hence we can further write, \\
+
+
+
 \begin{equation}
 \frac{\partial ||\textbf{e}||^2}{\partial \hat{\boldsymbol{\beta}}} = -2 (\textbf{y} - \hat{\textbf{y}})^T \textbf{X}
 \end{equation}
@@ -121,13 +124,13 @@ We calculate the optimum value of $\bld{\beta}$ by taking first and second deriv
 
 As the second derivative will always be positive, hence we confirm that the value of $\hbld{\beta}$ obtain from first derivative would result in minimization of $||\textbf{e}||$. 
 Hence we can find $\hat{\boldsymbol{\beta}}$ that minimize $||\textbf{e}||^2$ as,
-\begin{equation*}
-\begin{split}
+\\begin{equation*}
+\\begin{split}
 &-2 (\textbf{y} - \hat{\textbf{y}})^T \textbf{X} = 0\\
 \Rightarrow &
 -2 (\textbf{y} - \textbf{X}\hat{\boldsymbol{\beta}})^T \textbf{X} = 0\\
-\Rightarrow & \textbf{y}^T X =  \hat{\boldsymbol{\beta}}^T \textbf{X}^T \textbf{X} 
-\end{split}
+\\Rightarrow & \textbf{y}^T X =  \hat{\boldsymbol{\beta}}^T \textbf{X}^T \textbf{X} 
+\\end{split}
 \end{equation*}
 
 [[
