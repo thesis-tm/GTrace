@@ -6,6 +6,7 @@ url:                 https://vijay-kumar-hb.github.io
 baseurl:             '/methods-quant/'
 paginate:            5
 permalink:           pretty
+markdown:            kramdown
 
 # About/contact
 author:
