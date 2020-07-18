@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Linear regression
-subtitle: 'Matrix form'
 mathjax: true
 tikz: yes
 comments: true  
