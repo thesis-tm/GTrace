@@ -7,6 +7,19 @@
     }
   });
 </script>
+<script>
+    MathJax = {
+    tex: {
+      macros: {
+        hbld: ['\\hat{\\textbf{#1}}', 1],                    // a simple string replacement
+        bold: ['\\boldsymbol{#1}',1] ,     // this macro has one parameter
+        ddx: ['\\frac{d#2}{d#1}', 2, 'x'], // this macro has an optional parameter that defaults to 'x'
+        abc: ['(#1)', 1, [null, '\\cba']]  // equivalent to \def\abc#1\cba{(#1)}
+      }
+    }
+  };
+  </script>
+</script>
 <script
   type="text/javascript"
   charset="utf-8"
