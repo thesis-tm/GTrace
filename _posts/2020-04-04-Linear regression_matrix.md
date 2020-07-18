@@ -11,6 +11,7 @@ categories: methods, linear regression
 \(
   \def\<#1>{\left<#1\right>}
   \newcommand{\ddx}[2]{\frac{#1}{#2}}
+  \newcommand{\CC}{\mathbf{C}}
 \)
 </div>
 
@@ -18,6 +19,8 @@ categories: methods, linear regression
 
 $\ddx{x,y}$
 
+
+$\CC$
 \ddx{x,y}
 
 $\section{Introduction}$
