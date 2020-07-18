@@ -379,72 +379,72 @@ In our analysis, we try to prove null hypothesis. If we succeed in doing so, we 
 
 
 
-In the previous section we concluded that the regression parameters $\hbld{\beta}$ follows some distributions. As we predict the output using $\hbld{\beta}$ i.e. using Eq. \ref{eq:beta_hat}, the predictions should also some distribution.    Hence the predicted values $\hat{\textbf{y}}$ are not fixed, rather follow a distribution. Let's consider that we want to predict the values for $\textbf{X}^\*$, as given below, 
+In the previous section we concluded that the regression parameters $\hbld{\beta}$ follows some distributions. As we predict the output using $\hbld{\beta}$ i.e. using Eq. \ref{eq:beta_hat}, the predictions should also some distribution.    Hence the predicted values $\hat{\textbf{y}}$ are not fixed, rather follow a distribution. Let's consider that we want to predict the values for $\textbf{X}^*$, as given below, 
 
 \begin{equation}
 \begin{split}
-\hat{\textbf{y}}(\textbf{X}^\*) &= \textbf{X}^\* \hat{\boldsymbol{\beta}}\\
-& =  \textbf{X}^\* (\bld{\beta} + \textbf{H}\bld{\epsilon})\\
-& = \textbf{X}^\* \bld{\beta} + \textbf{X}^\*\textbf{H}\bld{\epsilon}
+\hat{\textbf{y}}(\textbf{X}^*) &= \textbf{X}^* \hat{\boldsymbol{\beta}}\\
+& =  \textbf{X}^* (\bld{\beta} + \textbf{H}\bld{\epsilon})\\
+& = \textbf{X}^* \bld{\beta} + \textbf{X}^*\textbf{H}\bld{\epsilon}
 \end{split}
 \end{equation}
 
-Now we calculate the expected value of $\hat{\textbf{y}}(\textbf{X}^\*)$ as,
+Now we calculate the expected value of $\hat{\textbf{y}}(\textbf{X}^*)$ as,
 \begin{equation}
-\mathtt{E}[\hat{\textbf{y}}(\textbf{X}^\*)] = \mathtt{E}[\textbf{X}^\*\bld{\beta}] + \mathtt{E}[\textbf{X}^\*\textbf{H}\bld{\epsilon}] = \textbf{X}^\*\bld{\beta} + \textbf{X}^\*\textbf{H}\mathtt{E}[\bld{\epsilon}]  = \textbf{X}^\*\bld{\beta}
+\mathtt{E}[\hat{\textbf{y}}(\textbf{X}^*)] = \mathtt{E}[\textbf{X}^*\bld{\beta}] + \mathtt{E}[\textbf{X}^*\textbf{H}\bld{\epsilon}] = \textbf{X}^*\bld{\beta} + \textbf{X}^*\textbf{H}\mathtt{E}[\bld{\epsilon}]  = \textbf{X}^*\bld{\beta}
 \end{equation}
 This is because  $\mathtt{E}(\bld{\epsilon}) = 0$
 
 Further we calculate the variance as,
 \begin{equation\*}
-\text{Var}(\hat{y}(\textbf{X}^\*)) = \mathtt{E}[\hat{y}(\textbf{X}^\*) - \mathtt{E}[\hat{y}(\textbf{X}^\*)]]^2 = \mathtt{E}[\textbf{X}^\* \boldsymbol{\beta} + \textbf{X}^\* \textbf{H} \epsilon - \textbf{X}^\*  \boldsymbol{\beta}]^2
+\text{Var}(\hat{y}(\textbf{X}^*)) = \mathtt{E}[\hat{y}(\textbf{X}^*) - \mathtt{E}[\hat{y}(\textbf{X}^*)]]^2 = \mathtt{E}[\textbf{X}^* \boldsymbol{\beta} + \textbf{X}^* \textbf{H} \epsilon - \textbf{X}^*  \boldsymbol{\beta}]^2
 \end{equation\*}
 
 
 Thus we can write the variance in simplified form as, 
 \begin{equation\*}
 \begin{split}
-\text{Var}(\hat{y}(\textbf{X}^\*)) &=  \mathtt{E}[ \textbf{X}^\* (\textbf{X}^T \textbf{X})^{-1} \textbf{X}^T \bld{\epsilon} ]^2\\
- &=  \textbf{E}[ \textbf{X}^\* (\textbf{X}^T \textbf{X})^{-1} \textbf{X}^T \epsilon (\textbf{X}^\* (\textbf{X}^T \textbf{X})^{-1} \textbf{X}^T \epsilon)^T ]\\
-& =  \textbf{E}[ \textbf{X}^\* (\textbf{X}^T \textbf{X})^{-1} \textbf{X}^T \epsilon \epsilon^T \textbf{X}  (\textbf{X}^\* (\textbf{X}^T \textbf{X})^{-1} \textbf{X}^{\*T}]   
+\text{Var}(\hat{y}(\textbf{X}^*)) &=  \mathtt{E}[ \textbf{X}^* (\textbf{X}^T \textbf{X})^{-1} \textbf{X}^T \bld{\epsilon} ]^2\\
+ &=  \textbf{E}[ \textbf{X}^* (\textbf{X}^T \textbf{X})^{-1} \textbf{X}^T \epsilon (\textbf{X}^* (\textbf{X}^T \textbf{X})^{-1} \textbf{X}^T \epsilon)^T ]\\
+& =  \textbf{E}[ \textbf{X}^* (\textbf{X}^T \textbf{X})^{-1} \textbf{X}^T \epsilon \epsilon^T \textbf{X}  (\textbf{X}^* (\textbf{X}^T \textbf{X})^{-1} \textbf{X}^{*T}]   
 \end{split}
 \end{equation\*}
 
 
 \begin{equation\*}
-\text{Var}(\hat{y}(\textbf{X}^\*)) =  \textbf{X}^\* (\textbf{X}^T \textbf{X})^{-1} \textbf{X}^T \textbf{E}[ \epsilon \epsilon^T] \textbf{X}  ( (\textbf{X}^T \textbf{X})^{-1} \textbf{X}^{\*T}
+\text{Var}(\hat{y}(\textbf{X}^*)) =  \textbf{X}^* (\textbf{X}^T \textbf{X})^{-1} \textbf{X}^T \textbf{E}[ \epsilon \epsilon^T] \textbf{X}  ( (\textbf{X}^T \textbf{X})^{-1} \textbf{X}^{*T}
 \end{equation\*}
 
 Since $\textbf{E}( \bld{\epsilon} \bld{\epsilon}^T) = \sigma^2 \textbf{I}$,
 
 \begin{equation\*}
-\text{Var}(\hat{y}(\textbf{X}^\*)) =  \sigma^2 \textbf{X}^\* (\textbf{X}^T \textbf{X})^{-1} \textbf{X}^{\*T}
+\text{Var}(\hat{y}(\textbf{X}^*)) =  \sigma^2 \textbf{X}^* (\textbf{X}^T \textbf{X})^{-1} \textbf{X}^{*T}
 \end{equation\*}
 
 Thus we can write the distribution of predicted values as, 
 
 \begin{equation}
-\hat{y}(\textbf{X}^\*) \sim \mathcal{N}\big( \textbf{X}^\* \bld{\beta}, \sigma^2 \textbf{X}^\* (\textbf{X}^T \textbf{X})^{-1} \textbf{X}^{\*T} \big)
+\hat{y}(\textbf{X}^*) \sim \mathcal{N}\big( \textbf{X}^* \bld{\beta}, \sigma^2 \textbf{X}^* (\textbf{X}^T \textbf{X})^{-1} \textbf{X}^{*T} \big)
 \end{equation}
 
 
 We can easily calculate that, 
 
 \begin{equation}
-\frac{\hat{y}(\textbf{x}_i^{T\*}) - \textbf{x}_i^{T\*}\beta}{\text{SE}_{\hat{y}}} \sim \mathtt{t}_{n-p}
+\frac{\hat{y}(\textbf{x}_i^{T*}) - \textbf{x}_i^{T*}\beta}{\text{SE}_{\hat{y}}} \sim \mathtt{t}_{n-p}
 \end{equation}
 
-where $\text{SE}_{\hat{y}} = \hat{\sigma} \sqrt{\textbf{x}_i^{T\*} (\textbf{X}^T \textbf{X})^{-1}\textbf{x}_i^{\*}}$
+where $\text{SE}_{\hat{y}} = \hat{\sigma} \sqrt{\textbf{x}_i^{T*} (\textbf{X}^T \textbf{X})^{-1}\textbf{x}_i^{*}}$
 
-From $\mathtt{t}$ distribution, we can easily calculate the range that there is a certain probability that $\hat{y}(\textbf{x}_i^{\*T})$ belongs to the distribution which has mean of $ \textbf{x}_i^{T\*}\beta$. Let's say $(\pm) \gamma$ is the range for which $\hat{y}(\textbf{x}_i^{\*T})$ can vary on given probability level. Then we can calculate the actual range as, 
+From $\mathtt{t}$ distribution, we can easily calculate the range that there is a certain probability that $\hat{y}(\textbf{x}_i^{*T})$ belongs to the distribution which has mean of $ \textbf{x}_i^{T*}\beta$. Let's say $(\pm) \gamma$ is the range for which $\hat{y}(\textbf{x}_i^{*T})$ can vary on given probability level. Then we can calculate the actual range as, 
 \begin{equation}
-\hat{y}(\textbf{x}_i^{\*T}) -\gamma \text{SE}_{\hat{y}} \leq \hat{y} \leq  \hat{y}(\textbf{x}_i^{\*T}) +\gamma \text{SE}_{\hat{y}} 
+\hat{y}(\textbf{x}_i^{*T}) -\gamma \text{SE}_{\hat{y}} \leq \hat{y} \leq  \hat{y}(\textbf{x}_i^{*T}) +\gamma \text{SE}_{\hat{y}} 
 \end{equation}  
 
 In other words, 
 
 \begin{equation}
-\hat{y}(\textbf{x}_i^{\*T}) -\gamma \hat{\sigma} \sqrt{\textbf{x}_i^{T\*} (\textbf{X}^T \textbf{X})^{-1}\textbf{x}_i^{\*}} \leq \hat{y} \leq  \hat{y}(\textbf{x}_i^{\*T}) +\gamma \hat{\sigma} \sqrt{\textbf{x}_i^{T\*} (\textbf{X}^T \textbf{X})^{-1}\textbf{x}_i^{\*}} 
+\hat{y}(\textbf{x}_i^{*T}) -\gamma \hat{\sigma} \sqrt{\textbf{x}_i^{T*} (\textbf{X}^T \textbf{X})^{-1}\textbf{x}_i^{*}} \leq \hat{y} \leq  \hat{y}(\textbf{x}_i^{*T}) +\gamma \hat{\sigma} \sqrt{\textbf{x}_i^{T*} (\textbf{X}^T \textbf{X})^{-1}\textbf{x}_i^{*}} 
 \end{equation}
 
 \section{Example}
