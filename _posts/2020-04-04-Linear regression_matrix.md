@@ -130,6 +130,15 @@ Hence we can find $\hat{\boldsymbol{\beta}}$ that minimize $||\textbf{e}||^2$ as
 \end{split}
 \end{equation*}
 
+[[
+\begin{split}
+&-2 (\textbf{y} - \hat{\textbf{y}})^T \textbf{X} = 0\\
+\Rightarrow &
+-2 (\textbf{y} - \textbf{X}\hat{\boldsymbol{\beta}})^T \textbf{X} = 0\\
+\Rightarrow & \textbf{y}^T X =  \hat{\boldsymbol{\beta}}^T \textbf{X}^T \textbf{X} 
+\end{split}
+]]
+
 Taking transpose of both sides and with little manipulation, we have, 
 
 \begin{equation}
