@@ -33,9 +33,9 @@ We define a linear system where the output of the system is dependent linearly o
 here $x_1,x_2,...x_n$ are the inputs and $y$ is the output.
 In a linear system, we know that the output is linearly dependent on the inputs, which implies that the inputs are scaled by some numbers and then results in an output. Hence in mathematical form, we can write the linear system as, 
 
-\begin{equation}
+\begin{equation*}
 y(t) = \beta_0 + \beta_1 x_1(t) + \beta_2 x_2(t) + \cdots + \beta_k x_k(t) + \epsilon
-\end{equation}
+\end{equation*}
 
 where $\epsilon$ is the random noise that either the system or any other source related to the system generates, and $(t)$ signifies the time, which means the output at time $t$ depends on the inputs $i.e.$ $x_i$ at time $t$. 
  
