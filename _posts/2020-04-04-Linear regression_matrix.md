@@ -14,6 +14,7 @@ categories: methods, linear regression
   \newcommand{\CC}{\mathbf{C}}
   \newcommand{\bld}[1]{\boldsymbol{#1}}
   \newcommand{\hbld}[1]{\hat{\boldsymbol{#1}}}
+  \newcommand{\textbf}[1]{\mathbf{#1}}
 \)
 </div>
 
