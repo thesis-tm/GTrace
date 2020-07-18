@@ -7,6 +7,15 @@ comments: true
 categories: methods, linear regression
 ---
 
+<div style="display:none">
+\(
+  \def\<#1>{\left<#1\right>}
+  \newcommand{\ddx}[2]{\frac{d#1}{d#2}}
+\)
+</div>
+
+
+
 $\ddx{x,y}$
 $\section{Introduction}$
 We define a linear system where the output of the system is dependent linearly on some inputs. Let's consider the following system, 
