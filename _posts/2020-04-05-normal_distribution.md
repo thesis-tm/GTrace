@@ -40,7 +40,6 @@ Normal distribution function or normal probability distribution function (PDF) i
     samples=100, 
     color=black,
     ] {(1/(sqrt(2*pi*1^2))*exp(-(x-3)^2/(2*1^2))) }; 
-    \legend{{$\mu=0, \sigma=1$},{$\mu=0, \sigma=2$}, {$\mu=3, \sigma=1$}}
   \end{axis}
 \end{tikzpicture}
 </script>
