@@ -452,8 +452,7 @@ In other words,
 \section{Example}
 Consider an example of a supermarket, where we want to understand the consumer spending with respect to the time that the consumers spend in the supermarket and their education level. We have the data shown in \ref{table:table_1}. 
 
-\[
-\centering
+
 \begin{array}{|l|l|l|l|}
 \hline
 \textbf{Sr. no. }	& 	\textbf{Time spent}	&	\textbf{Year of education}	&	\textbf{Spending }\\
@@ -479,12 +478,13 @@ Consider an example of a supermarket, where we want to understand the consumer s
 19 & 97 & 9 & 1485 \\
 20 & 117 & 14 & 1785 \\
 \hline
+\end{array}
 \textbf{mean}	&	99.9 & 14.1	&	1537.5\\
 \hline
 \end{array}
 \label{table:table_1}
 \caption{Supermarket data (fictitious)}
-]\
+
 
 We can write the data shown in Table \ref{table:table_1} in the following form.
 <p> \begin{equation*}
