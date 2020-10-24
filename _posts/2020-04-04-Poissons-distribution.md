@@ -31,7 +31,11 @@ categories: github jekyll
 \pgfplotsset{compat=1.16}
 
 
-
+<script type="text/tikz">
+  \begin{tikzpicture}
+    \draw (0,0) circle (1in);
+  \end{tikzpicture}
+</script>
 
 \title{Poisson's distribution}
 \author{
