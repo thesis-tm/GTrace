@@ -4,7 +4,7 @@ mathjax: true
 tikz: yes
 comments: true
 title:  "Poisson's distribution derivation"
-date:   2016-08-21 23:41:54 +0000
+date:   2020-10-25 23:41:54 +0000
 categories: github jekyll
 ---
 
