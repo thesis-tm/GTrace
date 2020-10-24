@@ -140,6 +140,7 @@ Let's take an example traffic light violation. Imagine we have a data for one ye
 
 
 \begin{figure}
+<script type="text/tikz">
 	\begin{tikzpicture}
 		\pgfmathsetmacro{\p}{5.6}
 		\begin{axis}
@@ -152,6 +153,7 @@ Let's take an example traffic light violation. Imagine we have a data for one ye
 			\addplot[ycomb, domain=0:10, samples at={0,1,...,19}, blue, mark=*]{exp(-\p) * (\p^x)/(factorial(x)};
 		\end{axis}
 	\end{tikzpicture}
+</script>
 	\caption{Probability distribution for traffic light violations.}
 	\label{Fig:2}
 \end{figure}
