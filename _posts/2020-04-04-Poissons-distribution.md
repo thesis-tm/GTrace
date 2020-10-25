@@ -11,7 +11,7 @@ categories: basic statistics
 Poisson's distribution is a probability distribution used to simulate the probability (or possibility) of happening some (discrete) events. For example, probability of $x$ number of accidents in a city. It is important to understand that the event are discrete $i.e.$ either they happen or do not happen, there is no middle state. Thus, the events are counted in discrete numbers like $1, 2,..., n$. 
 
 
-**Preliminaries**
+# Preliminaries
 Before start introducing Poisson's distribution, we understand binomial distribution first, which is a probability distribution calculating successes of an event when it is tried for given number of times. For example, if we flip a coin ($n=$) 20 times, what is the probability that it will be head for let's say ($x$) 5 times. 
 
 The standard expression for binomial distribution is, 
