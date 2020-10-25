@@ -37,9 +37,9 @@ In other words we have,
 \end{equation}
 
 We can calculate $p$ as,
-\begin{equation*}
+\begin{equation\*}
 	p = \frac{\lambda}{n}
-\end{equation*}
+\end{equation\*}
 
 i.e. if we observe $n$ events (where $n$ is very large) and $\lambda$ are total successes, then probability of success is $\lambda/n$.
 
@@ -50,7 +50,7 @@ Hence we can rewrite Eq. \ref{Eq:1} as,
 \end{equation}
 
 A little modification leads to,
-\begin{equation*}
+\begin{equation\*}
 	\begin{split}
 		P(X=x) &= \bigg(\frac{1}{x!}\bigg) \lim_{n \to \infty}\frac{n!}{(n-x)!} \bigg(\frac{\lambda}{n}\bigg)^{x} \bigg(1-\frac{\lambda}{n}\bigg)^{n-x}\\
 		&= \bigg(\frac{1}{x!}\bigg) \lim_{n \to \infty}\frac{n \times (n-1) \times...\times (n-x+1) \times (n-x)!}{(n-x)!} \bigg(\frac{\lambda}{n}\bigg)^{x} \bigg(1-\frac{\lambda}{n}\bigg)^{n-x}\\
@@ -58,7 +58,7 @@ A little modification leads to,
 		&=\bigg(\frac{1}{x!}\bigg) \lim_{n \to \infty}\frac{(n-x)}{n} \frac{(n-x-1)}{n} \frac{(n-x-2)}{n} ... \frac{(n-x-x)}{n} \lambda^{x} \bigg(1-\frac{\lambda}{n}\bigg)^{n-x}\\	
 		&=\bigg(\frac{\lambda^{x}}{x!}\bigg) \lim_{n \to \infty} \bigg(1-\frac{\lambda}{n}\bigg)^{n-x}\\	
 	\end{split}
-\end{equation*}
+\end{equation\*}
 
 
 In the above equation $\frac{(n-x)}{n}=\frac{(n-x-1)}{n}=\frac{(n-x-2)}{n} =...=\frac{(n-x-x)}{n} = 1$ when $n \rightarrow \infty$ or $n>>x$.
