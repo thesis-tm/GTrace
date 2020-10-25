@@ -24,8 +24,8 @@ where, $n$ is the total number of events and $p$ is the probability of success a
 So the above equation tells what would be the probability if there are total $n$ tosses, it will be heads for $x$ times (and $n-x$ times would be tails).  
 
 
-
-**Derivation**
+ 
+# Derivation of expression for Poisson's distriution
 Now we come to the main part here. Poisson's distribution function is a probability distribution function which tells us the probability of successes when $n \rightarrow \infty$, while $p$ is relatively small. It is, in fact, a special case of Binomial distribution when total number of events are very very large.
 
 What happens to the probability distribution when we have $n$ which is very large i.e. infinite and $p$ is very small ?
@@ -78,3 +78,6 @@ Thus, finally we have,
 \end{equation}
 
 The above equation is known as \textit{Poisson}'s probability distribution function.
+
+
+
