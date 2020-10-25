@@ -19,9 +19,9 @@ The standard expression for binomial distribution is,
 	P(X=x) = \frac{n!}{x!(n-x)!} p^{x} (1-p)^{n-x}
 \end{equation}
 
-where, $n$ is the total number of events and $p$ is the probability of success and automatically $1-p$ becomes the probability of failure (e.g. tails). 
+where, $n$ is the total number of events and $p$ is the probability of success and $1-p$ automatically becomes the probability of failure (e.g. tails). 
 
-So the above equation tells what would be the probability if there are total $n$ tosses, it will be heads for $x$ times (and $n-x$ times would be tails).  
+So the above equation tells what would be the probability if there are total $n$ tosses, it will be head for $x$ times (and $n-x$ times would be tails).  
 
 
  
@@ -79,5 +79,8 @@ Thus, finally we have,
 
 The above equation is known as \textit{Poisson}'s probability distribution function.
 
+
+# Application
+Let's take an example traffic light violations. Imagine we have data for one year for traffic light violations in a city. There are total $(n=) 1000$ light crossings in the city and there were total $(\lambda=)5.6$ violations daily or $560 \times 365$ violations for a year across all crossings. So we can calculate the probability distribution for violations at a given traffic light using Poisson's distribution, as shown in Figure \ref{Fig:2}. Alternately, we can also calculate the distribution of violations across the traffic lights in the city as shown in \ref{Fig:3}, by simply multiplying the probability by total number of traffic lights.
 
 
