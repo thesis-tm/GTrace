@@ -88,16 +88,37 @@ Let's take an example traffic light violations. Imagine we have data for one yea
 \begin{figure}
 	\centering
 	\begin{tikzpicture}
-	\pgfmathsetmacro{\p}{5.6}
-	\begin{axis}
-		\[
-		xlabel={$x$},
-		ylabel={$nP(X=x)$},
-		xmin=-0.5, xmax=20,
-		ymin = 0
-		\]
-		\addplot\[ycomb, domain=0:10, samples at={0,1,...,19}, blue, mark=\*\]{1000\*exp(-\p)\*(\p^x)/(factorial(x)};
-	\end{axis}
+\def\DimScale#1{\pgfmathparse{#1}\pgfmathprintnumberto\[precision=2\]{\pgfmathresult}{\roundednumber} \roundednumber}
+\draw \[->, ultra thick\] (0,0) -- (15,0);
+\draw \[->, ultra thick\] (0,0) -- (0,5);
+\foreach \y \[count=\x from 1\] in {0.004,
+ 0.021,
+ 0.058,
+ 0.108,
+ 0.152,
+ 0.17,
+ 0.158,
+ 0.127,
+ 0.089,
+ 0.055,
+ 0.031,
+ 0.016,
+ 0.007,
+ 0.003,
+ 0.001} {
+\fill\[\](\x,\y\*10) circle (1mm);
+\draw\[-\](\x,0) -- (\x,\y\*10)node\[label=\y\]{};
+}
+
+\foreach \x in {0,1,...,15}{
+\draw\[-\] (\x, -0.1) -- (\x, 0.1) node\[label=below:$\x$\]{};
+}
+
+\foreach \y in {0,0.1,...,0.5}{
+\draw\[-\] (-0.1, \y\*10) -- (+0.1, \y\*10) node\[label=left:\DimScale{\y}\]{};
+}
+
+      
 \end{tikzpicture}
 \caption{Distribution of number of traffic light violations}
 \label{Fig:3}
