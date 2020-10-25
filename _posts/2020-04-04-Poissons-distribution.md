@@ -84,4 +84,20 @@ The above equation is known as *Poisson*'s probability distribution function.
 # Application
 Let's take an example traffic light violations. Imagine we have data for one year for traffic light violations in a city. There are total $(n=) 1000$ light crossings in the city and there were total $(\lambda=)5.6$ violations daily or $560 \times 365$ violations for a year across all crossings. So we can calculate the probability distribution for violations at a given traffic light using Poisson's distribution, as shown in Figure \ref{Fig:2}. Alternately, we can also calculate the distribution of violations across the traffic lights in the city as shown in \ref{Fig:3}, by simply multiplying the probability by total number of traffic lights.
 
-
+\begin{figure}
+	\centering
+	\begin{tikzpicture}
+	\pgfmathsetmacro{\p}{5.6}
+	\begin{axis}
+		\[
+		xlabel={$x$},
+		ylabel={$nP(X=x)$},
+		xmin=-0.5, xmax=20,
+		ymin = 0
+		\]
+		\addplot\[ycomb, domain=0:10, samples at={0,1,...,19}, blue, mark=\*\]{1000\*exp(-\p)\*(\p^x)/(factorial(x)};
+	\end{axis}
+\end{tikzpicture}
+\caption{Distribution of number of traffic light violations}
+\label{Fig:3}
+\end{figure}
