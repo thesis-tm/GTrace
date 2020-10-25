@@ -78,7 +78,7 @@ Thus, finally we have,
 	\end{split}
 \end{equation}
 
-The above equation is known as \textit{Poisson}'s probability distribution function.
+The above equation is known as *Poisson*'s probability distribution function.
 
 
 # Application
