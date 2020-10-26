@@ -87,9 +87,9 @@ Let's take an example traffic light violations. Imagine we have data for one yea
 
 \begin{figure}
 	\centering
-  <script type="text/tikz">
-	\begin{tikzpicture}
-  {% raw %}
+<script type="text/tikz">
+\begin{tikzpicture}
+{% raw %}
 \def\DimScale#1{\pgfmathparse{#1}\pgfmathprintnumberto[precision=2]{\pgfmathresult}{\roundednumber} \roundednumber}
 \draw [->, ultra thick] (0,0) -- (15,0);
 \draw [->, ultra thick] (0,0) -- (0,5);
@@ -111,11 +111,9 @@ Let's take an example traffic light violations. Imagine we have data for one yea
 \fill[](\x,\y*10) circle (1mm);
 \draw[-](\x,0) -- (\x,\y*10)node[label=\y]{};
 }
-
 \foreach \x in {0,1,...,15}{
 \draw[-] (\x, -0.1) -- (\x, 0.1) node[label=below:\x]{};
 }
-
 \foreach \y in {0,0.1,...,0.5}{
 \draw[-] (-0.1, \y\*10) -- (+0.1, \y\*10) node[label=left:\DimScale{\y}]{};
 }
