@@ -36,8 +36,6 @@ Normal distribution function or normal probability distribution function (PDF) i
 }
 \draw[samples=70, color=red]plot(\x, {10*(1/(sqrt(2*pi*1))*exp(-(\x-0)^2/(2*1)))});
 \end{tikzpicture}
-\label{typical_normal_distribution}
-\caption{Normal distribution curve.}
 </script>
 
 
