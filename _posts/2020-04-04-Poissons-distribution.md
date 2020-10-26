@@ -12,6 +12,11 @@ $\require{\tikz}$
 
 Poisson's distribution is a probability distribution used to simulate the probability (or possibility) of happening some (discrete) events. For example, probability of $x$ number of accidents in a city. It is important to understand that the event are discrete $i.e.$ either they happen or do not happen, there is no middle state. Thus, the events are counted in discrete numbers like $1, 2,..., n$. 
 
+<script type="text/tikz">
+  \begin{tikzpicture}
+    \draw (0,0) circle (1in);
+  \end{tikzpicture}
+</script>
 
 # Preliminaries
 Before start introducing Poisson's distribution, we understand binomial distribution first, which is a probability distribution calculating successes of an event when it is tried for given number of times. For example, if we flip a coin ($n=$) 20 times, what is the probability that it will be head for let's say ($x$) 5 times. 
@@ -88,7 +93,6 @@ Let's take an example traffic light violations. Imagine we have data for one yea
 
 <script type="text/tikz">
 \begin{tikzpicture}
-\def\DimScale#1{\pgfmathparse{#1}\pgfmathprintnumberto[precision=2]{\pgfmathresult}{\roundednumber} \roundednumber}
 \draw [-, ultra thick] (0,0) -- (15,0);
 \draw [-, ultra thick] (0,0) -- (0,5);
 \foreach \y [count=\x from 1] in {0.004,
