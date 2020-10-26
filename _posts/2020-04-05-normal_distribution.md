@@ -23,7 +23,7 @@ categories: methods, normal distribution, derivation, proof
 # Introduction
 Normal distribution function or normal probability distribution function (PDF) is probably the most common distribution used in statistics. It is a function of two parameters, known as mean $(\mu)$ and standard deviation $ (\sigma) $ or variance $(\sigma^2)$. Normal PDF is represented by $\mathcal{N}(\mu, \sigma^2)$.  Figure \ref{typical_normal_distribution} shows example of normal PDF for varying parameters. 
 
-![subcaption here](
+
 <script type="text/tikz">
 \begin{tikzpicture}
 \draw[-](-3.5,0)--(3.5,0);
@@ -40,7 +40,9 @@ Normal distribution function or normal probability distribution function (PDF) i
 \caption{Normal distribution curve.}
 \end{figure}
 </script>
-){#typical_normal_distribution width=50%}
+
+![subcaption here](){#typical_normal_distribution width=50%}
+
 
 
 
