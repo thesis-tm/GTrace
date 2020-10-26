@@ -126,3 +126,4 @@ Let's take an example traffic light violations. Imagine we have data for one yea
 \label{Fig:2}
 \end{figure}
 
+<iframe src="https://www.desmos.com/calculator/g7izucn6nn" width="100%" style="min-height:200px"></iframe>
