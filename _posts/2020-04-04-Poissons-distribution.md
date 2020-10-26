@@ -87,7 +87,7 @@ Let's take an example traffic light violations. Imagine we have data for one yea
 
 \begin{figure}
 	\centering
-  {% raw %}{% 
+  {% raw %}
   <script type="text/tikz">
 	\begin{tikzpicture}
 \def\DimScale#1{\pgfmathparse{#1}\pgfmathprintnumberto[precision=2]{\pgfmathresult}{\roundednumber} \roundednumber}
@@ -120,7 +120,7 @@ Let's take an example traffic light violations. Imagine we have data for one yea
 \draw[-] (-0.1, \y\*10) -- (+0.1, \y\*10) node[label=left:\DimScale{\y}]{};
 }      
 \end{tikzpicture}
-%}{% endraw %}
+{% endraw %}
 </script>
 \caption{Distribution of number of traffic light violations}
 \label{Fig:3}
