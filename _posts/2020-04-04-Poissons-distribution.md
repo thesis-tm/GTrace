@@ -93,7 +93,7 @@ Let's take an example traffic light violations. Imagine we have data for one yea
 
 <script type="text/tikz">
 \begin{tikzpicture}
-\def\DimScale#1{\pgfmathparse{#1}\pgfmathprintnumberto[precision=2]{\pgfmathresult}{\roundednumber} \roundednumber} \
+\def\DimScale#1{\pgfmathparse{#1}\pgfmathprintnumberto[precision=2]{\pgfmathresult}{\roundednumber} \roundednumber}
 \draw [-, ultra thick] (0,0) -- (15,0);
 \draw [-, ultra thick] (0,0) -- (0,5);
 \foreach \y [count=\x from 1] in {0.004,
