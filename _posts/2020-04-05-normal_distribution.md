@@ -38,10 +38,10 @@ Normal distribution function or normal probability distribution function (PDF) i
 \end{tikzpicture}
 \label{typical_normal_distribution}
 \caption{Normal distribution curve.}
-\end{figure}
 </script>
 
-![subcaption here](){#typical_normal_distribution width=50%}
+
+![subcaption here](){typical_normal_distribution width=50%}
 
 
 
