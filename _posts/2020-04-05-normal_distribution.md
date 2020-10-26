@@ -41,7 +41,7 @@ Normal distribution function or normal probability distribution function (PDF) i
 
 ![subcaption here](){typical_normal_distribution width=50%}
 
-
+{% include image.html url="/dot.jpg" description="My cat, Robert Downey Jr." %}
 
 
 
