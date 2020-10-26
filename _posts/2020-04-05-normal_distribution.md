@@ -25,6 +25,7 @@ Normal distribution function or normal probability distribution function (PDF) i
 
 
 <script type="text/tikz">
+\begin{figure}
 \begin{tikzpicture}
 \draw[-](-3.5,0)--(3.5,0);
 \draw[-](0,0)--(0,0.5*10);
@@ -36,10 +37,11 @@ Normal distribution function or normal probability distribution function (PDF) i
 }
 \draw[samples=70, color=red]plot(\x, {10*(1/(sqrt(2*pi*1))*exp(-(\x-0)^2/(2*1)))});
 \end{tikzpicture}
-</script>
 \label{typical_normal_distribution}
 \caption{Normal distribution curve.}
 \end{figure}
+</script>
+
 
 
 # The concept of probability
