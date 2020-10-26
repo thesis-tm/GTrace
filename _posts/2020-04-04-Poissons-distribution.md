@@ -118,7 +118,7 @@ Let's take an example traffic light violations. Imagine we have data for one yea
 \draw[-] (\x, -0.1) -- (\x, 0.1) node[label=below:\x]{};
 }
 \foreach \y in {0,0.1,...,0.5}{
-\draw[-] (-0.1, \y\*10) -- (+0.1, \y\*10) node[label=left:\DimScale{\y}]{};
+\draw[-] (-0.1, \y*10) -- (+0.1, \y*10) node[label=left:\DimScale{\y}]{};
 }
 \end{tikzpicture}
 </script>
