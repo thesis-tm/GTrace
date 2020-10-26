@@ -20,35 +20,21 @@ categories: methods, normal distribution, derivation, proof
 </div>
 
 
-#Introduction
+# Introduction
 Normal distribution function or normal probability distribution function (PDF) is probably the most common distribution used in statistics. It is a function of two parameters, known as mean $(\mu)$ and standard deviation $ (\sigma) $ or variance $(\sigma^2)$. Normal PDF is represented by $\mathcal{N}(\mu, \sigma^2)$.  Figure \ref{typical_normal_distribution} shows example of normal PDF for varying parameters. 
 
 
 <script type="text/tikz">
-  \begin{tikzpicture}
 \begin{tikzpicture}
-  \begin{axis}[ 
-    xlabel=$x$,
-    ylabel={$\mathcal{N}(x|\mu, \sigma^2)$},
-     xmin=-8,xmax=8,
-    ymin=0,ymax=0.6,
-  ] 
-    \addplot [
-    domain=-8:8, 
-    samples=100, 
-    color=blue,
-    ] {(1/(sqrt(2*pi*1))*exp(-(x-0)^2/(2*1))) }; 
-    \addplot [
-    domain=-8:8, 
-    samples=100, 
-    color=red,
-    ] {(1/(sqrt(2*pi*2^2))*exp(-(x-0)^2/(2*2^2))) }; 
-    \addplot [
-    domain=-8:8, 
-    samples=100, 
-    color=black,
-    ] {(1/(sqrt(2*pi*1^2))*exp(-(x-3)^2/(2*1^2))) }; 
-  \end{axis}
+\draw[-](-3.5,0)--(3.5,0);
+\draw[-](0,0)--(0,0.5*10);
+\foreach \x in {0.1,0.2,0.3,0.4}{
+\draw[-](-0.1,\x*10)-- (0.1,\x*10) node[label=right:{\x}]{};
+}
+\foreach \x in {-3,-2,...,3}{
+\draw[-](\x, -0.1)--(\x, 0.1)node[label=below:{\x}]{};
+}
+\draw[samples=70, color=red]plot(\x, {10*(1/(sqrt(2*pi*1))*exp(-(\x-0)^2/(2*1)))});
 \end{tikzpicture}
 </script>
 \label{typical_normal_distribution}
@@ -56,12 +42,12 @@ Normal distribution function or normal probability distribution function (PDF) i
 \end{figure}
 
 
-
 # The concept of probability
 
-Probability, in general, defines the possibility or chances of something to happen. For example, what is the probability that it will rain on a particular day in future. Probability varies between $0$ and $1$, where $0$ implies that there is perfectly no chances of something to happen and $1$ implies that something will happen definitely. And a probability between $0$ and $1$ tells the changes of something to happen.\\ 
+Probability, in general, defines the possibility or chances of something to happen. For example, what is the probability that it will rain on a particular day in future. Probability varies between $0$ and $1$, where $0$ implies that there is perfectly no chances of something to happen and $1$ implies that something will happen definitely. And a probability between $0$ and $1$ tells the changes of something to happen.
 
-Imaging that we are playing a game of darts. The aim is to throw the dart that lands on the centre of the board, which is represented by $x-y$ coordinate $(0,0)$. As we are not expert in throwing the dart, after many tries, we got trained to throw the dart which lands near to the centre of the board. Here, near implies that sometimes the dart lands on left and sometimes right of the centre. Similarly sometimes the darts falls on below the centre position and sometimes above of the centre position. Of course, in few cases, we are able to hit the bull's eye i.e. the centre point.\\   
+Imagine that we are playing a game of darts. The aim is to throw the dart that lands on the centre of the board, which is represented by $x-y$ coordinate $(0,0)$. As we are not expert in throwing the dart, after many tries, we got trained to throw the dart which lands near to the centre of the board. Here, near implies that sometimes the dart lands on left and sometimes right of the centre. Similarly sometimes the darts falls on below the centre position and sometimes above of the centre position. Of course, in few cases, we are able to hit the bull's eye i.e. the centre point.
+
 Now as the dart can land on any arbitrary position, we represent the arbitrary position $(x,y)$ by polar coordinates $(r,\theta)$, measured from  origin $(0,0)$, where $r$ defines the distance of the centre points, and $\theta$ defines the angle that line connecting points $(0,0)$ and $(x,y)$ from horizontal direction.\\ 
 If we assume that coordinates $x$ and $y$ are independent and probability is depending only on radial distance $r$, then we can write probability distribution function (PDF) as,
 
@@ -69,7 +55,7 @@ If we assume that coordinates $x$ and $y$ are independent and probability is dep
 \phi(r) = f(x)f(y)
 \end{equation}
 where, $\phi(r)$ defines the probability that the dart lands on distance $r$ from the centre, irrespective of angle $\theta$. Similarly, $f(x)$ define the probability that the point is located at horizontal distance $x$ from $x-axis$ and $f(y)$ define the probability that the point is located at horizontal distance $y$.\\
-Since we know that $r^2=x^2+y^2$, so we can write Eq. \ref{eq_1} as follows, \\
+Since we know that $r^2=x^2+y^2$, so we can write Eq. \ref{eq_1} as follows, 
 
 \begin{equation}
 \phi(\sqrt{x^2+y^2})=f(x)f(y)
@@ -82,13 +68,14 @@ Suppose $y=0$, we have,
 \Rightarrow \phi(x) &= \lambda f(x)
 \end{split}
 \end{equation}
+
 where $\lambda$ is a constant. $\lambda$ can be understood as what is the probability that the dart lends on $0$ distance from horizontal or vertical axis. 
 Further we can write the above equation as,
 
 \begin{equation}
 \begin{split}
-\lambda f(\sqrt{x^2+y^2}) &= f(x)f(y)\\
-\\
+\lambda f(\sqrt{x^2+y^2}) &= f(x)f(y)
+
 \Rightarrow \frac{\lambda f(\sqrt{x^2+y^2})}{\lambda^2} &= \frac{f(x)}{\lambda} \frac{f(y)}{\lambda}
 \end{split}
 \end{equation}
@@ -104,10 +91,11 @@ Lets define $g(a) = \frac{f(a)}{\lambda}$, then we can write the above equation 
 g(x)g(y) = g(\sqrt{x^2+y^2})
 \end{equation}
 
-Now here the question is, what should be the function $g$ that satisfies the condition given in Eq. \ref{eq_2}.\\
+Now here the question is, what should be the function $g$ that satisfies the condition given in Eq. \ref{eq_2}.
+
 For a moment, let's consider that the function $g$ is an exponential function, i.e. $g(a) = \exp(A a^2)$, where $A$ is a constant. 
 
-Using $g$ as exponential function, we have the following equation, \\
+Using $g$ as exponential function, we have the following equation, 
 
 \begin{equation}
 \begin{split}
