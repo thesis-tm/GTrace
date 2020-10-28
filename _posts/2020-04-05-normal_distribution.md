@@ -52,12 +52,10 @@ Since we know that $r^2=x^2+y^2$, so we can write Eq. \ref{eq_1} as follows,
 \end{equation}
 
 Suppose $y=0$, we have,
-\begin{equation}
-\begin{split}
-\phi(\sqrt{x^2}) &= f(x)f(0)\\
-\Rightarrow \phi(x) &= \lambda f(x)
-\end{split}
-\end{equation}
+$$\begin{eqnarray}
+\phi(\sqrt{x^2}) &=& f(x)f(0)\\
+\Rightarrow \phi(x) &=& \lambda f(x)
+\end{eqnarray}$$
 
 where $\lambda$ is a constant. $\lambda$ can be understood as what is the probability that the dart lends on $0$ distance from horizontal or vertical axis. 
 Further we can write the above equation as,
@@ -88,7 +86,7 @@ For a moment, let's consider that the function $g$ is an exponential function, i
 Using $g$ as exponential function, we have the following equation, 
 
 $$\begin{eqnarray}
-g(x)g(y) &=$ \exp(A x^2)\exp(A y^2) \nonumber\\
+g(x)g(y) &=& \exp(A x^2)\exp(A y^2) \nonumber\\
 \Rightarrow g(x)g(y) &=& \exp(A (x^2 + y^2)) \nonumber\\
 \Rightarrow g(x)g(y) &=& g(\sqrt{x^2+y^2}) \nonumber\\
 \end{eqnarray}$$
@@ -106,10 +104,10 @@ So far, we do not know the parameters $\lambda$ and $A$. These parameters are ha
 As mentioned previously, the distributions represent the probability of something to happen for given parameters. The area under the curve of distribution should be unity as that would represent the total probability.
 Let's first find the area under the curve for the function derived in Eq. \ref{eq_3}. We integrate the function from $-\infty$ to $+\infty$ to calculate all area, as follows, 
 
-\begin{eqnarray}
+$$\begin{eqnarray}
 \int_{-\infty}^{+\infty} f(x)dx &=& 1\\
 \int_{-\infty}^{+\infty} \lambda \exp(Ax^2)dx &=& 1
-\end{eqnarray}
+\end{eqnarray}$$
 
 For the sake of computational easing, let's replace $A$ by $-h^2$, where $h$ is another parameter, and we will calculate this later. 
 
@@ -150,13 +148,13 @@ As we know from calculus that $\int udv  = uv - \int v du$. We can compare this 
 So we can write Eq. \ref{eq_4} as follows, 
 
 $$\begin{eqnarray}
-Var(x) = \sigma^2 &=& \lambda \Big( x \Big( -\frac{1}{2\pi \lambda^2} &\exp(-\pi \lambda^2 x^2) \biggr\rvert_{-\infty}^{+\infty} \Big) \\
+Var(x) &=& \sigma^2 &=& \lambda \Big( x \Big( -\frac{1}{2\pi \lambda^2} &\exp(-\pi \lambda^2 x^2) \biggr\rvert_{-\infty}^{+\infty} \Big) \\
 & &- \int_{-\infty}^{+\infty}  -\frac{1}{2\pi \lambda^2} \exp(-\pi \lambda^2 x^2  \Big)
 \end{eqnarray}$$
 
 
 $$\begin{eqnarray}\label{eq_4a}
-Var(x) = \sigma^2 &= \lambda \Big( x \Big( 0 \Big) - \int_{-\infty}^{+\infty}  -\frac{1}{2\pi \lambda^2} \exp(-\pi \lambda^2 x^2) \Big)\\
+Var(x) = \sigma^2 &=& \lambda \Big( x \Big( 0 \Big) - \int_{-\infty}^{+\infty}  -\frac{1}{2\pi \lambda^2} \exp(-\pi \lambda^2 x^2) \Big)\\
 &=& \frac{1}{2\pi \lambda^2} \Big(  \int_{-\infty}^{+\infty} \lambda  \exp(-\pi \lambda^2 x^2) \Big)\\
 &=& \frac{1}{2\pi \lambda^2} \Big( \int_{-\infty}^{+\infty} \lambda  \exp(-\pi \lambda^2 x^2 \Big)\\
 \end{eqnarray}$$
@@ -167,9 +165,7 @@ Since we know from Eq. \ref{eq_3a} that $\int_{-\infty}^{+\infty} \lambda  \exp(
 Hence we can write Eq. \ref{eq_4a} as given below,
 
 \begin{equation}
-\begin{split}
 \sigma^2 &= \frac{1}{2\pi \lambda^2}\\
-\end{split}
 \end{equation}
 
 $$\begin{eqnarray}\label{eq_5}
