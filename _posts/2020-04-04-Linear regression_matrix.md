@@ -19,8 +19,8 @@ categories: methods, linear regression
 </div>
 
 
-
-\section{Introduction}
+# Introduction
+%\section{Introduction}
 We define a linear system where the output of the system is dependent linearly on some inputs. Let's consider the following system, 
 
 
@@ -36,7 +36,9 @@ where $\epsilon$ is the random noise that either the system or any other source 
  
 Now the next challenge is to identify $\beta_i$ to know about the system, and we do this by \textit{linear regression}.  
 
-\section{Formal representation}
+
+# Formal representation
+%\section{Formal representation}
 
 To start with, we formalize the notations to be used further.
 As we have time dependent output $y(t)$, to present the $n$ instances of the outputs for given $n$ instances of each inputs $x_i$, we use the following matrix notation. 
@@ -79,68 +81,75 @@ Hence we can write the linear system as,
 \end{equation} </p> 
 
 
-\section{Regression parameter estimation}
+# Regression parameter estimation
+%\section{Regression parameter estimation}
 As it is not possible for us to know the regression parameters $\beta$ for the system, so to estimate these parameters we take some another variable $\hat{\beta}$ , and replace it with $\beta$  in Eq. \ref{eq:regression} and predict the output $\hat{\textbf{y}}$, i.e., 
 
-<p> \begin{equation}\label{eq:y_hat}
+\begin{equation}\label{eq:y_hat}
 \hbld{y} = \textbf{X} \hbld{\beta}
-\end{equation} </p>
+\end{equation} 
 
 To approximate the regression parameters of unknown system, we have fix $\hat{\beta}$ such that the predicted $\hat{\textbf{y}}$ is closest to actual $\textbf{y}$. In order to do so, we define a term $\textbf{\textbf{e}}$ which is known residual term and mathematically written as, 
 
-<p> \begin{equation}
+\begin{equation}
 \label{eq:residual}
 \textbf{e} = \textbf{y} - \hat{\textbf{y}} 
-\end{equation} </p>
+\end{equation}
 
 So now the problem can identified as adjusting  $\hat{\boldsymbol{\beta}}$ that tries make $\textbf{e}$ zero or towards zero. Alternately we can define it as adjusting  $\hat{\boldsymbol{\beta}}$ such that  $||\textbf{e}||^2$ minimizes. $||\cdot||^2$ signifies the square of each element of $\bld{e}$. \\
 The values of $\hat{\boldsymbol{\beta}}$ that minimizes $||\textbf{e}||^2$ can be obtained by finding minima by differentiation. i.e.,\\
 
-<p> \begin{equation}
+\begin{equation}
 \frac{\partial ||\textbf{e}||^2}{\partial \hat{\boldsymbol{\beta}}} = \frac{\partial \textbf{e}^T \textbf{e}}{\partial \hat{\boldsymbol{\beta}}} = \frac{\partial (\textbf{y} - \hat{\textbf{y}})^T (\textbf{y} - \hat{\textbf{y}})}{\partial \hat{\boldsymbol{\beta}}} = 2 (\textbf{y} - \hat{\textbf{y}})^T \frac{\partial \hat{\textbf{y}}}{\partial \hat{\boldsymbol{\beta}}}
-\end{equation} </p>
+\end{equation}
 Further we know that, 
 
-<p> \begin{equation*}
+\begin{equation*}
 \frac{\partial \hat{\textbf{y}}}{\partial \hat{\boldsymbol{\beta}}} = \frac{\partial \textbf{X} \hat{\boldsymbol{\beta}}}{\partial \hat{\boldsymbol{\beta}}} = -\textbf{X}
-\end{equation*} </p>
-Hence we can further write, \\
-<p> \begin{equation}
-\frac{\partial ||\textbf{e}||^2}{\partial \hat{\boldsymbol{\beta}}} = -2 (\textbf{y} - \hat{\textbf{y}})^T \textbf{X}
-\end{equation} </p>
-We calculate the optimum value of $\bld{\beta}$ by taking first and second derivative of $||\textbf{e}||^2$ with respect to $\hbld{\beta}$, as shown below, 
-<p> \begin{equation}
-\frac{\partial}{\partial \hbld{\beta}} \frac{\partial ||\textbf{e}||^2}{\partial \hbld{\beta}} = \textbf{X}^T \textbf{X}
-\end{equation} </p>
+\end{equation*}
 
-As the second derivative will always be positive, hence we confirm that the value of $\hbld{\beta}$ obtain from first derivative would result in minimization of $||\textbf{e}||$. 
+Hence we can further write, 
+
+\begin{equation}
+\frac{\partial ||\textbf{e}||^2}{\partial \hat{\boldsymbol{\beta}}} = -2 (\textbf{y} - \hat{\textbf{y}})^T \textbf{X}
+\end{equation} 
+
+
+We calculate the optimum value of $\bld{\beta}$ by taking first and second derivative of $||\textbf{e}||^2$ with respect to $\hbld{\beta}$, as shown below, 
+
+\begin{equation}
+\frac{\partial}{\partial \hbld{\beta}} \frac{\partial ||\textbf{e}||^2}{\partial \hbld{\beta}} = \textbf{X}^T \textbf{X}
+\end{equation} 
+
+
+As the second derivative will always be positive, hence we confirm that the value of $\hbld{\beta}$ obtain from first derivative would result in minimization of $||\textbf{e}||$.
+
 Hence we can find $\hat{\boldsymbol{\beta}}$ that minimize $||\textbf{e}||^2$ as,
-<p> \begin{equation*}
-\begin{split}
-&-2 (\textbf{y} - \hat{\textbf{y}})^T \textbf{X} = 0\\
-\Rightarrow &
+
+$$\begin{eqnarray}
+& &-2 (\textbf{y} - \hat{\textbf{y}})^T \textbf{X} = 0\\
+\Rightarrow & &
 -2 (\textbf{y} - \textbf{X}\hat{\boldsymbol{\beta}})^T \textbf{X} = 0\\
-\Rightarrow & \textbf{y}^T X =  \hat{\boldsymbol{\beta}}^T \textbf{X}^T \textbf{X} 
-\end{split}
-\end{equation*} </p>
+\Rightarrow & & \textbf{y}^T X =  \hat{\boldsymbol{\beta}}^T \textbf{X}^T \textbf{X} 
+\end{eqnarray}$$
+
 
 Taking transpose of both sides and with little manipulation, we have, 
 
-<p> \begin{equation}
-\begin{split}
+$$\begin{eqnarray}
 \textbf{X}^T \textbf{X}  \hbld{\beta}  &= \textbf{X}^T\textbf{y}\\ 
 \Rightarrow \hbld{\beta}  &= (\textbf{X}^T \textbf{X})^{-1} \textbf{X}^T\textbf{y} 
-\end{split}
-\end{equation} </p>
+\end{eqnarray}$$
+
 
 Now we can predict the values using the calculated parameter $\hbld{\beta}$ as, \\
-<p> \begin{equation}
-\begin{split}
+
+$$\begin{eqnarray}
 \hat{\textbf{y}} &= \textbf{X}\hbld{\beta}\\
 &= \textbf{X} (\textbf{X}^T \textbf{X})^{-1} \textbf{X}^T\textbf{y} \\
 &= \textbf{H} \textbf{y} 
-\end{split}
-\end{equation} </p>
+\end{eqnarray}$$
+
 where, $\textbf{H} = \textbf{X} (\textbf{X}^T \textbf{X})^{-1} \textbf{X}^T $
 
 Further we can easily derive that $H = H H^T = H^T H $
@@ -152,28 +161,31 @@ Now the question is, does the above expression really tell us the actual values 
 
 Let's find this. We plug Eq. \ref{eq:regression} into the above equation, 
 
-<p> \begin{equation*}
+\begin{equation}
   \hat{\boldsymbol{\beta}}  = (\textbf{X}^T \textbf{X})^{-1} \textbf{X}^T(\textbf{X}\bld{\beta} + \bld{\epsilon})  = (\textbf{X}^T \textbf{X})^{-1} \textbf{X}^T \textbf{X}\beta + (\textbf{X}^T \textbf{X})^{-1} \textbf{X}^T \bld{\epsilon}
-\end{equation*} </p>
+\end{equation}
 
 Or simply, 
 
-<p> \begin{equation*}
+\begin{equation}
 \hat{\boldsymbol{\beta}}  = \boldsymbol{\beta} + (\textbf{X}^T \textbf{X})^{-1} \textbf{X}^T \bld{\epsilon}
-\end{equation*} </p>
+\end{equation}
 
 
 
 
 This means that how close $\hat{\boldsymbol{\beta}}$ is to $\boldsymbol{\beta}$ depends on the noise $\bld{\epsilon}$. \\
-It is interesting to note that the noise $\bld{\epsilon}$ is independent and identical or \textit{i.i.d.} and follows normal distribution with certain variance [how do we know thia ? well, we assume so!]. Therefore any once element of noise vector i.e. $\epsilon_i$ can be written as,\\
-<p> \begin{equation*}
+It is interesting to note that the noise $\bld{\epsilon}$ is independent and identical or \textit{i.i.d.} and follows normal distribution with certain variance \[how do we know thia ? well, we assume so!\]. Therefore any once element of noise vector i.e. $\epsilon_i$ can be written as,\\
+
+\begin{equation*}
 \epsilon_i \sim \mathcal{N}(0, \sigma^2)
-\end{equation*} </p>
+\end{equation*} 
+
 Similarly $\bld{\epsilon}$ can be written in the form of multivariate normal distribution as,\\
-<p> \begin{equation}
+
+\begin{equation}
 \bld{\epsilon} = \mathcal{N}(0, \sigma^2 \textbf{I})
-\end{equation} </p>\\
+\end{equation}
 
 Thus, since $\bld{\epsilon}$ follows a distribution, the  parameter $\hbld{\beta}$ must also follow the distribution. We must also note that we cannot directly measure $\bld{\epsilon}$ instead we can measure residual $\textbf{e}$ which can be calculated using Eq. \ref{eq:residual}. Nonetheless we can learn about $\bld{\epsilon}$ from $\textbf{e}$ as explained in the next section.
 
@@ -181,72 +193,69 @@ Thus, since $\bld{\epsilon}$ follows a distribution, the  parameter $\hbld{\beta
 
 Let's approximate it from error term or residuals, i.e. $\textbf{e}$. Let's write sum of squared of residual first in the following form, 
 
-<p> \begin{equation*}
-\begin{split}
-\textbf{SSR} = \textbf{e}^T\textbf{e} = (\textbf{y} - \hat{\textbf{y}})^T (\textbf{y} - \hat{\textbf{y}}) &= (\textbf{y} - \textbf{Hy})^T (\textbf{y} - \textbf{Hy})\\
-& = \textbf{y}^T \textbf{y} - \textbf{y}^T  \textbf{Hy} - \textbf{y}^T \textbf{H}^T \textbf{y} + \textbf{y}^T \textbf{H}^T \textbf{Hy}
-\end{split}
-\end{equation*} </p>
+$$\begin{eqnarray}
+\textbf{SSR} = \textbf{e}^T\textbf{e} &=& (\textbf{y} - \hat{\textbf{y}})^T (\textbf{y} - \hat{\textbf{y}}) \\
+&=& (\textbf{y} - \textbf{Hy})^T (\textbf{y} - \textbf{Hy})\\
+& =& \textbf{y}^T \textbf{y} - \textbf{y}^T  \textbf{Hy} - \textbf{y}^T \textbf{H}^T \textbf{y} + \textbf{y}^T \textbf{H}^T \textbf{Hy}
+\end{eqnarray}$$
 
 Since $\textbf{H}^T\textbf{H} = \textbf{H}$, thus we have, 
 
-<p> \begin{equation*}
-\begin{split}
-\textbf{SSR} &= \textbf{y}^T \textbf{y} - \textbf{y}^T  \textbf{Hy} - \textbf{y}^T \textbf{H}^T \textbf{y} + \textbf{y}^T  \textbf{Hy}\\
-&= \textbf{y}^T(I-H)\textbf{y}\\
-&= (\textbf{X}\bld{\beta}+\bld{\epsilon})^T\textbf{M}(\textbf{X}\bld{\beta}+\bld{\epsilon})\\
-&= (\textbf{X}\bld{\beta}+\bld{\epsilon})^T\textbf{M}(\textbf{X}\bld{\beta}+\bld{\epsilon}) = (\bld{\beta}^T \textbf{X}^T+\bld{\epsilon}^T)\textbf{M}(\textbf{X}\bld{\beta}+\bld{\epsilon})\\
-&= (\bld{\beta}^T \textbf{X}^T \textbf{M}+\bld{\epsilon}^T \textbf{M})(\textbf{X}\bld{\beta}+\bld{\epsilon})\\
-&= \bld{\beta}^T \textbf{X}^T \textbf{M} \textbf{X}\bld{\beta} +\bld{\epsilon}^T \textbf{M} \textbf{X}\bld{\beta} + \bld{\beta}^T \textbf{X}^T \textbf{M} \bld{\epsilon} +\bld{\epsilon}^T \textbf{M} \bld{\epsilon}
-\end{split}
-\end{equation*} </p>
+$$\begin{eqnarray}
+\textbf{SSR} &=& \textbf{y}^T \textbf{y} - \textbf{y}^T  \textbf{Hy} - \textbf{y}^T \textbf{H}^T \textbf{y} + \textbf{y}^T  \textbf{Hy} \\
+&=& \textbf{y}^T(I-H)\textbf{y}   \\
+&=& (\textbf{X}\bld{\beta}+\bld{\epsilon})^T\textbf{M}(\textbf{X}\bld{\beta}+\bld{\epsilon})\\
+&=& (\textbf{X}\bld{\beta}+\bld{\epsilon})^T\textbf{M}(\textbf{X}\bld{\beta}+\bld{\epsilon}) = (\bld{\beta}^T \textbf{X}^T+\bld{\epsilon}^T)\textbf{M}(\textbf{X}\bld{\beta}+\bld{\epsilon})\\
+&=& (\bld{\beta}^T \textbf{X}^T \textbf{M}+\bld{\epsilon}^T \textbf{M})(\textbf{X}\bld{\beta}+\bld{\epsilon})\\
+&=& \bld{\beta}^T \textbf{X}^T \textbf{M} \textbf{X}\bld{\beta} +\bld{\epsilon}^T \textbf{M} \textbf{X}\bld{\beta} + \bld{\beta}^T \textbf{X}^T \textbf{M} \bld{\epsilon} +\bld{\epsilon}^T \textbf{M} \bld{\epsilon}
+\end{eqnarray}$$
 
 Further, it must be noted that 
-<p> \begin{equation}
+\begin{equation}
 \textbf{M}\textbf{X} = \textbf{X} - \textbf{H}\textbf{X} = 0
-\end{equation} </p>
+\end{equation} 
 
 Thus we can write, 
-<p> \begin{equation*}
+\begin{equation*}
 \textbf{SSR} = \bld{\epsilon}^T \textbf{M} \bld{\epsilon}
-\end{equation*} </p>
+\end{equation*}
 
 
 Now we calculate the expected value of \textbf{SSR} as,
 
-<p> \begin{equation*}
-\mathtt{E}[\textbf{SSR}] = \mathtt{E}[\bld{\epsilon}^T \textbf{M} \bld{\epsilon}] = \mathtt{E}[\text{tr}(\bld{\epsilon}^T \textbf{M} \bld{\epsilon})] = \mathtt{E}[\text{tr}( \textbf{M} \bld{\epsilon} \bld{\epsilon}^T)] = \text{tr}( \textbf{M} \mathtt{E}[\bld{\epsilon} \bld{\epsilon}^T])
-\end{equation*} </p>
+\begin{equation}
+\mathtt{E}[\textbf{SSR}]=\mathtt{E}[\bld{\epsilon}^T \textbf{M} \bld{\epsilon}] = \mathtt{E}[\text{tr}(\bld{\epsilon}^T \textbf{M} \bld{\epsilon})] = \mathtt{E}[\text{tr}( \textbf{M} \bld{\epsilon} \bld{\epsilon}^T)] = \text{tr}( \textbf{M} \mathtt{E}[\bld{\epsilon} \bld{\epsilon}^T])
+\end{equation}
 
 
 Since we know that $\mathtt{E}[\bld{\epsilon} \bld{\epsilon}^T)] = \sigma^2 \textbf{I} $ 
 
-<p> \begin{equation*}
+\begin{equation*}
 \mathtt{E}[\textbf{SSR}] = \sigma^2 \text{tr}( \textbf{M})
-\end{equation*} </p>
+\end{equation*}
 
 Little maths tells us that $\text{tr}( \textbf{M}) = n-p$
 Thus finally we have, 
 
-<p> \begin{equation}
+\begin{equation}
 \mathtt{E}[\textbf{SSR}] = (n-p)\sigma^2 
 \end{equation} </p>
 Hence we can say that, 
 <p> \begin{equation}
 \sigma^2 = \frac{\textbf{e}^T \textbf{e}}{n-p} =  \frac{\textbf{e}^T \textbf{e}}{n-p} = \frac{\textbf{SSR}}{n-p}
-\end{equation} </p>
+\end{equation}
 
 Further we also write, 
 
-<p> \begin{equation*}
+\begin{equation*}
 \hat{\sigma}^2 = \frac{\textbf{SSR}}{n} = \frac{1}{n}\bld{\epsilon}^T \textbf{M} \bld{\epsilon}
-\end{equation*} </p>
+\end{equation*}
 
 Going back to the original problem, we can estimate $\Sigma$ from \textbf{SSR} as shown below, 
 
-<p> \begin{equation}
+\begin{equation}
 \Sigma = \sigma^2 (\textbf{X}^T \textbf{X})^{-1} = \frac{\textbf{SSR}}{n-k} (\textbf{X}^T \textbf{X})^{-1} = \frac{n\hat{\sigma}^2}{n-k} (\textbf{X}^T \textbf{X})^{-1}
-\end{equation} </p>
+\end{equation}
 
 
 
@@ -254,15 +263,15 @@ Going back to the original problem, we can estimate $\Sigma$ from \textbf{SSR} a
 
 With little manipulation and dividing both sides by $\sigma^2$ we have, 
 
-<p> \begin{equation*}
+\begin{equation*}
 \frac{n\hat{\sigma}^2}{\sigma^2} = \bigg(\frac{\bld{\epsilon}}{\sigma} \bigg)^T \textbf{M} \bigg(\frac{\bld{\epsilon}}{\sigma}\bigg) \sim Z^2 \textbf{M} Z^2 = \chi^2_{n-p}
-\end{equation*} </p>
+\end{equation*}
 
 where $Z$ is a standard normal distribution.
 
 
-
-\subsection{Distribution of $\hat{\boldsymbol{\beta}}$}
+# Distribution of $\hat{\boldsymbol{\beta}}$
+%\subsection{Distribution of $\hat{\boldsymbol{\beta}}$}
 In order to represent the $\hbld{\beta}$ in distribution form, we calculate the two main parameters first i.e. mean and variance. 
 
 \subsubsection{Expected value of $\hbld{\beta}$, $\mathtt{E}(\hat{\boldsymbol{\beta}})$}
@@ -270,14 +279,14 @@ In order to represent the $\hbld{\beta}$ in distribution form, we calculate the 
 E[\hbld{\beta}] = E[\bld{\beta} + \textbf{H} \bld{\epsilon}] = E[\bld{\beta}] + E[\textbf{H} \bld{\epsilon}]
 \end{equation*} </p>
 nointen
-As we know, $ E[\boldsymbol{\beta} ] = \boldsymbol{\beta}$, and $E[\textbf{H} \boldsymbol{\epsilon}] = \textbf{X}^T \textbf{X})^{-1} \textbf{X}^T E[\boldsymbol{\epsilon}] = 0$ 
+As we know, $E[\boldsymbol{\beta} ] = \boldsymbol{\beta}$, and $E[\textbf{H} \boldsymbol{\epsilon}] = \textbf{X}^T \textbf{X})^{-1} \textbf{X}^T E[\boldsymbol{\epsilon}] = 0$ 
 
 \subsubsection{Variance of $\hat{\boldsymbol{\beta}}$}
 We calculate the variance from second moment as, 
 
-<p> \begin{equation*}
+\begin{equation*}
 \mathtt{E}[\hat{\boldsymbol{\beta}} - \mathtt{E}[\boldsymbol{\beta} ]]^2 = \mathtt{E}[\hat{\boldsymbol{\beta}} - \boldsymbol{\beta}]^2 = \mathtt{E}[\textbf{H} \epsilon]^2
-\end{equation*} </p>
+\end{equation*}
 
 we can write it further as,
 
