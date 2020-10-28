@@ -166,9 +166,9 @@ Hence we can write Eq. \ref{eq_4a} as given below,
 \sigma^2 = \frac{1}{2\pi \lambda^2}
 \end{equation}
 
-$$\begin{eqnarray}\label{eq_5}
+$$\begin{eqnarray}
 \lambda^2 &=& \frac{1}{2\pi \sigma^2 }\nonumber \\
-\Rightarrow \lambda &=& \frac{1}{\sigma \sqrt{2\pi }}
+\Rightarrow \lambda &=& \frac{1}{\sigma \sqrt{2\pi }} \label{eq_5}
 \end{eqnarray}$$
 
 So we finally have from Eq. \ref{eq_3a} and Eq. \ref{eq_5}, 
