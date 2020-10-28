@@ -91,8 +91,8 @@ g(x)g(y) &=& \exp(A x^2)\exp(A y^2) \nonumber\\
 Hence, we have,
 
 $$\begin{eqnarray}\label{eq_3}
-f(x) &=& \lambda g(x) \nonumber \\
-\Rightarrow f(x) &=& \lambda \exp(Ax^2) 
+f(x) &=& \lambda g(x) \nonumber \nonumber \\
+\Rightarrow f(x) &=& \lambda \exp(Ax^2) \\
 \end{eqnarray}$$
 
 So far, we do not know the parameters $\lambda$ and $A$. These parameters are having important aspects that we will discuss in the future sections. 
@@ -136,7 +136,7 @@ Now we will calculate the variance of the distribution, as follows,
 
 $$\begin{eqnarray}\label{eq_4}
 Var(x) $=$ \sigma^2 &=& \int_{-\infty}^{+\infty} x^2 \exp(-\pi \lambda^2 x^2) dx\\
-\Rightarrow Var(x) &=& \sigma^2 $=$ \lambda \int_{-\infty}^{+\infty} x.x \exp(-\pi \lambda^2 x^2) dx
+\Rightarrow Var(x) &=& \sigma^2 &=& \lambda \int_{-\infty}^{+\infty} x.x \exp(-\pi \lambda^2 x^2) dx
 \end{eqnarray}$$
  
 
@@ -145,7 +145,7 @@ As we know from calculus that $\int udv  = uv - \int v du$. We can compare this 
 So we can write Eq. \ref{eq_4} as follows, 
 
 $$\begin{eqnarray}
-Var(x) &=& \sigma^2 &=& \lambda \Big( x \Big( -\frac{1}{2\pi \lambda^2} \exp(-\pi \lambda^2 x^2) \biggr\rvert_{-\infty}^{+\infty} \Big) \\
+Var(x) = \sigma^2 &=& \lambda \Big( x \Big( -\frac{1}{2\pi \lambda^2} \exp(-\pi \lambda^2 x^2) \biggr\rvert_{-\infty}^{+\infty} \Big) \\
 & &- \int_{-\infty}^{+\infty}  -\frac{1}{2\pi \lambda^2} \exp(-\pi \lambda^2 x^2  \Big)
 \end{eqnarray}$$
 
@@ -162,7 +162,7 @@ Since we know from Eq. \ref{eq_3a} that $\int_{-\infty}^{+\infty} \lambda  \exp(
 Hence we can write Eq. \ref{eq_4a} as given below,
 
 \begin{equation}
-\sigma^2 &= \frac{1}{2\pi \lambda^2}\\
+\sigma^2 = \frac{1}{2\pi \lambda^2}
 \end{equation}
 
 $$\begin{eqnarray}\label{eq_5}
