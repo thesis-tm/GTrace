@@ -91,15 +91,15 @@ g(x)g(y) &=& \exp(A x^2)\exp(A y^2) \nonumber\\
 Hence, we have,
 
 $$\begin{eqnarray}\label{eq_3}
-f(x) &=& \lambda g(x) \nonumber \nonumber \nonumber \\
-\Rightarrow f(x) &=& \lambda \exp(Ax^2) \\
+f(x) &=& \lambda g(x) \nonumber \nonumber \\
+\Rightarrow f(x) &=& \lambda \exp(Ax^2) 
 \end{eqnarray}$$
 
 So far, we do not know the parameters $\lambda$ and $A$. These parameters are having important aspects that we will discuss in the future sections. 
  
 # Distribution 
 As mentioned previously, the distributions represent the probability of something to happen for given parameters. The area under the curve of distribution should be unity as that would represent the total probability.
-Let's first find the area under the curve for the function derived in Eq. \ref{eq_3}. We integrate the function from $-\infty$ to $+\infty$ to calculate all area, as follows, 
+Let's first find the area under the curve of function derived in Eq. \ref{eq_3}. We integrate the function from $-\infty$ to $+\infty$ to calculate all area, as follows, 
 
 $$\begin{eqnarray}
 \int_{-\infty}^{+\infty} f(x)dx &=& 1\\
@@ -120,7 +120,10 @@ $$\begin{eqnarray}
 \Rightarrow \frac{\lambda}{h} \sqrt{\pi} &=& 1 \nonumber \\
 \Rightarrow h &=& \lambda \sqrt{\pi} \nonumber \\
 \end{eqnarray}$$
+
+
 where, $\int_{-\infty}^{+\infty} \exp(-u^2)du = \sqrt{\pi}$.\\
+
 Further, 
 \begin{equation}
 h^2 = \lambda^2 \pi 
@@ -135,7 +138,7 @@ So far, the distribution represented by $f(x)$ has area unity. \\
 Now we will calculate the variance of the distribution, as follows, 
 
 $$\begin{eqnarray}\label{eq_4}
-Var(x) $=$ \sigma^2 &=& \int_{-\infty}^{+\infty} x^2 \exp(-\pi \lambda^2 x^2) dx\nonumber \\
+Var(x) = \sigma^2 &=& \int_{-\infty}^{+\infty} x^2 \exp(-\pi \lambda^2 x^2) dx\nonumber \\
 \Rightarrow Var(x) &=& \sigma^2 &=& \lambda \int_{-\infty}^{+\infty} x.x \exp(-\pi \lambda^2 x^2) dx
 \end{eqnarray}$$
  
