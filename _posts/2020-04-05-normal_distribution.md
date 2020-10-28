@@ -7,23 +7,12 @@ comments: true
 categories: methods, normal distribution, derivation, proof
 ---
 
-<div style="display:none">
-\(
-  \def\<#1>{\left<#1\right>}
-  \newcommand{\ddx}[2]{\frac{#1}{#2}}
-  \newcommand{\CC}{\mathbf{C}}
-  \newcommand{\bld}[1]{\boldsymbol{#1}}
-  \newcommand{\hbld}[1]{\hat{\boldsymbol{#1}}}
-  \newcommand{\textbf}[1]{\mathbf{#1}}
-  \newcommand{\textit}[1]{\mathit{#1}}
-\)
-</div>
+
 
 
 # Introduction
-Normal distribution function or normal probability distribution function (PDF) is probably the most common distribution used in statistics. It is a function of two parameters, known as mean $(\mu)$ and standard deviation $ (\sigma) $ or variance $(\sigma^2)$. Normal PDF is represented by $\mathcal{N}(\mu, \sigma^2)$.  Figure \ref{typical_normal_distribution} shows example of normal PDF for varying parameters. 
+Normal distribution function or normal probability distribution function (PDF) is probably the most common distribution used in statistics. It is a function of two parameters, known as mean $(\mu)$ and standard deviation $ (\sigma) $ or variance $(\sigma^2)$. Normal PDF is represented by $\mathcal{N}(\mu, \sigma^2)$.  [Figure 1](#fig_1) shows example of normal PDF for varying parameters. 
 
-Take me to [pookie](#pookie)
 
 <script type="text/tikz">
 \begin{tikzpicture}
@@ -38,18 +27,15 @@ Take me to [pookie](#pookie)
 \draw[samples=70, color=red]plot(\x, {10*(1/(sqrt(2*pi*1))*exp(-(\x-0)^2/(2*1)))});
 \end{tikzpicture}
 </script>
+<a name="#fig_1">A normal distribution with mean 0 and standard deviation 1.</a>
 
-
-![subcaption here](){typical_normal_distribution width=50%}
-
-{% include image.html id="#fig_1" name='Figure' %}
 
 
 
 # The concept of probability
 
 Probability, in general, defines the possibility or chances of something to happen. For example, what is the probability that it will rain on a particular day in future. Probability varies between $0$ and $1$, where $0$ implies that there is perfectly no chances of something to happen and $1$ implies that something will happen definitely. And a probability between $0$ and $1$ tells the changes of something to happen.
-<a name="pookie">Pookie</a>
+
 Imagine that we are playing a game of darts. The aim is to throw the dart that lands on the centre of the board, which is represented by $x-y$ coordinate $(0,0)$. As we are not expert in throwing the dart, after many tries, we got trained to throw the dart which lands near to the centre of the board. Here, near implies that sometimes the dart lands on left and sometimes right of the centre. Similarly sometimes the darts falls on below the centre position and sometimes above of the centre position. Of course, in few cases, we are able to hit the bull's eye i.e. the centre point.
 
 Now as the dart can land on any arbitrary position, we represent the arbitrary position $(x,y)$ by polar coordinates $(r,\theta)$, measured from  origin $(0,0)$, where $r$ defines the distance of the centre points, and $\theta$ defines the angle that line connecting points $(0,0)$ and $(x,y)$ from horizontal direction.\\ 
@@ -101,22 +87,18 @@ For a moment, let's consider that the function $g$ is an exponential function, i
 
 Using $g$ as exponential function, we have the following equation, 
 
-\begin{equation}
-\begin{split}
-g(x)g(y) &= \exp(A x^2)\exp(A y^2)\\
-\Rightarrow g(x)g(y) &= \exp(A (x^2 + y^2))\\
-\Rightarrow g(x)g(y) &= g(\sqrt{x^2+y^2})
-\end{split}
-\end{equation}
+$$\begin{eqnarray}
+g(x)g(y) &= \exp(A x^2)\exp(A y^2) \nonumber\\
+\Rightarrow g(x)g(y) &= \exp(A (x^2 + y^2)) \nonumber\\
+\Rightarrow g(x)g(y) &= g(\sqrt{x^2+y^2}) \nonumber\\
+\end{eqnarray}$$
 
 Hence, we have,
 
-\begin{equation}\label{eq_3}
-\begin{split}
-f(x) &= \lambda g(x) \\
-\Rightarrow f(x) &= \lambda \exp(Ax^2) 
-\end{split}
-\end{equation}
+$$\begin{eqnarray}\label{eq_3}
+f(x) $=$ \lambda g(x) \\
+\Rightarrow f(x) $=$ \lambda \exp(Ax^2) 
+\end{eqnarray}$$
 
 So far, we do not know the parameters $\lambda$ and $A$. These parameters are having important aspects that we will discuss in the future sections. 
  
