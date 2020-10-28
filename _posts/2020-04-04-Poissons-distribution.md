@@ -53,15 +53,15 @@ Hence we can rewrite Eq. \ref{Eq:1} as,
 \end{equation}
 
 A little modification leads to,
-\begin{equation\*}
-	\begin{split}
-		P(X=x) &= \bigg(\frac{1}{x!}\bigg) \lim_{n \to \infty}\frac{n!}{(n-x)!} \bigg(\frac{\lambda}{n}\bigg)^{x} \bigg(1-\frac{\lambda}{n}\bigg)^{n-x}\\
-		&= \bigg(\frac{1}{x!}\bigg) \lim_{n \to \infty}\frac{n \times (n-1) \times...\times (n-x+1) \times (n-x)!}{(n-x)!} \bigg(\frac{\lambda}{n}\bigg)^{x} \bigg(1-\frac{\lambda}{n}\bigg)^{n-x}\\
-		&=\bigg(\frac{1}{x!}\bigg) \lim_{n \to \infty}\frac{(n-x)!}{n^k} \lambda^{x} \bigg(1-\frac{\lambda}{n}\bigg)^{n-x}\\	
-		&=\bigg(\frac{1}{x!}\bigg) \lim_{n \to \infty}\frac{(n-x)}{n} \frac{(n-x-1)}{n} \frac{(n-x-2)}{n} ... \frac{(n-x-x)}{n} \lambda^{x} \bigg(1-\frac{\lambda}{n}\bigg)^{n-x}\\	
-		&=\bigg(\frac{\lambda^{x}}{x!}\bigg) \lim_{n \to \infty} \bigg(1-\frac{\lambda}{n}\bigg)^{n-x}\\	
-	\end{split}
-\end{equation\*}
+%\begin{equation\*}
+\begin{eqnarray}
+  P(X=x) &=& \bigg(\frac{1}{x!}\bigg) \lim_{n \to \infty}\frac{n!}{(n-x)!} \bigg(\frac{\lambda}{n}\bigg)^{x} \bigg(1-\frac{\lambda}{n}\bigg)^{n-x}\\
+  &=& \bigg(\frac{1}{x!}\bigg) \lim_{n \to \infty}\frac{n \times (n-1) \times...\times (n-x+1) \times (n-x)!}{(n-x)!} \bigg(\frac{\lambda}{n}\bigg)^{x} \bigg(1-\frac{\lambda}{n}\bigg)^{n-x}\\
+  &=& \bigg(\frac{1}{x!}\bigg) \lim_{n \to \infty}\frac{(n-x)!}{n^k} \lambda^{x} \bigg(1-\frac{\lambda}{n}\bigg)^{n-x}\\	
+  &=& \bigg(\frac{1}{x!}\bigg) \lim_{n \to \infty}\frac{(n-x)}{n} \frac{(n-x-1)}{n} \frac{(n-x-2)}{n} ... \frac{(n-x-x)}{n} \lambda^{x} \bigg(1-\frac{\lambda}{n}\bigg)^{n-x}\\	
+  &=& \bigg(\frac{\lambda^{x}}{x!}\bigg) \lim_{n \to \infty} \bigg(1-\frac{\lambda}{n}\bigg)^{n-x}\\	
+\end{eqnarray}
+%\end{equation\*}
 
 
 In the above equation $\frac{(n-x)}{n}=\frac{(n-x-1)}{n}=\frac{(n-x-2)}{n} =...=\frac{(n-x-x)}{n} = 1$ when $n \rightarrow \infty$ or $n>>x$.
