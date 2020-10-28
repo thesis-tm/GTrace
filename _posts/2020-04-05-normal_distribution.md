@@ -91,7 +91,7 @@ g(x)g(y) &=& \exp(A x^2)\exp(A y^2) \nonumber\\
 Hence, we have,
 
 $$\begin{eqnarray}\label{eq_3}
-f(x) &=& \lambda g(x) \nonumber \nonumber \\
+f(x) &=& \lambda g(x) \nonumber \nonumber \nonumber \\
 \Rightarrow f(x) &=& \lambda \exp(Ax^2) \\
 \end{eqnarray}$$
 
@@ -116,9 +116,9 @@ $$\begin{equation}
 Let's consider $hx = u$, we have $du = h dx$,\\
 
 $$\begin{eqnarray}
-\int_{-\infty}^{+\infty} \frac{\lambda}{h} \exp(-u^2)du &=& 1 \\
-\Rightarrow \frac{\lambda}{h} \sqrt{\pi} &=& 1 \\
-\Rightarrow h &=& \lambda \sqrt{\pi} \\
+\int_{-\infty}^{+\infty} \frac{\lambda}{h} \exp(-u^2)du &=& 1 \nonumber \\
+\Rightarrow \frac{\lambda}{h} \sqrt{\pi} &=& 1 \nonumber \\
+\Rightarrow h &=& \lambda \sqrt{\pi} \nonumber \\
 \end{eqnarray}$$
 where, $\int_{-\infty}^{+\infty} \exp(-u^2)du = \sqrt{\pi}$.\\
 Further, 
@@ -135,7 +135,7 @@ So far, the distribution represented by $f(x)$ has area unity. \\
 Now we will calculate the variance of the distribution, as follows, 
 
 $$\begin{eqnarray}\label{eq_4}
-Var(x) $=$ \sigma^2 &=& \int_{-\infty}^{+\infty} x^2 \exp(-\pi \lambda^2 x^2) dx\\
+Var(x) $=$ \sigma^2 &=& \int_{-\infty}^{+\infty} x^2 \exp(-\pi \lambda^2 x^2) dx\nonumber \\
 \Rightarrow Var(x) &=& \sigma^2 &=& \lambda \int_{-\infty}^{+\infty} x.x \exp(-\pi \lambda^2 x^2) dx
 \end{eqnarray}$$
  
@@ -145,14 +145,14 @@ As we know from calculus that $\int udv  = uv - \int v du$. We can compare this 
 So we can write Eq. \ref{eq_4} as follows, 
 
 $$\begin{eqnarray}
-Var(x) = \sigma^2 &=& \lambda \Big( x \Big( -\frac{1}{2\pi \lambda^2} \exp(-\pi \lambda^2 x^2) \biggr\rvert_{-\infty}^{+\infty} \Big) \\
-& &- \int_{-\infty}^{+\infty}  -\frac{1}{2\pi \lambda^2} \exp(-\pi \lambda^2 x^2  \Big)
+Var(x) = \sigma^2 &=& \lambda \Big( x \Big( -\frac{1}{2\pi \lambda^2} \exp(-\pi \lambda^2 x^2) \biggr\rvert_{-\infty}^{+\infty} \Big) \nonumber \\
+& &- \int_{-\infty}^{+\infty}  -\frac{1}{2\pi \lambda^2} \exp(-\pi \lambda^2 x^2  \Big) \nonumber \\
 \end{eqnarray}$$
 
 
 $$\begin{eqnarray}\label{eq_4a}
-Var(x) = \sigma^2 &=& \lambda \Big( x \Big( 0 \Big) - \int_{-\infty}^{+\infty}  -\frac{1}{2\pi \lambda^2} \exp(-\pi \lambda^2 x^2) \Big)\\
-&=& \frac{1}{2\pi \lambda^2} \Big(  \int_{-\infty}^{+\infty} \lambda  \exp(-\pi \lambda^2 x^2) \Big)\\
+Var(x) = \sigma^2 &=& \lambda \Big( x \Big( 0 \Big) - \int_{-\infty}^{+\infty}  -\frac{1}{2\pi \lambda^2} \exp(-\pi \lambda^2 x^2) \Big) \nonumber \\
+&=& \frac{1}{2\pi \lambda^2} \Big(  \int_{-\infty}^{+\infty} \lambda  \exp(-\pi \lambda^2 x^2) \Big)\nonumber \\
 &=& \frac{1}{2\pi \lambda^2} \Big( \int_{-\infty}^{+\infty} \lambda  \exp(-\pi \lambda^2 x^2 \Big)\\
 \end{eqnarray}$$
 
@@ -166,7 +166,7 @@ Hence we can write Eq. \ref{eq_4a} as given below,
 \end{equation}
 
 $$\begin{eqnarray}\label{eq_5}
-\lambda^2 &=& \frac{1}{2\pi \sigma^2 }\\
+\lambda^2 &=& \frac{1}{2\pi \sigma^2 }\nonumber \\
 \Rightarrow \lambda &=& \frac{1}{\sigma \sqrt{2\pi }}
 \end{eqnarray}$$
 
