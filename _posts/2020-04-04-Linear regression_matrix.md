@@ -7,11 +7,20 @@ comments: true
 categories: methods, linear regression
 ---
 
-
+<div style="display:none">
+\(
+  \def\<#1>{\left<#1\right>}
+  \newcommand{\ddx}[2]{\frac{#1}{#2}}
+  \newcommand{\CC}{\mathbf{C}}
+  \newcommand{\bld}[1]{\boldsymbol{#1}}
+  \newcommand{\hbld}[1]{\hat{\boldsymbol{#1}}}
+  \newcommand{\textbf}[1]{\mathbf{#1}}
+\)
+</div>
 
 
 # Introduction
-[comment]: <> (\section{Introduction})
+%[comment]: <> (\section{Introduction})
 We define a linear system where the output of the system is dependent linearly on some inputs. Let's consider the following system, 
 
 
@@ -29,7 +38,7 @@ Now the next challenge is to identify $\beta_i$ to know about the system, and we
 
 
 # Formal representation
-[comment]: <> (\section{Formal representation})
+%[comment]: <> (\section{Formal representation})
 
 To start with, we formalize the notations to be used further.
 As we have time dependent output $y(t)$, to present the $n$ instances of the outputs for given $n$ instances of each inputs $x_i$, we use the following matrix notation. 
