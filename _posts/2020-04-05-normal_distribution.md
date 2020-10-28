@@ -60,13 +60,10 @@ $$\begin{eqnarray}
 where $\lambda$ is a constant. $\lambda$ can be understood as what is the probability that the dart lends on $0$ distance from horizontal or vertical axis. 
 Further we can write the above equation as,
 
-\begin{equation}
-\begin{split}
-\lambda f(\sqrt{x^2+y^2}) &= f(x)f(y)
-
-\Rightarrow \frac{\lambda f(\sqrt{x^2+y^2})}{\lambda^2} &= \frac{f(x)}{\lambda} \frac{f(y)}{\lambda}
-\end{split}
-\end{equation}
+$$\begin{eqnarray}
+\lambda f(\sqrt{x^2+y^2}) &=& f(x)f(y) \\
+\Rightarrow \frac{\lambda f(\sqrt{x^2+y^2})}{\lambda^2} &=& \frac{f(x)}{\lambda} \frac{f(y)}{\lambda} \\
+\end{eqnarray}$$
 
 Further we can write it as,
 
@@ -138,8 +135,8 @@ So far, the distribution represented by $f(x)$ has area unity. \\
 Now we will calculate the variance of the distribution, as follows, 
 
 $$\begin{eqnarray}\label{eq_4}
-Var(x) = \sigma^2 &=& \int_{-\infty}^{+\infty} x^2 \exp(-\pi \lambda^2 x^2) dx\\
-\Rightarrow Var(x) &=& \sigma^2 = \lambda \int_{-\infty}^{+\infty} x.x \exp(-\pi \lambda^2 x^2) dx
+Var(x) $=$ \sigma^2 &=& \int_{-\infty}^{+\infty} x^2 \exp(-\pi \lambda^2 x^2) dx\\
+\Rightarrow Var(x) &=& \sigma^2 $=$ \lambda \int_{-\infty}^{+\infty} x.x \exp(-\pi \lambda^2 x^2) dx
 \end{eqnarray}$$
  
 
@@ -148,7 +145,7 @@ As we know from calculus that $\int udv  = uv - \int v du$. We can compare this 
 So we can write Eq. \ref{eq_4} as follows, 
 
 $$\begin{eqnarray}
-Var(x) &=& \sigma^2 &=& \lambda \Big( x \Big( -\frac{1}{2\pi \lambda^2} &\exp(-\pi \lambda^2 x^2) \biggr\rvert_{-\infty}^{+\infty} \Big) \\
+Var(x) &=& \sigma^2 &=& \lambda \Big( x \Big( -\frac{1}{2\pi \lambda^2} \exp(-\pi \lambda^2 x^2) \biggr\rvert_{-\infty}^{+\infty} \Big) \\
 & &- \int_{-\infty}^{+\infty}  -\frac{1}{2\pi \lambda^2} \exp(-\pi \lambda^2 x^2  \Big)
 \end{eqnarray}$$
 
