@@ -67,9 +67,13 @@ $$\begin{eqnarray}
 In the above equation $\frac{(n-x)}{n}=\frac{(n-x-1)}{n}=\frac{(n-x-2)}{n} =...=\frac{(n-x-x)}{n} = 1$ when $n \rightarrow \infty$ or $n>>x$.
 
 Further we have, 
-$$\lim_{n \to \infty} \bigg(1-\frac{\lambda}{n}\bigg)^{n-x} = \lim_{n \to \infty} \bigg(1-\frac{\lambda}{n}\bigg)^{n} \bigg(1-\frac{\lambda}{n}\bigg)^{-x} = \lim_{n \to \infty} \bigg(1-\frac{\lambda}{n}\bigg)^{n} $$
+$$\begin{eqnarray}
+\lim_{n \to \infty} \bigg(1-\frac{\lambda}{n}\bigg)^{n-x} $=$ \lim_{n \to \infty} \bigg(1-\frac{\lambda}{n}\bigg)^{n} \bigg(1-\frac{\lambda}{n}\bigg)^{-x} \nonumber \\
+$=$ \lim_{n \to \infty} \bigg(1-\frac{\lambda}{n}\bigg)^{n}
+\end{eqnarray}
+$$
 
-In the above equation we have, $\lim_{n \to \infty}  \bigg(1-\frac{\lambda}{n}\bigg)^{-x} = 1$ because $\frac{\lambda}{n} <<1$ when $n \rightarrow \infty$. 
+In the above equation we have, $\lim_{n \to \infty}  \bigg(1-\frac{\lambda}{n}\bigg)^{-x} = 1$ because $\frac{\lambda}{n} <{}<1$ when $n \rightarrow \infty$. 
 
 Further, $\lim_{n \to \infty} \bigg(1-\frac{\lambda}{n}\bigg)^{n} = \lim_{n \to \infty} \bigg(1-\frac{1}{z}\bigg)^{-z\lambda} = e^{-\lambda}$, where $z=\frac{n}{\lambda}$, and $\bigg(1-\frac{1}{z}\bigg)^{z} = e$.
 
