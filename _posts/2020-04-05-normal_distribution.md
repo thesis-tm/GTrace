@@ -151,10 +151,10 @@ Var(x) = \sigma^2 &=& \lambda \Big( x \Big( -\frac{1}{2\pi \lambda^2} \exp(-\pi 
 \end{eqnarray}$$
 
 
-$$\begin{eqnarray}\label{eq_4a}
+$$\begin{eqnarray}
 Var(x) = \sigma^2 &=& \lambda \Big( x \Big( 0 \Big) - \int_{-\infty}^{+\infty}  -\frac{1}{2\pi \lambda^2} \exp(-\pi \lambda^2 x^2) \Big) \nonumber \\
 &=& \frac{1}{2\pi \lambda^2} \Big(  \int_{-\infty}^{+\infty} \lambda  \exp(-\pi \lambda^2 x^2) \Big)\nonumber \\
-&=& \frac{1}{2\pi \lambda^2} \Big( \int_{-\infty}^{+\infty} \lambda  \exp(-\pi \lambda^2 x^2 \Big)\\
+&=& \frac{1}{2\pi \lambda^2} \Big( \int_{-\infty}^{+\infty} \lambda  \exp(-\pi \lambda^2 x^2 \Big) \label{eq_4a}\\
 \end{eqnarray}$$
 
 
