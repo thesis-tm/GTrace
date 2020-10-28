@@ -88,16 +88,16 @@ For a moment, let's consider that the function $g$ is an exponential function, i
 Using $g$ as exponential function, we have the following equation, 
 
 $$\begin{eqnarray}
-g(x)g(y) &= \exp(A x^2)\exp(A y^2) \nonumber\\
-\Rightarrow g(x)g(y) &= \exp(A (x^2 + y^2)) \nonumber\\
-\Rightarrow g(x)g(y) &= g(\sqrt{x^2+y^2}) \nonumber\\
+g(x)g(y) &=$ \exp(A x^2)\exp(A y^2) \nonumber\\
+\Rightarrow g(x)g(y) &=& \exp(A (x^2 + y^2)) \nonumber\\
+\Rightarrow g(x)g(y) &=& g(\sqrt{x^2+y^2}) \nonumber\\
 \end{eqnarray}$$
 
 Hence, we have,
 
 $$\begin{eqnarray}\label{eq_3}
-f(x) $=$ \lambda g(x) \\
-\Rightarrow f(x) $=$ \lambda \exp(Ax^2) 
+f(x) &=& \lambda g(x) \nonumber \\
+\Rightarrow f(x) &=& \lambda \exp(Ax^2) 
 \end{eqnarray}$$
 
 So far, we do not know the parameters $\lambda$ and $A$. These parameters are having important aspects that we will discuss in the future sections. 
@@ -106,29 +106,25 @@ So far, we do not know the parameters $\lambda$ and $A$. These parameters are ha
 As mentioned previously, the distributions represent the probability of something to happen for given parameters. The area under the curve of distribution should be unity as that would represent the total probability.
 Let's first find the area under the curve for the function derived in Eq. \ref{eq_3}. We integrate the function from $-\infty$ to $+\infty$ to calculate all area, as follows, 
 
-\begin{equation}
-\begin{split}
-\int_{-\infty}^{+\infty} f(x)dx &= 1\\
-\int_{-\infty}^{+\infty} \lambda \exp(Ax^2)dx &= 1
-\end{split}
-\end{equation}
+\begin{eqnarray}
+\int_{-\infty}^{+\infty} f(x)dx &=& 1\\
+\int_{-\infty}^{+\infty} \lambda \exp(Ax^2)dx &=& 1
+\end{eqnarray}
 
 For the sake of computational easing, let's replace $A$ by $-h^2$, where $h$ is another parameter, and we will calculate this later. 
 
 
-\begin{equation}
+$$\begin{equation}
 \int_{-\infty}^{+\infty} \lambda \exp(-h^2x^2)dx = 1
-\end{equation}
+\end{equation}$$
 
 Let's consider $hx = u$, we have $du = h dx$,\\
 
-\begin{equation}
-\begin{split}
-\int_{-\infty}^{+\infty} \frac{\lambda}{h} \exp(-u^2)du &= 1\\
-\Rightarrow \frac{\lambda}{h} \sqrt{\pi} &= 1\\
-\Rightarrow h &= \lambda \sqrt{\pi}\\
-\end{split}
-\end{equation}
+$$\begin{eqnarray}
+\int_{-\infty}^{+\infty} \frac{\lambda}{h} \exp(-u^2)du &=& 1 \\
+\Rightarrow \frac{\lambda}{h} \sqrt{\pi} &=& 1 \\
+\Rightarrow h &=& \lambda \sqrt{\pi} \\
+\end{equation}$$
 where, $\int_{-\infty}^{+\infty} \exp(-u^2)du = \sqrt{\pi}$.\\
 Further, 
 \begin{equation}
@@ -143,33 +139,27 @@ So far, the distribution represented by $f(x)$ has area unity. \\
 
 Now we will calculate the variance of the distribution, as follows, 
 
-\begin{equation}\label{eq_4}
-\begin{split}
-Var(x) = \sigma^2 &= \int_{-\infty}^{+\infty} x^2 \exp(-\pi \lambda^2 x^2) dx\\
-\Rightarrow Var(x) &= \sigma^2 = \lambda \int_{-\infty}^{+\infty} x.x \exp(-\pi \lambda^2 x^2) dx
-\end{split}
-\end{equation}
+$$\begin{eqnarray}\label{eq_4}
+Var(x) = \sigma^2 &=& \int_{-\infty}^{+\infty} x^2 \exp(-\pi \lambda^2 x^2) dx\\
+\Rightarrow Var(x) &=& \sigma^2 = \lambda \int_{-\infty}^{+\infty} x.x \exp(-\pi \lambda^2 x^2) dx
+\end{eqnarray}$$
  
 
 As we know from calculus that $\int udv  = uv - \int v du$. We can compare this identity with Eq. \ref{eq_4} as $u = x$, so $du = dx$, and $v = x \exp(-\pi h^2x^2)$, so $dv = x \exp(-\pi \lambda^2 x^2) dx$ and $v = -\frac{1}{2\pi \lambda^2} \exp(-\pi \lambda^2 x^2)$
 
 So we can write Eq. \ref{eq_4} as follows, 
 
-\begin{equation}
-\begin{split}
-Var(x) = \sigma^2 = \lambda \Big( x \Big( -\frac{1}{2\pi \lambda^2} &\exp(-\pi \lambda^2 x^2) \biggr\rvert_{-\infty}^{+\infty} \Big) \\
-&- \int_{-\infty}^{+\infty}  -\frac{1}{2\pi \lambda^2} \exp(-\pi \lambda^2 x^2  \Big)
-\end{split}
-\end{equation}
+$$\begin{eqnarray}
+Var(x) = \sigma^2 &=& \lambda \Big( x \Big( -\frac{1}{2\pi \lambda^2} &\exp(-\pi \lambda^2 x^2) \biggr\rvert_{-\infty}^{+\infty} \Big) \\
+& &- \int_{-\infty}^{+\infty}  -\frac{1}{2\pi \lambda^2} \exp(-\pi \lambda^2 x^2  \Big)
+\end{eqnarray}$$
 
 
-\begin{equation}\label{eq_4a}
-\begin{split}
+$$\begin{eqnarray}\label{eq_4a}
 Var(x) = \sigma^2 &= \lambda \Big( x \Big( 0 \Big) - \int_{-\infty}^{+\infty}  -\frac{1}{2\pi \lambda^2} \exp(-\pi \lambda^2 x^2) \Big)\\
-&= \frac{1}{2\pi \lambda^2} \Big(  \int_{-\infty}^{+\infty} \lambda  \exp(-\pi \lambda^2 x^2) \Big)\\
-&= \frac{1}{2\pi \lambda^2} \Big( \int_{-\infty}^{+\infty} \lambda  \exp(-\pi \lambda^2 x^2 \Big)\\
-\end{split}
-\end{equation}
+&=& \frac{1}{2\pi \lambda^2} \Big(  \int_{-\infty}^{+\infty} \lambda  \exp(-\pi \lambda^2 x^2) \Big)\\
+&=& \frac{1}{2\pi \lambda^2} \Big( \int_{-\infty}^{+\infty} \lambda  \exp(-\pi \lambda^2 x^2 \Big)\\
+\end{eqnarray}$$
 
 
 
@@ -182,13 +172,10 @@ Hence we can write Eq. \ref{eq_4a} as given below,
 \end{split}
 \end{equation}
 
-\begin{equation}\label{eq_5}
-\begin{split}
-\lambda^2 &= \frac{1}{2\pi \sigma^2 }\\
-\Rightarrow \lambda &= \frac{1}{\sigma \sqrt{2\pi }}
-\end{split}
-\end{equation}
-
+$$\begin{eqnarray}\label{eq_5}
+\lambda^2 &=& \frac{1}{2\pi \sigma^2 }\\
+\Rightarrow \lambda &=& \frac{1}{\sigma \sqrt{2\pi }}
+\end{eqnarray}$$
 
 So we finally have from Eq. \ref{eq_3a} and Eq. \ref{eq_5}, 
 \begin{equation}\label{eq_6}
