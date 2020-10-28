@@ -138,8 +138,8 @@ So far, the distribution represented by $f(x)$ has area unity. \\
 Now we will calculate the variance of the distribution, as follows, 
 
 $$\begin{eqnarray}\label{eq_4}
-Var(x) = \sigma^2 &=& \int_{-\infty}^{+\infty} x^2 \exp(-\pi \lambda^2 x^2) dx\nonumber \\
-\Rightarrow Var(x) &=& \sigma^2 &=& \lambda \int_{-\infty}^{+\infty} x.x \exp(-\pi \lambda^2 x^2) dx
+Var(x) = \sigma^2 &=& \int_{-\infty}^{+\infty} x^2 \exp(-\pi \lambda^2 x^2) dx \nonumber \\
+\Rightarrow &=& \lambda \int_{-\infty}^{+\infty} x.x \exp(-\pi \lambda^2 x^2) dx
 \end{eqnarray}$$
  
 
