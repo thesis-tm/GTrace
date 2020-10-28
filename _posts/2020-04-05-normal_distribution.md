@@ -136,10 +136,9 @@ So far, the distribution represented by $f(x)$ has area unity. \\
 
 Now we will calculate the variance of the distribution, as follows, 
 
-$$\begin{eqnarray}\label{eq_4}
-Var(x) = \sigma^2 &=& \int_{-\infty}^{+\infty} x^2 \exp(-\pi \lambda^2 x^2) dx \nonumber \\
- &=& \lambda \int_{-\infty}^{+\infty} x.x \exp(-\pi \lambda^2 x^2) dx
-\end{eqnarray}$$
+\begin{equation}\label{eq_4}
+Var(x) = \sigma^2 = \int_{-\infty}^{+\infty} x^2 \exp(-\pi \lambda^2 x^2) dx = \lambda \int_{-\infty}^{+\infty} x.x \exp(-\pi \lambda^2 x^2) dx
+\end{equation}
  
 
 As we know from calculus that $\int udv  = uv - \int v du$. We can compare this identity with Eq. \ref{eq_4} as $u = x$, so $du = dx$, and $v = x \exp(-\pi h^2x^2)$, so $dv = x \exp(-\pi \lambda^2 x^2) dx$ and $v = -\frac{1}{2\pi \lambda^2} \exp(-\pi \lambda^2 x^2)$
