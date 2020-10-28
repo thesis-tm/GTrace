@@ -70,8 +70,7 @@ Further we have,
 $$\begin{eqnarray}
 \lim_{n \to \infty} \bigg(1-\frac{\lambda}{n}\bigg)^{n-x} $=$ \lim_{n \to \infty} \bigg(1-\frac{\lambda}{n}\bigg)^{n} \bigg(1-\frac{\lambda}{n}\bigg)^{-x} \nonumber \\
 $=$ \lim_{n \to \infty} \bigg(1-\frac{\lambda}{n}\bigg)^{n}
-\end{eqnarray}
-$$
+\end{eqnarray}$$
 
 In the above equation we have, $\lim_{n \to \infty}  \bigg(1-\frac{\lambda}{n}\bigg)^{-x} = 1$ because $\frac{\lambda}{n} <{}<1$ when $n \rightarrow \infty$. 
 
@@ -126,4 +125,4 @@ Let's take an example traffic light violations. Imagine we have data for one yea
 \label{Fig:2}
 \end{figure}
 
-<iframe src="https://www.desmos.com/calculator/g7izucn6nn" width="100%" style="min-height:200px"></iframe>
+
