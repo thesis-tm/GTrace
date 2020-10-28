@@ -7,16 +7,7 @@ comments: true
 categories: methods, linear regression
 ---
 
-<div style="display:none">
-\(
-  \def\<#1>{\left<#1\right>}
-  \newcommand{\ddx}[2]{\frac{#1}{#2}}
-  \newcommand{\CC}{\mathbf{C}}
-  \newcommand{\bld}[1]{\boldsymbol{#1}}
-  \newcommand{\hbld}[1]{\hat{\boldsymbol{#1}}}
-  \newcommand{\textbf}[1]{\mathbf{#1}}
-\)
-</div>
+
 
 
 # Introduction
@@ -96,8 +87,9 @@ To approximate the regression parameters of unknown system, we have fix $\hat{\b
 \textbf{e} = \textbf{y} - \hat{\textbf{y}} 
 \end{equation}
 
-So now the problem can identified as adjusting  $\hat{\boldsymbol{\beta}}$ that tries make $\textbf{e}$ zero or towards zero. Alternately we can define it as adjusting  $\hat{\boldsymbol{\beta}}$ such that  $||\textbf{e}||^2$ minimizes. $||\cdot||^2$ signifies the square of each element of $\bld{e}$. \\
-The values of $\hat{\boldsymbol{\beta}}$ that minimizes $||\textbf{e}||^2$ can be obtained by finding minima by differentiation. i.e.,\\
+So now the problem can identified as adjusting  $\hat{\boldsymbol{\beta}}$ that tries make $\textbf{e}$ zero or towards zero. Alternately we can define it as adjusting  $\hat{\boldsymbol{\beta}}$ such that  $\|\|\textbf{e}\|\|^2$ minimizes. $\|\|\cdot\|\|^2$ signifies the square of each element of $\bld{e}$. 
+
+The values of $\hat{\boldsymbol{\beta}}$ that minimizes $\||\textbf{e}\||^2$ can be obtained by finding minima by differentiation. i.e.,\\
 
 \begin{equation}
 \frac{\partial ||\textbf{e}||^2}{\partial \hat{\boldsymbol{\beta}}} = \frac{\partial \textbf{e}^T \textbf{e}}{\partial \hat{\boldsymbol{\beta}}} = \frac{\partial (\textbf{y} - \hat{\textbf{y}})^T (\textbf{y} - \hat{\textbf{y}})}{\partial \hat{\boldsymbol{\beta}}} = 2 (\textbf{y} - \hat{\textbf{y}})^T \frac{\partial \hat{\textbf{y}}}{\partial \hat{\boldsymbol{\beta}}}
@@ -189,7 +181,9 @@ Similarly $\bld{\epsilon}$ can be written in the form of multivariate normal dis
 
 Thus, since $\bld{\epsilon}$ follows a distribution, the  parameter $\hbld{\beta}$ must also follow the distribution. We must also note that we cannot directly measure $\bld{\epsilon}$ instead we can measure residual $\textbf{e}$ which can be calculated using Eq. \ref{eq:residual}. Nonetheless we can learn about $\bld{\epsilon}$ from $\textbf{e}$ as explained in the next section.
 
-\subsection{Features of residual}
+# Features of residual
+
+%\subsection{Features of residual}
 
 Let's approximate it from error term or residuals, i.e. $\textbf{e}$. Let's write sum of squared of residual first in the following form, 
 
@@ -271,7 +265,8 @@ where $Z$ is a standard normal distribution.
 
 
 # Distribution of $\hat{\boldsymbol{\beta}}$
-[comment]: <> (\subsection{Distribution of $\hat{\boldsymbol{\beta}}$})
+
+%[comment]: <> (\subsection{Distribution of $\hat{\boldsymbol{\beta}}$})
 In order to represent the $\hbld{\beta}$ in distribution form, we calculate the two main parameters first i.e. mean and variance. 
 
 \subsubsection{Expected value of $\hbld{\beta}$, $\mathtt{E}(\hat{\boldsymbol{\beta}})$}
@@ -315,7 +310,8 @@ Thus we can write the distribution of $\hbld{\beta}$ as,
 \end{equation} </p>
 
 # Hypothesis testing
-[comment]: <> (\section{Hypotheses tests})
+
+%[comment]: <> (\section{Hypotheses tests})
 From Eq. \ref{eq:beta_hat} we know that calculated parameter $\hbld{\beta}$ follows a distribution. But we want to know how probable is that the calculated parameter i.e. $\hbld{\beta}$ is close to actual parameter $\bld{\beta}$. 
 
 Before doing so, let's do some maths magic. Let's write Eq. \ref{eq:beta_hat} as follows, 
@@ -491,11 +487,11 @@ Consider an example of a supermarket, where we want to understand the consumer s
 \hline
 \textbf{mean}	&	99.9 & 14.1	&	1537.5\\
 \end{array}
-<a name="#table_1">Table 1</a>Supermarket data (fictitious).
+<a name="#table_1">Table 1</a> Supermarket data (fictitious).
 
 
 
-We can write the data shown in Table \ref{table:table_1} in the following form.
+We can write the data shown in <a href="#table_1">Table 1</a> in the following form.
 <p> \begin{equation*}
 \textbf{X} = \begin{bmatrix}
 1 & 80 & 20 \\
@@ -565,9 +561,9 @@ Now we calculate $\hbld{\beta}$ as,
 \end{bmatrix}
 \end{equation} </p>
 
-\begin{array}{|l|l|l|l|l|l|}
+\begin{array}{|r|r|r|r|r|r|}
 \hline
-\textbf{Sr. no.}	&	\textbf{AS} ($y_i$)	&	\textbf{PS} ($\hat{y_i}$)	&	\textbf{Residual} ($e_i$)	&	CI($-95\%$)	&	CI($+95\%$)\\
+\textbf{Sr. no.}	&	\textbf{AS} (y_i)	&	\textbf{PS} (\hat{y_i})	&	\textbf{Residual} (e_i)	&	CI(-95\%)	&	CI(+95\%)\\
 \hline
 1 & 1260.00 & 1242.69 & 17.31 & 1239.85 & 1280.15 \\
 2 & 1275.00 & 1280.87 & -5.87 & 1261.80 & 1288.20 \\
@@ -591,27 +587,25 @@ Now we calculate $\hbld{\beta}$ as,
 20 & 1785.00 & 1795.93 & -10.93 & 1771.86 & 1798.14 \\
 \hline
 \end{array}
-<a name="#table_2">Table 2</a>Actual and predicted outputs. (AS: Actual spending, PS: Predicted spending).
+<a name="#table_2">Table 2</a> Actual and predicted outputs. (AS: Actual spending, PS: Predicted spending).
 
 
 Based on $\hbld{\beta}$ we predict the output using Eq. \ref{eq:beta_hat} as shown in Table \ref{table:table_2}. 
 Now we calculate $\hat{\sigma}^2$ using the data from  <a href="#table_2">Table 2</a>  as shown below, 
 
 <p> \begin{equation}
-\hat{\sigma}^2 = \frac{1}{20} \textbf{e}^T\textbf{e} = 263.48
+\hat{\sigma}^2 = \frac{1}{20} \textbf{e}^T\textbf{e} = 263.48 \nonumber \\
 \end{equation} </p>
 
 and 
-<p> \begin{equation*}
-\begin{split}
-&\sqrt{\frac{n}{n-p}\hat{\sigma}^2 (\textbf{X}^T\textbf{X})^{-1}} = \sqrt{\frac{20}{20-3} \times 263.48 \times (\textbf{X}^T\textbf{X})^{-1}}\\
-&=\sqrt{\frac{20}{20-3} \times 263.48 \times \begin{bmatrix}
+<p> \begin{eqnarray}
+& &\sqrt{\frac{n}{n-p}\hat{\sigma}^2 (\textbf{X}^T\textbf{X})^{-1}} = \sqrt{\frac{20}{20-3} \times 263.48 \times (\textbf{X}^T\textbf{X})^{-1}} \nonumber \\
+&=&\sqrt{\frac{20}{20-3} \times 263.48 \times \begin{bmatrix}
   3.70e+00 &  -2.89e-02 &  -5.41e-02 \\
  -2.89e-02 &   2.96e-04 &  -4.30e-05 \\
  -5.41e-02 &  -4.30e-05 &   4.14e-03 \\
-\end{bmatrix}}
-\end{split}
-\end{equation*} </p>
+\end{bmatrix}} \nonumber \\
+\end{eqnarray} </p>
 
 
 So we have 
@@ -632,12 +626,10 @@ So finally following the null hypothesis i.e. $\beta_i=0$ we have,
 \end{equation*} </p>
 Similarly we can derive, 
 
-<p> \begin{equation*}
-\begin{split}
-\frac{\hat{\beta}_1}{\text{SE}_{\hat{\beta}_1}} = \frac{15.12}{0.30} &= 49.94\\
-\frac{\hat{\beta}_2}{\text{SE}_{\hat{\beta}_2}} = \frac{1.02}{1.13} &= 0.90
-\end{split}
-\end{equation*} </p>
+$$\begin{eqnarray}
+\frac{\hat{\beta}_1}{\text{SE}_{\hat{\beta}_1}} = \frac{15.12}{0.30} &= 49.94 \nonumber \\
+\frac{\hat{\beta}_2}{\text{SE}_{\hat{\beta}_2}} = \frac{1.02}{1.13} &= 0.90 \nonumber \\
+\end{eqnarray}$$ 
 
 <p>
 From standard $\mathtt{t}$ table, the critical value for $\alpha=0.95$ is $2.1098$. Since $\frac{\hat{\beta}_0}{\text{SE}_{\hat{\beta}_0}} < \alpha$ and $\frac{\hat{\beta}_2}{\text{SE}_{\hat{\beta}_2}} <\alpha$ we accept the null hypothesis for $\beta_0$ and $\beta_2$ and conclude that $\beta_0 = \beta_1 = 0$. On the other hand,  $\frac{\hat{\beta}_1}{\text{SE}_{\hat{\beta}_1}} > \alpha$, thus we fail to accept the null hypothesis, and conclude that $\beta_1\neq 0$.\\
