@@ -122,7 +122,7 @@ $$\begin{eqnarray}
 \int_{-\infty}^{+\infty} \frac{\lambda}{h} \exp(-u^2)du &=& 1 \\
 \Rightarrow \frac{\lambda}{h} \sqrt{\pi} &=& 1 \\
 \Rightarrow h &=& \lambda \sqrt{\pi} \\
-\end{equation}$$
+\end{eqnarray}$$
 where, $\int_{-\infty}^{+\infty} \exp(-u^2)du = \sqrt{\pi}$.\\
 Further, 
 \begin{equation}
