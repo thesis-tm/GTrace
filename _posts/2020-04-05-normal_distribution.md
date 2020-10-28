@@ -90,10 +90,9 @@ g(x)g(y) &=& \exp(A x^2)\exp(A y^2) \nonumber\\
 
 Hence, we have,
 
-$$\begin{eqnarray}\label{eq_3}
-f(x) &=& \lambda g(x) \nonumber \\
-&=& \lambda \exp(Ax^2) 
-\end{eqnarray}$$
+\begin{equation}\label{eq_3}
+f(x) &=& \lambda g(x) = \lambda \exp(Ax^2) 
+\end{equation}
 
 So far, we do not know the parameters $\lambda$ and $A$. These parameters are having important aspects that we will discuss in the future sections. 
  
