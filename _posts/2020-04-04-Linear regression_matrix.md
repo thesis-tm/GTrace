@@ -20,7 +20,7 @@ categories: methods, linear regression
 
 
 # Introduction
-%\section{Introduction}
+[comment]: <> (\section{Introduction})
 We define a linear system where the output of the system is dependent linearly on some inputs. Let's consider the following system, 
 
 
@@ -38,7 +38,7 @@ Now the next challenge is to identify $\beta_i$ to know about the system, and we
 
 
 # Formal representation
-%\section{Formal representation}
+[comment]: <> (\section{Formal representation})
 
 To start with, we formalize the notations to be used further.
 As we have time dependent output $y(t)$, to present the $n$ instances of the outputs for given $n$ instances of each inputs $x_i$, we use the following matrix notation. 
@@ -82,7 +82,7 @@ Hence we can write the linear system as,
 
 
 # Regression parameter estimation
-%\section{Regression parameter estimation}
+[comment]: <> (\section{Regression parameter estimation})
 As it is not possible for us to know the regression parameters $\beta$ for the system, so to estimate these parameters we take some another variable $\hat{\beta}$ , and replace it with $\beta$  in Eq. \ref{eq:regression} and predict the output $\hat{\textbf{y}}$, i.e., 
 
 \begin{equation}\label{eq:y_hat}
@@ -271,7 +271,7 @@ where $Z$ is a standard normal distribution.
 
 
 # Distribution of $\hat{\boldsymbol{\beta}}$
-%\subsection{Distribution of $\hat{\boldsymbol{\beta}}$}
+[comment]: <> (\subsection{Distribution of $\hat{\boldsymbol{\beta}}$})
 In order to represent the $\hbld{\beta}$ in distribution form, we calculate the two main parameters first i.e. mean and variance. 
 
 \subsubsection{Expected value of $\hbld{\beta}$, $\mathtt{E}(\hat{\boldsymbol{\beta}})$}
@@ -281,7 +281,8 @@ E[\hbld{\beta}] = E[\bld{\beta} + \textbf{H} \bld{\epsilon}] = E[\bld{\beta}] + 
 nointen
 As we know, $E[\boldsymbol{\beta} ] = \boldsymbol{\beta}$, and $E[\textbf{H} \boldsymbol{\epsilon}] = \textbf{X}^T \textbf{X})^{-1} \textbf{X}^T E[\boldsymbol{\epsilon}] = 0$ 
 
-\subsubsection{Variance of $\hat{\boldsymbol{\beta}}$}
+## Variance of $\hat{\boldsymbol{\beta}}$
+[comment]: <> (\subsubsection{Variance of $\hat{\boldsymbol{\beta}}$})
 We calculate the variance from second moment as, 
 
 \begin{equation*}
@@ -313,8 +314,8 @@ Thus we can write the distribution of $\hbld{\beta}$ as,
 \hbld{\beta} = \bld{\beta} + \textbf{H}\bld{\epsilon} \sim \mathcal{N}\big(\bld{\beta}, \sigma^2 (\textbf{X}^T \textbf{X})^{-1}\big)
 \end{equation} </p>
 
-
-\section{Hypotheses tests}
+# Hypothesis testing
+[comment]: <> (\section{Hypotheses tests})
 From Eq. \ref{eq:beta_hat} we know that calculated parameter $\hbld{\beta}$ follows a distribution. But we want to know how probable is that the calculated parameter i.e. $\hbld{\beta}$ is close to actual parameter $\bld{\beta}$. 
 
 Before doing so, let's do some maths magic. Let's write Eq. \ref{eq:beta_hat} as follows, 
@@ -378,15 +379,15 @@ Thus we conclude that $\mathtt{t}_{n-k}$  tells us the probability of obtaining 
 
 In this context, we formulate the following hypotheses,\\
 <p>
-\begin{itemize}
-\item[H0:] The regression parameter $\beta_i = 0$. Also known as \textit{null} hypothesis. Intuitively, we state that the regression parameter that we have approximated i.e. $\hat{\beta}_i$ belongs to a population or system which as a regression parameter $\beta_i$ and $\beta_i=0$.
-\item[H1:] The regression parameter $\beta_i \neq 0$. Also known as \textit{alternate} hypothesis. Intuitively, we state that the regression parameter that we have approximated i.e. $\hat{\beta_i}$ belongs to a population or system which as a regression parameter $\beta_i$ and $\beta_i \neq 0$.
-\end{itemize}
-  <p>
-In our analysis, we try to prove null hypothesis. If we succeed in doing so, we conclude that the regression parameter is zero. Otherwise, we conclude that the regression parameter is \textit{not} zero.  A line of precaution here. As mentioned previously, $\mathtt{t}$ distribution tells the probability of $\hat{\beta}_i$ to belong to a system which has a regression parameter $\beta_i$, and since it is composed of normal distribution and $\chi^2$ distribution, there will always be certain non-zero probability that $\hat{\beta}_i$ belongs to $\beta_i$. So we can never conclude that any possible value of $\beta_i$ is does not belong to a population of system which has regression parameter $\beta_i$, which is $0$ in case of null hypothesis. Therefore, to avoid such situation, we restrict our analysis to a given probability $\alpha$ i.e. if there is probability of $\hat{\beta}_i$ to belong to $\beta_i$ is more than $\alpha$, then \textit{null} hypothesis is true, otherwise if the probability is lower than $\alpha$, we reject the null hypothesis and accept the alternate hypothesis i.e. $\beta_i \neq 0$. In management literature the most used level of $\alpha$ is 0.95. Therefore if $\frac{\hat{\beta}_i- \beta_i}{\text{SE}_{\hat{\beta}_i}}$ is less than the critical value of $\mathtt{t}_{n-p}$ for $\alpha=0.95$, then we accept the null hypothesis. Otherwise we accept the alternate hypothesis. 
- 
 
-\section{Predictions}
+* \[H0] The regression parameter $\beta_i = 0$. Also known as \textit{null} hypothesis. Intuitively, we state that the regression parameter that we have approximated i.e. $\hat{\beta}_i$ belongs to a population or system which as a regression parameter $\beta_i$ and $\beta_i=0$.
+* \[H1] The regression parameter $\beta_i \neq 0$. Also known as \textit{alternate} hypothesis. Intuitively, we state that the regression parameter that we have approximated i.e. $\hat{\beta_i}$ belongs to a population or system which as a regression parameter $\beta_i$ and $\beta_i \neq 0$.
+
+ 
+In our analysis, we try to prove null hypothesis. If we succeed in doing so, we conclude that the regression parameter is zero. Otherwise, we conclude that the regression parameter is \textit{not} zero.  A line of precaution here. As mentioned previously, $\mathtt{t}$ distribution tells the probability of $\hat{\beta}_i$ to belong to a system which has a regression parameter $\beta_i$, and since it is composed of normal distribution and $\chi^2$ distribution, there will always be certain non-zero probability that $\hat{\beta}_i$ belongs to $\beta_i$. So we can never conclude that any possible value of $\beta_i$ is does not belong to a population of system which has regression parameter $\beta_i$, which is $0$ in case of null hypothesis. Therefore, to avoid such situation, we restrict our analysis to a given probability $\alpha$ i.e. if there is probability of $\hat{\beta}_i$ to belong to $\beta_i$ is more than $\alpha$, then \textit{null} hypothesis is true, otherwise if the probability is lower than $\alpha$, we reject the null hypothesis and accept the alternate hypothesis i.e. $\beta_i \neq 0$. In management literature the most used level of $\alpha$ is 0.95. Therefore if $\frac{\hat{\beta}_i- \beta_i}{\text{SE}_{\hat{\beta}_i}}$ is less than the critical value of $\mathtt{t}_{n-p}$ for $\alpha=0.95$, then we accept the null hypothesis. Otherwise we accept the alternate hypothesis. 
+
+# Predictions
+[comment]: <> (\section{Predictions})
 
 
 
@@ -458,8 +459,9 @@ In other words,
 \hat{y}(\textbf{x}_i^{*T}) -\gamma \hat{\sigma} \sqrt{\textbf{x}_i^{T*} (\textbf{X}^T \textbf{X})^{-1}\textbf{x}_i^{*}} \leq \hat{y} \leq  \hat{y}(\textbf{x}_i^{*T}) +\gamma \hat{\sigma} \sqrt{\textbf{x}_i^{T*} (\textbf{X}^T \textbf{X})^{-1}\textbf{x}_i^{*}} 
 \end{equation} </p>
 
-\section{Example}
-Consider an example of a supermarket, where we want to understand the consumer spending with respect to the time that the consumers spend in the supermarket and their education level. We have the data shown in \ref{table:table_1}. 
+# Example
+[comment]: <> (\section{Example})
+Consider an example of a supermarket, where we want to understand the consumer spending with respect to the time that the consumers spend in the supermarket and their education level. We have the data shown in <a href="#table_1">Table 1</a>. 
 
 
 \begin{array}{|l|l|l|l|}
@@ -487,12 +489,10 @@ Consider an example of a supermarket, where we want to understand the consumer s
 19 & 97 & 9 & 1485 \\
 20 & 117 & 14 & 1785 \\
 \hline
-\end{array}
 \textbf{mean}	&	99.9 & 14.1	&	1537.5\\
-\hline
 \end{array}
-\label{table:table_1}
-\caption{Supermarket data (fictitious)}
+<a name="#table_1">Table 1</a>Supermarket data (fictitious).
+
 
 
 We can write the data shown in Table \ref{table:table_1} in the following form.
@@ -565,9 +565,7 @@ Now we calculate $\hbld{\beta}$ as,
 \end{bmatrix}
 \end{equation} </p>
 
-\begin{table}
-\centering
-\begin{tabular}{|l|l|l|l|l|l|}
+\begin{array}{|l|l|l|l|l|l|}
 \hline
 \textbf{Sr. no.}	&	\textbf{AS} ($y_i$)	&	\textbf{PS} ($\hat{y_i}$)	&	\textbf{Residual} ($e_i$)	&	CI($-95\%$)	&	CI($+95\%$)\\
 \hline
@@ -592,12 +590,12 @@ Now we calculate $\hbld{\beta}$ as,
 19 & 1485.00 & 1488.43 & -3.43 & 1470.83 & 1499.17 \\
 20 & 1785.00 & 1795.93 & -10.93 & 1771.86 & 1798.14 \\
 \hline
-\end{tabular}
-\label{table:table_2}
-\caption{Actual and predicted outputs. (AS: Actual spending, PS: Predicted spending)}
-\end{table}
+\end{array}
+<a name="#table_2">Table 2</a>Actual and predicted outputs. (AS: Actual spending, PS: Predicted spending).
+
+
 Based on $\hbld{\beta}$ we predict the output using Eq. \ref{eq:beta_hat} as shown in Table \ref{table:table_2}. 
-Now we calculate $\hat{\sigma}^2$ using the data from Table \ref{table:table_2} as shown below, 
+Now we calculate $\hat{\sigma}^2$ using the data from  <a href="#table_2">Table 2</a>  as shown below, 
 
 <p> \begin{equation}
 \hat{\sigma}^2 = \frac{1}{20} \textbf{e}^T\textbf{e} = 263.48
