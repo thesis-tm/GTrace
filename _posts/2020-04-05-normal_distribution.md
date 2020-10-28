@@ -91,8 +91,8 @@ g(x)g(y) &=& \exp(A x^2)\exp(A y^2) \nonumber\\
 Hence, we have,
 
 $$\begin{eqnarray}\label{eq_3}
-f(x) &=& \lambda g(x) \nonumber \nonumber \\
-\Rightarrow f(x) &=& \lambda \exp(Ax^2) 
+f(x) &=& \lambda g(x) \nonumber \\
+&=& \lambda \exp(Ax^2) 
 \end{eqnarray}$$
 
 So far, we do not know the parameters $\lambda$ and $A$. These parameters are having important aspects that we will discuss in the future sections. 
@@ -139,7 +139,7 @@ Now we will calculate the variance of the distribution, as follows,
 
 $$\begin{eqnarray}\label{eq_4}
 Var(x) = \sigma^2 &=& \int_{-\infty}^{+\infty} x^2 \exp(-\pi \lambda^2 x^2) dx \nonumber \\
-\Rightarrow &=& \lambda \int_{-\infty}^{+\infty} x.x \exp(-\pi \lambda^2 x^2) dx
+ &=& \lambda \int_{-\infty}^{+\infty} x.x \exp(-\pi \lambda^2 x^2) dx
 \end{eqnarray}$$
  
 
