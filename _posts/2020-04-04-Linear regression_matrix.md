@@ -224,7 +224,7 @@ Thus we can write,
 \end{equation}
 
 
-Now we calculate the expected value of \textbf{SSR} as,
+Now we calculate the expected value of $\textbf{SSR}$ as,
 
 \begin{equation}
 \mathtt{E}[\textbf{SSR}]=\mathtt{E}[\bld{\epsilon}^T \textbf{M} \bld{\epsilon}] = \mathtt{E}[\text{tr}(\bld{\epsilon}^T \textbf{M} \bld{\epsilon})] = \mathtt{E}[\text{tr}( \textbf{M} \bld{\epsilon} \bld{\epsilon}^T)] = \text{tr}( \textbf{M} \mathtt{E}[\bld{\epsilon} \bld{\epsilon}^T])
@@ -242,19 +242,19 @@ Thus finally we have,
 
 \begin{equation}
 \mathtt{E}[\textbf{SSR}] = (n-p)\sigma^2 
-\end{equation} </p>
+\end{equation} 
 Hence we can say that, 
-<p> \begin{equation}
+\begin{equation}
 \sigma^2 = \frac{\textbf{e}^T \textbf{e}}{n-p} =  \frac{\textbf{e}^T \textbf{e}}{n-p} = \frac{\textbf{SSR}}{n-p}
 \end{equation}
 
 Further we also write, 
 
-\begin{equation}
+\begin{equation}\label{eq:sigm_hat}
 \hat{\sigma}^2 = \frac{\textbf{SSR}}{n} = \frac{1}{n}\bld{\epsilon}^T \textbf{M} \bld{\epsilon}
 \end{equation}
 
-Going back to the original problem, we can estimate $\Sigma$ from \textbf{SSR} as shown below, 
+Going back to the original problem, we can estimate $\Sigma$ from $\textbf{SSR}$ as shown below, 
 
 \begin{equation}
 \Sigma = \sigma^2 (\textbf{X}^T \textbf{X})^{-1} = \frac{\textbf{SSR}}{n-k} (\textbf{X}^T \textbf{X})^{-1} = \frac{n\hat{\sigma}^2}{n-k} (\textbf{X}^T \textbf{X})^{-1}
@@ -262,12 +262,10 @@ Going back to the original problem, we can estimate $\Sigma$ from \textbf{SSR} a
 
 
 
-
-
-With little manipulation and dividing both sides by $\sigma^2$ we have, 
+Further, with a little manipulation in Eq. \ref{eq:sigm_hat} and dividing both sides by $\sigma^2$ we have, 
 
 \begin{equation}
-\frac{n\hat{\sigma}^2}{\sigma^2} = \bigg(\frac{\bld{\epsilon}}{\sigma} \bigg)^T \textbf{M} \bigg(\frac{\bld{\epsilon}}{\sigma}\bigg) \sim Z^2 \textbf{M} Z^2 = \chi^2_{n-p}
+\frac{n\hat{\sigma}^2}{\sigma^2} = \bigg(\frac{\bld{\epsilon}}{\sigma} \bigg)^T \textbf{M} \bigg(\frac{\bld{\epsilon}}{\sigma}\bigg) \sim Z^T \textbf{M} Z = \chi^2_{n-p}
 \end{equation}
 
 where $Z$ is a standard normal distribution.
@@ -345,54 +343,54 @@ However, it must be noted that we still have a parameter unknown i.e. $\sigma^2$
 
 Since we know that estimated standard error for a single component $\beta_i$ can be written as, 
 
-<p> \begin{equation}
+\begin{equation}
 \text{SE}_{\hat{\beta_i}} = \sqrt{\frac{n\hat{\sigma}^2}{n-k} (\textbf{X}^T \textbf{X})^{-1}_{ii}}
-\end{equation} </p>
+\end{equation}
 
 And we can write the distribution of individual $\beta_i$ parameter as,
 
-<p> \begin{equation}
+\begin{equation}
 \hat{\beta_i} \sim \mathcal{N}\bigg(\beta_i, \sigma^2 (\textbf{X}^T \textbf{X})^{-1}_{ii} \bigg)
-\end{equation} </p>
+\end{equation}
 
 Further we can write it as, 
-<p> \begin{equation}
+\begin{equation}
 \frac{\hat{\beta}_i- \beta_i}{\text{SE}_{\hat{\beta_i}}} = \frac{\frac{\hat{\beta}_i- \beta_i}{\sqrt{\sigma^2 (\textbf{X}^T\textbf{X})^{-1}_{ii}}}}{\frac{\text{SE}_{\hat{\beta_i}}}{\sqrt{\sigma^2 (\textbf{X}^T\textbf{X})^{-1}_{ii}}}}
-\end{equation} </p>
+\end{equation}
 
 Since we know that, 
-<p> \begin{equation}
+\begin{equation}
 \frac{\hat{\beta}_i- \beta_i}{\sqrt{\sigma^2 (\textbf{X}^T\textbf{X})^{-1}_{ii}}} \sim \mathcal{N} (0, 1)
-\end{equation} </p>
+\end{equation}
 So we have,
 
-<p> \begin{equation}
+\begin{equation}
 \begin{split}
 \frac{\hat{\beta}_i- \beta_i}{\text{SE}_{\hat{\beta_i}}} &\sim \frac{\mathcal{N}(0,1)}{\frac{\sqrt{\frac{n\hat{\sigma}^2}{n-k} (\textbf{X}^T \textbf{X})^{-1}_{ii}}}{\sqrt{\sigma^2 (\textbf{X}^T\textbf{X})^{-1}_{ii}}}}\\
 &\sim \frac{\mathcal{N}(0,1)}{\sqrt{\frac{n\hat{\sigma}^2}{\sigma^2}\frac{1}{n-k} }}\\
 &\sim \frac{\mathcal{N}(0,1)}{\sqrt{\frac{\chi^2_{n-k}}{n-k} }}\\
 & \sim \mathtt{t}_{n-k}
 \end{split}
-\end{equation} </p>
+\end{equation} 
 
 
 where $\mathtt{t}_{n-k}$ is the $\mathtt{t}$ distribution with $n-k$ degree of freedom.\\
-Thus we conclude that $\mathtt{t}_{n-k}$  tells us the probability of obtaining different values of $\frac{\hat{\beta}_i- \beta_i}{\text{SE}_{\hat{\beta_i}}}$. Intuitively, $\mathtt{t}_{n-k}$ values tells us that what is the probability that the given value of $\hat{\beta}_i$ belongs to a distribution which is generated from system that has a regression parameter $\beta_i$. \\
-
-
+Thus we conclude that $\mathtt{t}_{n-k}$  tells us the probability of obtaining different values of $\frac{\hat{\beta}_i- \beta_i}{\text{SE}_{\hat{\beta_i}}}$. Intuitively, $\mathtt{t}_{n-k}$ values tells us that what is the probability that the given value of $\hat{\beta}_i$ belongs to a distribution which is generated from system that has a regression parameter $\beta_i$. 
+<br />
 
 In this context, we formulate the following hypotheses, <br />
-
+<br />
 
 [$\textbf{H0}$] The regression parameter $\beta_i = 0$. Also known as $\textit{null}$ hypothesis. Intuitively, we state that the regression parameter that we have approximated i.e. $\hat{\beta}_i$ belongs to a population or system which as a regression parameter $\beta_i$ and $\beta_i=0$.<br />
-
+<br />
 [$\textbf{H1}$] The regression parameter $\beta_i \neq 0$. Also known as $\textit{alternate}$ hypothesis. Intuitively, we state that the regression parameter that we have approximated i.e. $\hat{\beta_i}$ belongs to a population or system which as a regression parameter $\beta_i$ and $\beta_i \neq 0$.<br />
 
  
 In our analysis, we try to prove null hypothesis. If we succeed in doing so, we conclude that the regression parameter is zero. Otherwise, we conclude that the regression parameter is $\textit{not}$ zero.  A line of precaution here. As mentioned previously, $\mathtt{t}$ distribution tells the probability of $\hat{\beta}_i$ to belong to a system which has a regression parameter $\beta_i$, and since it is composed of normal distribution and $\chi^2$ distribution, there will always be certain non-zero probability that $\hat{\beta}_i$ belongs to $\beta_i$. So we can never conclude that any possible value of $\beta_i$ is does not belong to a population of system which has regression parameter $\beta_i$, which is $0$ in case of null hypothesis. Therefore, to avoid such situation, we restrict our analysis to a given probability $\alpha$ i.e. if there is probability of $\hat{\beta}_i$ to belong to $\beta_i$ is more than $\alpha$, then $\textit{null}$ hypothesis is true, otherwise if the probability is lower than $\alpha$, we reject the null hypothesis and accept the alternate hypothesis i.e. $\beta_i \neq 0$. In management literature the most used level of $\alpha$ is 0.95. Therefore if $\frac{\hat{\beta}_i- \beta_i}{\text{SE}_{\hat{\beta}_i}}$ is less than the critical value of $\mathtt{t}_{n-p}$ for $\alpha=0.95$, then we accept the null hypothesis. Otherwise we accept the alternate hypothesis. 
 
 
-# Predictions
+#Predictions
+
 <br />
 In the previous section we concluded that the regression parameters $\hbld{\beta}$ follows some distributions. As we predict the output using $\hbld{\beta}$ i.e. using Eq. \ref{eq:beta_hat}, the predictions should also some distribution.    Hence the predicted values $\hat{\textbf{y}}$ are not fixed, rather follow a distribution. Let's consider that we want to predict the values for $\textbf{X}^*$, as given below, 
 
