@@ -7,6 +7,8 @@ baseurl:             '/methods-quant/'
 paginate:            5
 permalink:           pretty
 markdown:            kramdown
+kramdown:
+  hard_wrap: true
 
 # About/contact
 author:
