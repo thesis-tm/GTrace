@@ -20,7 +20,7 @@ categories: methods, linear regression
 
 
 # Introduction
-%[comment]: <> (\section{Introduction})
+
 We define a linear system where the output of the system is dependent linearly on some inputs. Let's consider the following system, 
 
 
@@ -34,11 +34,11 @@ y(t) = \beta_0 + \beta_1 x_1(t) + \beta_2 x_2(t) + \cdots + \beta_k x_k(t) + \ep
 where $\epsilon$ is the random noise that either the system or any other source related to the system generates, and $(t)$ signifies the time, which means the output at time $t$ depends on the inputs $i.e.$ $x_i$ at time $t$. 
  
  
-Now the next challenge is to identify $\beta_i$ to know about the system, and we do this by \textit{linear regression}.  
+Now the next challenge is to identify $\beta_i$ to know about the system, and we do this by $\textit{linear regression}$.  
 
 
 # Formal representation
-%[comment]: <> (\section{Formal representation})
+
 
 To start with, we formalize the notations to be used further.
 As we have time dependent output $y(t)$, to present the $n$ instances of the outputs for given $n$ instances of each inputs $x_i$, we use the following matrix notation. 
@@ -82,7 +82,7 @@ Hence we can write the linear system as,
 
 
 # Regression parameter estimation
-[comment]: <> (\section{Regression parameter estimation})
+
 As it is not possible for us to know the regression parameters $\beta$ for the system, so to estimate these parameters we take some another variable $\hat{\beta}$ , and replace it with $\beta$  in Eq. \ref{eq:regression} and predict the output $\hat{\textbf{y}}$, i.e., 
 
 \begin{equation}\label{eq:y_hat}
@@ -96,7 +96,7 @@ To approximate the regression parameters of unknown system, we have fix $\hat{\b
 \textbf{e} = \textbf{y} - \hat{\textbf{y}} 
 \end{equation}
 
-So now the problem can identified as adjusting  $\hat{\boldsymbol{\beta}}$ that tries make $\textbf{e}$ zero or towards zero. Alternately we can define it as adjusting  $\hat{\boldsymbol{\beta}}$ such that  $\vert\verttextbf{e}\vert\vert^2$ minimizes. $\vert\vert\cdot\vert\vert^2$ signifies the square of each element of $\bld{e}$. 
+So now the problem can identified as adjusting  $\hat{\boldsymbol{\beta}}$ that tries make $\textbf{e}$ zero or towards zero. Alternately we can define it as adjusting  $\hat{\boldsymbol{\beta}}$ such that  $\vert\vert\textbf{e}\vert\vert^2$ minimizes. $\vert\vert\cdot\vert\vert^2$ signifies the square of each element of $\bld{e}$. 
 
 The values of $\hat{\boldsymbol{\beta}}$ that minimizes $\vert\vert\textbf{e}\vert\vert^2$ can be obtained by finding minima by differentiation. i.e.,
 
@@ -177,7 +177,7 @@ Or simply,
 
 
 This means that how close $\hat{\boldsymbol{\beta}}$ is to $\boldsymbol{\beta}$ depends on the noise $\bld{\epsilon}$. \\
-It is interesting to note that the noise $\bld{\epsilon}$ is independent and identical or \textit{i.i.d.} and follows normal distribution with certain variance \[how do we know thia ? well, we assume so!\]. Therefore any once element of noise vector i.e. $\epsilon_i$ can be written as,\\
+It is interesting to note that the noise $\bld{\epsilon}$ is independent and identical or $\textit{i.i.d.}$ and follows normal distribution with certain variance \[how do we know thia ? well, we assume so!\]. Therefore any once element of noise vector i.e. $\epsilon_i$ can be written as,\\
 
 \begin{equation}
 \epsilon_i \sim \mathcal{N}(0, \sigma^2)
@@ -193,7 +193,6 @@ Thus, since $\bld{\epsilon}$ follows a distribution, the  parameter $\hbld{\beta
 
 # Features of residual
 
-%\subsection{Features of residual}
 
 Let's approximate it from error term or residuals, i.e. $\textbf{e}$. Let's write sum of squared of residual first in the following form, 
 
@@ -276,10 +275,11 @@ where $Z$ is a standard normal distribution.
 
 # Distribution of $\hat{\boldsymbol{\beta}}$
 
-%[comment]: <> (\subsection{Distribution of $\hat{\boldsymbol{\beta}}$})
 In order to represent the $\hbld{\beta}$ in distribution form, we calculate the two main parameters first i.e. mean and variance. 
 
-\subsubsection{Expected value of $\hbld{\beta}$, $\mathtt{E}(\hat{\boldsymbol{\beta}})$}
+## Expected value of $\hbld{\beta}$, $\mathtt{E}(\hat{\boldsymbol{\beta}})$
+
+
 <p> \begin{equation}
 E[\hbld{\beta}] = E[\bld{\beta} + \textbf{H} \bld{\epsilon}] = E[\bld{\beta}] + E[\textbf{H} \bld{\epsilon}]
 \end{equation} </p>
@@ -287,7 +287,8 @@ nointen
 As we know, $E[\boldsymbol{\beta} ] = \boldsymbol{\beta}$, and $E[\textbf{H} \boldsymbol{\epsilon}] = \textbf{X}^T \textbf{X})^{-1} \textbf{X}^T E[\boldsymbol{\epsilon}] = 0$ 
 
 ## Variance of $\hat{\boldsymbol{\beta}}$
-[comment]: <> (\subsubsection{Variance of $\hat{\boldsymbol{\beta}}$})
+
+
 We calculate the variance from second moment as, 
 
 \begin{equation}
@@ -319,7 +320,6 @@ Thus we can write the distribution of $\hbld{\beta}$ as,
 
 # Hypothesis testing
 
-% [comment]: <> (\section{Hypotheses tests})
 From Eq. \ref{eq:beta_hat} we know that calculated parameter $\hbld{\beta}$ follows a distribution. But we want to know how probable is that the calculated parameter i.e. $\hbld{\beta}$ is close to actual parameter $\bld{\beta}$. 
 
 Before doing so, let's do some maths magic. Let's write Eq. \ref{eq:beta_hat} as follows, 
@@ -384,16 +384,15 @@ Thus we conclude that $\mathtt{t}_{n-k}$  tells us the probability of obtaining 
 In this context, we formulate the following hypotheses,\\
 <p>
 
-* \[H0] The regression parameter $\beta_i = 0$. Also known as \textit{null} hypothesis. Intuitively, we state that the regression parameter that we have approximated i.e. $\hat{\beta}_i$ belongs to a population or system which as a regression parameter $\beta_i$ and $\beta_i=0$.
-* \[H1] The regression parameter $\beta_i \neq 0$. Also known as \textit{alternate} hypothesis. Intuitively, we state that the regression parameter that we have approximated i.e. $\hat{\beta_i}$ belongs to a population or system which as a regression parameter $\beta_i$ and $\beta_i \neq 0$.
+[$\textbf{H0}$] The regression parameter $\beta_i = 0$. Also known as \textit{null} hypothesis. Intuitively, we state that the regression parameter that we have approximated i.e. $\hat{\beta}_i$ belongs to a population or system which as a regression parameter $\beta_i$ and $\beta_i=0$.
+
+[$\textbf{H1}$] The regression parameter $\beta_i \neq 0$. Also known as \textit{alternate} hypothesis. Intuitively, we state that the regression parameter that we have approximated i.e. $\hat{\beta_i}$ belongs to a population or system which as a regression parameter $\beta_i$ and $\beta_i \neq 0$.
 
  
-In our analysis, we try to prove null hypothesis. If we succeed in doing so, we conclude that the regression parameter is zero. Otherwise, we conclude that the regression parameter is \textit{not} zero.  A line of precaution here. As mentioned previously, $\mathtt{t}$ distribution tells the probability of $\hat{\beta}_i$ to belong to a system which has a regression parameter $\beta_i$, and since it is composed of normal distribution and $\chi^2$ distribution, there will always be certain non-zero probability that $\hat{\beta}_i$ belongs to $\beta_i$. So we can never conclude that any possible value of $\beta_i$ is does not belong to a population of system which has regression parameter $\beta_i$, which is $0$ in case of null hypothesis. Therefore, to avoid such situation, we restrict our analysis to a given probability $\alpha$ i.e. if there is probability of $\hat{\beta}_i$ to belong to $\beta_i$ is more than $\alpha$, then \textit{null} hypothesis is true, otherwise if the probability is lower than $\alpha$, we reject the null hypothesis and accept the alternate hypothesis i.e. $\beta_i \neq 0$. In management literature the most used level of $\alpha$ is 0.95. Therefore if $\frac{\hat{\beta}_i- \beta_i}{\text{SE}_{\hat{\beta}_i}}$ is less than the critical value of $\mathtt{t}_{n-p}$ for $\alpha=0.95$, then we accept the null hypothesis. Otherwise we accept the alternate hypothesis. 
+In our analysis, we try to prove null hypothesis. If we succeed in doing so, we conclude that the regression parameter is zero. Otherwise, we conclude that the regression parameter is $\textit{not}$ zero.  A line of precaution here. As mentioned previously, $\mathtt{t}$ distribution tells the probability of $\hat{\beta}_i$ to belong to a system which has a regression parameter $\beta_i$, and since it is composed of normal distribution and $\chi^2$ distribution, there will always be certain non-zero probability that $\hat{\beta}_i$ belongs to $\beta_i$. So we can never conclude that any possible value of $\beta_i$ is does not belong to a population of system which has regression parameter $\beta_i$, which is $0$ in case of null hypothesis. Therefore, to avoid such situation, we restrict our analysis to a given probability $\alpha$ i.e. if there is probability of $\hat{\beta}_i$ to belong to $\beta_i$ is more than $\alpha$, then \textit{null} hypothesis is true, otherwise if the probability is lower than $\alpha$, we reject the null hypothesis and accept the alternate hypothesis i.e. $\beta_i \neq 0$. In management literature the most used level of $\alpha$ is 0.95. Therefore if $\frac{\hat{\beta}_i- \beta_i}{\text{SE}_{\hat{\beta}_i}}$ is less than the critical value of $\mathtt{t}_{n-p}$ for $\alpha=0.95$, then we accept the null hypothesis. Otherwise we accept the alternate hypothesis. 
+
 
 # Predictions
-[comment]: <> (\section{Predictions})
-
-
 
 In the previous section we concluded that the regression parameters $\hbld{\beta}$ follows some distributions. As we predict the output using $\hbld{\beta}$ i.e. using Eq. \ref{eq:beta_hat}, the predictions should also some distribution.    Hence the predicted values $\hat{\textbf{y}}$ are not fixed, rather follow a distribution. Let's consider that we want to predict the values for $\textbf{X}^*$, as given below, 
 
@@ -464,7 +463,7 @@ In other words,
 \end{equation} </p>
 
 # Example
-[comment]: <> (\section{Example})
+
 Consider an example of a supermarket, where we want to understand the consumer spending with respect to the time that the consumers spend in the supermarket and their education level. We have the data shown in <a href="#table_1">Table 1</a>. 
 
 
