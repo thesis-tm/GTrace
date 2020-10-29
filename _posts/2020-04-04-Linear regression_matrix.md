@@ -106,9 +106,9 @@ The values of $\hat{\boldsymbol{\beta}}$ that minimizes $\vert\vert\textbf{e}\ve
 
 Further we know that, 
 
-\begin{equation*}
+\begin{equation}
 \frac{\partial \hat{\textbf{y}}}{\partial \hat{\boldsymbol{\beta}}} = \frac{\partial \textbf{X} \hat{\boldsymbol{\beta}}}{\partial \hat{\boldsymbol{\beta}}} = -\textbf{X}
-\end{equation*}
+\end{equation}
 
 Hence we can further write, 
 
@@ -179,9 +179,9 @@ Or simply,
 This means that how close $\hat{\boldsymbol{\beta}}$ is to $\boldsymbol{\beta}$ depends on the noise $\bld{\epsilon}$. \\
 It is interesting to note that the noise $\bld{\epsilon}$ is independent and identical or \textit{i.i.d.} and follows normal distribution with certain variance \[how do we know thia ? well, we assume so!\]. Therefore any once element of noise vector i.e. $\epsilon_i$ can be written as,\\
 
-\begin{equation*}
+\begin{equation}
 \epsilon_i \sim \mathcal{N}(0, \sigma^2)
-\end{equation*} 
+\end{equation} 
 
 Similarly $\bld{\epsilon}$ can be written in the form of multivariate normal distribution as,\\
 
@@ -220,9 +220,9 @@ Further, it must be noted that
 \end{equation} 
 
 Thus we can write, 
-\begin{equation*}
+\begin{equation}
 \textbf{SSR} = \bld{\epsilon}^T \textbf{M} \bld{\epsilon}
-\end{equation*}
+\end{equation}
 
 
 Now we calculate the expected value of \textbf{SSR} as,
@@ -234,9 +234,9 @@ Now we calculate the expected value of \textbf{SSR} as,
 
 Since we know that $\mathtt{E}[\bld{\epsilon} \bld{\epsilon}^T)] = \sigma^2 \textbf{I} $ 
 
-\begin{equation*}
+\begin{equation}
 \mathtt{E}[\textbf{SSR}] = \sigma^2 \text{tr}( \textbf{M})
-\end{equation*}
+\end{equation}
 
 Little maths tells us that $\text{tr}( \textbf{M}) = n-p$
 Thus finally we have, 
@@ -251,9 +251,9 @@ Hence we can say that,
 
 Further we also write, 
 
-\begin{equation*}
+\begin{equation}
 \hat{\sigma}^2 = \frac{\textbf{SSR}}{n} = \frac{1}{n}\bld{\epsilon}^T \textbf{M} \bld{\epsilon}
-\end{equation*}
+\end{equation}
 
 Going back to the original problem, we can estimate $\Sigma$ from \textbf{SSR} as shown below, 
 
@@ -267,9 +267,9 @@ Going back to the original problem, we can estimate $\Sigma$ from \textbf{SSR} a
 
 With little manipulation and dividing both sides by $\sigma^2$ we have, 
 
-\begin{equation*}
+\begin{equation}
 \frac{n\hat{\sigma}^2}{\sigma^2} = \bigg(\frac{\bld{\epsilon}}{\sigma} \bigg)^T \textbf{M} \bigg(\frac{\bld{\epsilon}}{\sigma}\bigg) \sim Z^2 \textbf{M} Z^2 = \chi^2_{n-p}
-\end{equation*}
+\end{equation}
 
 where $Z$ is a standard normal distribution.
 
@@ -280,9 +280,9 @@ where $Z$ is a standard normal distribution.
 In order to represent the $\hbld{\beta}$ in distribution form, we calculate the two main parameters first i.e. mean and variance. 
 
 \subsubsection{Expected value of $\hbld{\beta}$, $\mathtt{E}(\hat{\boldsymbol{\beta}})$}
-<p> \begin{equation*}
+<p> \begin{equation}
 E[\hbld{\beta}] = E[\bld{\beta} + \textbf{H} \bld{\epsilon}] = E[\bld{\beta}] + E[\textbf{H} \bld{\epsilon}]
-\end{equation*} </p>
+\end{equation} </p>
 nointen
 As we know, $E[\boldsymbol{\beta} ] = \boldsymbol{\beta}$, and $E[\textbf{H} \boldsymbol{\epsilon}] = \textbf{X}^T \textbf{X})^{-1} \textbf{X}^T E[\boldsymbol{\epsilon}] = 0$ 
 
@@ -290,22 +290,20 @@ As we know, $E[\boldsymbol{\beta} ] = \boldsymbol{\beta}$, and $E[\textbf{H} \bo
 [comment]: <> (\subsubsection{Variance of $\hat{\boldsymbol{\beta}}$})
 We calculate the variance from second moment as, 
 
-\begin{equation*}
+\begin{equation}
 \mathtt{E}[\hat{\boldsymbol{\beta}} - \mathtt{E}[\boldsymbol{\beta} ]]^2 = \mathtt{E}[\hat{\boldsymbol{\beta}} - \boldsymbol{\beta}]^2 = \mathtt{E}[\textbf{H} \epsilon]^2
-\end{equation*}
+\end{equation}
 
 we can write it further as,
 
-<p> \begin{equation*}
-\begin{split}
-\mathtt{E}[\textbf{H} \bld{\epsilon}]^2 &= \mathtt{E}[(\textbf{H} \bld{\epsilon})(\textbf{H} \bld{\epsilon})^T]\\
-& =  \mathtt{E}[\textbf{H} \bld{\epsilon} \bld{\epsilon}^T \textbf{H}^T] \\
-& = \textbf{H} \mathtt{E}[\bld{\epsilon} \bld{\epsilon}^T] \textbf{H}^T \\
-& = \textbf{H} \sigma^2 \textbf{I} \textbf{H}^T \\
-& = \sigma^2 \textbf{H} \textbf{H}^T \\
-&=\sigma^2 (\textbf{X}^T \textbf{X})^{-1} \textbf{X}^T \textbf{X} (\textbf{X}^T \textbf{X})^{-1} 
-\end{split}
-\end{equation*} </p>
+$$\begin{eqnarray}
+\mathtt{E}[\textbf{H} \bld{\epsilon}]^2 &= \mathtt{E}[(\textbf{H} \bld{\epsilon})(\textbf{H} \bld{\epsilon})^T] \nonumber \\
+& =  \mathtt{E}[\textbf{H} \bld{\epsilon} \bld{\epsilon}^T \textbf{H}^T] \nonumber \\
+& = \textbf{H} \mathtt{E}[\bld{\epsilon} \bld{\epsilon}^T] \textbf{H}^T \nonumber \\
+& = \textbf{H} \sigma^2 \textbf{I} \textbf{H}^T \nonumber \\
+& = \sigma^2 \textbf{H} \textbf{H}^T \nonumber \\
+&=\sigma^2 (\textbf{X}^T \textbf{X})^{-1} \textbf{X}^T \textbf{X} (\textbf{X}^T \textbf{X})^{-1} \nonumber \\
+\end{eqnarray}$$
 
 Hence we have, 
 
@@ -321,14 +319,14 @@ Thus we can write the distribution of $\hbld{\beta}$ as,
 
 # Hypothesis testing
 
-%[comment]: <> (\section{Hypotheses tests})
+% [comment]: <> (\section{Hypotheses tests})
 From Eq. \ref{eq:beta_hat} we know that calculated parameter $\hbld{\beta}$ follows a distribution. But we want to know how probable is that the calculated parameter i.e. $\hbld{\beta}$ is close to actual parameter $\bld{\beta}$. 
 
 Before doing so, let's do some maths magic. Let's write Eq. \ref{eq:beta_hat} as follows, 
 
-<p> \begin{equation*}
+\begin{equation}
 \hbld{\beta} \sim \mathcal{N} (\bld{\beta}, \Sigma)
-\end{equation*} </p> 
+\end{equation} 
 where, $\Sigma = \sigma^2 (\textbf{X}^T \textbf{X})^{-1}$
 
 We can transform the above distribution to zero mean as, 
@@ -338,9 +336,9 @@ We can transform the above distribution to zero mean as,
 \end{equation} </p>
 Further we can standardize the distribution to unit variance as, 
 
-<p> \begin{equation*}
+\begin{equation}
 \Sigma^{-1/2}(\hbld{\beta} - \bld{\beta}) \sim \Sigma^{-1/2} \mathcal{N} (0, \Sigma) = \mathcal{N} (0, \Sigma^{-T/2} \Sigma \Sigma^{-1/2} ) = \mathcal{N} (0, \textbf{I} )
-\end{equation*} </p>
+\end{equation}
 However, it must be noted that we still have a parameter unknown i.e. $\sigma^2$ in $\Sigma$. 
 
 
