@@ -98,10 +98,10 @@ To approximate the regression parameters of unknown system, we have fix $\hat{\b
 
 So now the problem can identified as adjusting  $\hat{\boldsymbol{\beta}}$ that tries make $\textbf{e}$ zero or towards zero. Alternately we can define it as adjusting  $\hat{\boldsymbol{\beta}}$ such that  $\|\|\textbf{e}\|\|^2$ minimizes. $\|\|\cdot\|\|^2$ signifies the square of each element of $\bld{e}$. 
 
-The values of $\hat{\boldsymbol{\beta}}$ that minimizes $\||\textbf{e}\||^2$ can be obtained by finding minima by differentiation. i.e.,\\
+The values of $\hat{\boldsymbol{\beta}}$ that minimizes $\vert\vert\textbf{e}\vert\vert^2$ can be obtained by finding minima by differentiation. i.e.,\\
 
 \begin{equation}
-\frac{\partial ||\textbf{e}||^2}{\partial \hat{\boldsymbol{\beta}}} = \frac{\partial \textbf{e}^T \textbf{e}}{\partial \hat{\boldsymbol{\beta}}} = \frac{\partial (\textbf{y} - \hat{\textbf{y}})^T (\textbf{y} - \hat{\textbf{y}})}{\partial \hat{\boldsymbol{\beta}}} = 2 (\textbf{y} - \hat{\textbf{y}})^T \frac{\partial \hat{\textbf{y}}}{\partial \hat{\boldsymbol{\beta}}}
+\frac{\partial \vert\vert\textbf{e}\vert\vert^2}{\partial \hat{\boldsymbol{\beta}}} = \frac{\partial \textbf{e}^T \textbf{e}}{\partial \hat{\boldsymbol{\beta}}} = \frac{\partial (\textbf{y} - \hat{\textbf{y}})^T (\textbf{y} - \hat{\textbf{y}})}{\partial \hat{\boldsymbol{\beta}}} = 2 (\textbf{y} - \hat{\textbf{y}})^T \frac{\partial \hat{\textbf{y}}}{\partial \hat{\boldsymbol{\beta}}}
 \end{equation}
 Further we know that, 
 
