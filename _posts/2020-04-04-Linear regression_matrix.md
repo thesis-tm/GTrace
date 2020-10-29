@@ -96,13 +96,14 @@ To approximate the regression parameters of unknown system, we have fix $\hat{\b
 \textbf{e} = \textbf{y} - \hat{\textbf{y}} 
 \end{equation}
 
-So now the problem can identified as adjusting  $\hat{\boldsymbol{\beta}}$ that tries make $\textbf{e}$ zero or towards zero. Alternately we can define it as adjusting  $\hat{\boldsymbol{\beta}}$ such that  $\|\|\textbf{e}\|\|^2$ minimizes. $\|\|\cdot\|\|^2$ signifies the square of each element of $\bld{e}$. 
+So now the problem can identified as adjusting  $\hat{\boldsymbol{\beta}}$ that tries make $\textbf{e}$ zero or towards zero. Alternately we can define it as adjusting  $\hat{\boldsymbol{\beta}}$ such that  $\vert\verttextbf{e}\vert\vert^2$ minimizes. $\vert\vert\cdot\vert\vert^2$ signifies the square of each element of $\bld{e}$. 
 
-The values of $\hat{\boldsymbol{\beta}}$ that minimizes $\vert\vert\textbf{e}\vert\vert^2$ can be obtained by finding minima by differentiation. i.e.,\\
+The values of $\hat{\boldsymbol{\beta}}$ that minimizes $\vert\vert\textbf{e}\vert\vert^2$ can be obtained by finding minima by differentiation. i.e.,
 
 \begin{equation}
 \frac{\partial \vert\vert\textbf{e}\vert\vert^2}{\partial \hat{\boldsymbol{\beta}}} = \frac{\partial \textbf{e}^T \textbf{e}}{\partial \hat{\boldsymbol{\beta}}} = \frac{\partial (\textbf{y} - \hat{\textbf{y}})^T (\textbf{y} - \hat{\textbf{y}})}{\partial \hat{\boldsymbol{\beta}}} = 2 (\textbf{y} - \hat{\textbf{y}})^T \frac{\partial \hat{\textbf{y}}}{\partial \hat{\boldsymbol{\beta}}}
 \end{equation}
+
 Further we know that, 
 
 \begin{equation*}
@@ -112,20 +113,20 @@ Further we know that,
 Hence we can further write, 
 
 \begin{equation}
-\frac{\partial ||\textbf{e}||^2}{\partial \hat{\boldsymbol{\beta}}} = -2 (\textbf{y} - \hat{\textbf{y}})^T \textbf{X}
+\frac{\partial \vert\vert\textbf{e}\vert\vert^2}{\partial \hat{\boldsymbol{\beta}}} = -2 (\textbf{y} - \hat{\textbf{y}})^T \textbf{X}
 \end{equation} 
 
 
-We calculate the optimum value of $\bld{\beta}$ by taking first and second derivative of $||\textbf{e}||^2$ with respect to $\hbld{\beta}$, as shown below, 
+We calculate the optimum value of $\bld{\beta}$ by taking first and second derivative of $\vert\vert\textbf{e}\vert\vert^2$ with respect to $\hbld{\beta}$, as shown below, 
 
 \begin{equation}
-\frac{\partial}{\partial \hbld{\beta}} \frac{\partial ||\textbf{e}||^2}{\partial \hbld{\beta}} = \textbf{X}^T \textbf{X}
+\frac{\partial}{\partial \hbld{\beta}} \frac{\partial \vert\vert\textbf{e}\vert\vert^2}{\partial \hbld{\beta}} = \textbf{X}^T \textbf{X}
 \end{equation} 
 
 
-As the second derivative will always be positive, hence we confirm that the value of $\hbld{\beta}$ obtain from first derivative would result in minimization of $||\textbf{e}||$.
+As the second derivative will always be positive, hence we confirm that the value of $\hbld{\beta}$ obtain from first derivative would result in minimization of $\vert\vert\textbf{e}\vert\vert$.
 
-Hence we can find $\hat{\boldsymbol{\beta}}$ that minimize $||\textbf{e}||^2$ as,
+Hence we can find $\hat{\boldsymbol{\beta}}$ that minimize $\vert\vert\textbf{e}\vert\vert^2$ as,
 
 $$\begin{eqnarray}
 & &-2 (\textbf{y} - \hat{\textbf{y}})^T \textbf{X} = 0\\
