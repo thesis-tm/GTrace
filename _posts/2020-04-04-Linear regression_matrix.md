@@ -327,9 +327,9 @@ Further we can standardize the distribution to unit variance as,
 However, it must be noted that we still have a parameter unknown i.e. $\sigma^2$ in $\Sigma$. 
 
 Since we know that estimated standard error for a single component $\beta_i$ can be written as, 
-\begin{equation}
-\text{SE}_{\hat{\beta_i}} = \sqrt{\frac{n\hat{\sigma}^2}{n-k} (\textbf{X}^T \textbf{X})^{-1}_{ii}}
-\end{equation}
+$$\begin{equation}
+\text{SE}_{\hat{\beta_i}}= \sqrt{\frac{n\hat{\sigma}^2}{n-k} (\textbf{X}^T \textbf{X})^{-1}_{ii}}
+\end{equation}$$
 
 And we can write the distribution of individual $\beta_i$ parameter as,
 \begin{equation}
