@@ -25,7 +25,7 @@ We define a linear system where the output of the system is dependent linearly o
 here $x_1,x_2,...x_n$ are the inputs and $y$ is the output.
 In a linear system, we know that the output is linearly dependent on the inputs, which implies that the inputs are scaled by some numbers and then results in an output. Hence in mathematical form, we can write the linear system as, 
 
- $$\begin{eqnarray}
+$$\begin{eqnarray}
 y(t) = \beta_0 + \beta_1 x_1(t) + \beta_2 x_2(t) + \cdots + \beta_k x_k(t) + \epsilon
 \end{eqnarray}$$ 
 
@@ -35,7 +35,7 @@ Now the next challenge is to identify $\beta_i$ to know about the system, and we
 To start with, we formalize the notations to be used further.
 As we have time dependent output $y(t)$, to present the $n$ instances of the outputs for given $n$ instances of each inputs $x_i$, we use the following matrix notation. 
 
- $$\begin{eqnarray}
+$$\begin{eqnarray}
 \textbf{y} = \begin{bmatrix}
 y_1\\
 y_2\\
@@ -67,7 +67,7 @@ y_n\\
 
 Hence, we can write the linear system as, 
 
- $$\begin{eqnarray}\label{eq:regression}
+$$\begin{eqnarray}\label{eq:regression}
 \textbf{y} = \textbf{X}\boldsymbol{\beta} + \bld{\epsilon}
 \end{eqnarray}$$  
 
