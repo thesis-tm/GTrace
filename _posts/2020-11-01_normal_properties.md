@@ -7,8 +7,9 @@ comments: true
 categories: methods, linear regression
 ---
 $\require{\AMSmath}$ 
+<div style="display:none">
 \( \newtheorem{theorem}{Theorem} \)
-
+<\div>
 
 # Notation
 This section mainly focuses on defining formal notations that will be used in the later sections.
