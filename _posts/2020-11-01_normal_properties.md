@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Linear regression
+title: Some properties of normal distribution
 mathjax: true
 tikz: yes
 comments: true  
-categories: methods, linear regression
+categories: methods, statistics, proofs, normal distribution, distribution
 ---
 $\require{\AMSmath}$ 
 <div style="display:none">
