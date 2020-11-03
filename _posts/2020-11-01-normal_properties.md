@@ -6,10 +6,6 @@ tikz: yes
 comments: true  
 categories: methods, statistics, proofs, normal distribution, distribution
 ---
-$\require{\AMSmath}$ 
-<div style="display:none">
-\( \newtheorem{theorem}{Theorem} \)
-<\div>
 
 # Notation
 This section mainly focuses on defining formal notations that will be used in the later sections.
