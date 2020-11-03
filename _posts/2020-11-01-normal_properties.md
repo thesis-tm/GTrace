@@ -16,6 +16,7 @@ categories: methods, statistics, proofs, normal distribution, distribution
   \newcommand{\hbld}[1]{\hat{\boldsymbol{#1}}}
   \newcommand{\textbf}[1]{\mathbf{#1}}
 \)
+  </div>
 
 # Notation
 This section mainly focuses on defining formal notations that will be used in the later sections.
