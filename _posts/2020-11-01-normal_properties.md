@@ -7,6 +7,16 @@ comments: true
 categories: methods, statistics, proofs, normal distribution, distribution
 ---
 
+<div style="display:none">
+\(
+  \def\<#1>{\left<#1\right>}
+  \newcommand{\ddx}[2]{\frac{#1}{#2}}
+  \newcommand{\CC}{\mathbf{C}}
+  \newcommand{\bld}[1]{\boldsymbol{#1}}
+  \newcommand{\hbld}[1]{\hat{\boldsymbol{#1}}}
+  \newcommand{\textbf}[1]{\mathbf{#1}}
+\)
+
 # Notation
 This section mainly focuses on defining formal notations that will be used in the later sections.
 
