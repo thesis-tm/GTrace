@@ -4,7 +4,7 @@ mathjax: true
 tikz: yes
 comments: true
 title:  "Classical proofs"
-date:   2016-08-21 23:41:54 +0000
+date:   2020-12-29 13:08:00 +0000
 categories: github jekyll
 ---
 
